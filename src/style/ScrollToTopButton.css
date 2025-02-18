@@ -1,0 +1,10 @@
+#fleche {
+    width: 4em;
+
+}
+
+.scroll-to-top-button {
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+}

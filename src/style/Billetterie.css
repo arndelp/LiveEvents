@@ -1,0 +1,35 @@
+.bill {
+   display: flex;
+ justify-content: space-around;  
+    
+}
+.billetterie {
+ 
+   justify-content: space-around;
+   min-height: 100vh;
+   padding-bottom: 2em;
+   background-size: cover;
+   background-image: url("../../public/assets/27104127-applaudissement-foule-illumine-par-vibrant-etape-lumieres-a-concert-photo.jpg");
+}
+.card-name {
+   font-family: katibeh, Arial, Helvetica, sans-serif;
+   font-size: 3em;
+   padding-bottom: 0.5em;
+}
+
+.card-fond {
+   background-color: var(--gris);
+   max-width: 15em;
+   height: auto;
+   
+}
+
+.btn {
+   text-align: center;
+   padding-top: 0em;
+   margin-top: 2em;
+}
+
+.card-text {
+   padding-top:0.5em;
+}

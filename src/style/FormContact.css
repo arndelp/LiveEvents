@@ -1,0 +1,61 @@
+.submitbutton {
+    display: flex;
+    justify-content: center;
+}
+
+.contact {
+    
+    display: flex;
+    justify-content: center;    
+    background-color: var(--gris);      
+    min-height: 100vh;   
+    min-width: 100vw;
+    padding-right: 3em; 
+    padding-left: 3em;
+    
+       
+}
+
+.label {
+    margin-top: 2em;
+    margin-bottom: 0.5em;    
+    
+}
+
+.contacth1 {
+    justify-content: center;
+    text-align: center;
+    background-color: var(--gris);   
+    margin-bottom: 0;
+    padding-top: 0.5em;
+    font-family: Katibeh;
+    font-size: 5em;  
+    
+}
+
+
+.boutonSubmit {    
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.checkRGPD {
+    margin-top: 2em;  
+    font-size: 0.8em;
+    max-width: 75em;
+} 
+
+
+
+.checkRGPDLink {
+    margin-top: 0em;  
+    font-size: 0.8em;
+    max-width: 75em;
+} 
+
+.ScrollConf {
+    margin-bottom: 1em;
+}
+
+
