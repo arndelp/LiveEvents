@@ -18,6 +18,7 @@ import MarkersScene from "./MarkersScene";
 export default function GoogleMap  () {
   //const {latitude, longitude, error} = usePosition();
   const API_KEY = 'AIzaSyDyFJl07pOphogij6mYHfO311l_LpvJ85g'
+  const mapId = 'd17a67bf932afd78'
   const [currentPosition] = useState({ lat: 48.64627130950389,    lng: 1.8125529133067797 });
   const [currentZoom] = useState(15.477);
  
@@ -56,7 +57,7 @@ export default function GoogleMap  () {
         className="Gmap"
         defaultCenter={currentPosition}
         defaultZoom={currentZoom}
-        mapId={'d17a67bf932afd78'}
+        mapId={mapId}
         gestureHandling={'greedy'}
         disableDefaultUI 
         /*Affichage dans la console des coordonnées du centre de la carte lors des mouvements */ 
