@@ -19,7 +19,7 @@ function Nav() {
                 <div className="logo col-2 d-none d-lg-block">
                     <div >
                         <Link to="/LiveEvents/">
-                            <img src='../logo.svg' alt="logo" className="logoSize" />
+                            <img src='../logo.png' alt="logo" className="logoSize" />
                         </Link>
                     </div>   
                 </div>
@@ -79,7 +79,7 @@ function Nav() {
                 <div class="col  d-block d-lg-none">
                 <div className="headLogoM">
                     <Link to="/LiveEvents/">
-                        <img src='../logo.svg' alt="logo"  />
+                        <img src='../logo.png' alt="logo"  />
                     </Link>
                     </div>
                 </div>   
