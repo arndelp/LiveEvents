@@ -27,7 +27,7 @@ function App() {
         
         <Routes>
 
-          <Route path="/LiveEvents" element={ 
+          <Route path="/" element={ 
             <Home />         }>           
           </Route>  
 
