@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0d4b054f.css",
-    "main.js": "/static/js/main.cd4aeb9c.js",
-    "static/media/pexels-wendywei-1190298.jpg": "/static/media/pexels-wendywei-1190298.9f73956ba2257824c655.jpg",
-    "static/media/27104127-applaudissement-foule-illumine-par-vibrant-etape-lumieres-a-concert-photo.jpg": "/static/media/27104127-applaudissement-foule-illumine-par-vibrant-etape-lumieres-a-concert-photo.e142dd9b0b955deaffb9.jpg",
-    "index.html": "/index.html",
-    "main.0d4b054f.css.map": "/static/css/main.0d4b054f.css.map",
-    "main.cd4aeb9c.js.map": "/static/js/main.cd4aeb9c.js.map"
+    "main.css": "/LiveEvents/static/css/main.137b00a4.css",
+    "main.js": "/LiveEvents/static/js/main.cd4aeb9c.js",
+    "static/media/pexels-wendywei-1190298.jpg": "/LiveEvents/static/media/pexels-wendywei-1190298.9f73956ba2257824c655.jpg",
+    "static/media/27104127-applaudissement-foule-illumine-par-vibrant-etape-lumieres-a-concert-photo.jpg": "/LiveEvents/static/media/27104127-applaudissement-foule-illumine-par-vibrant-etape-lumieres-a-concert-photo.e142dd9b0b955deaffb9.jpg",
+    "index.html": "/LiveEvents/index.html",
+    "main.137b00a4.css.map": "/LiveEvents/static/css/main.137b00a4.css.map",
+    "main.cd4aeb9c.js.map": "/LiveEvents/static/js/main.cd4aeb9c.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d4b054f.css",
+    "static/css/main.137b00a4.css",
     "static/js/main.cd4aeb9c.js"
   ]
 }
