@@ -6,8 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-//site: 6LdKvLkqAAAAAA4lDxCXoJkwK43guHUk53d6bCZ3
-//secrète: 6LdKvLkqAAAAAIlkBHWQOu5jX-TBohlIe_6f4BAC
+
 
 function FormContact() {
     const navigate = useNavigate()
