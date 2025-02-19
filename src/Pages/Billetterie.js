@@ -11,7 +11,7 @@ function Billetterie() {
             <h5 className="card-title">Billet</h5>
             <p className="card-name">D</p>
             <p className="card-text">Valable le 10/07/2027 </p>
-            <a href="/billetterie" className="btn btn-danger bout">Complet</a>
+            <a href="/Billetterie" className="btn btn-danger bout">Complet</a>
           </div>
         </div>
       
@@ -26,7 +26,7 @@ function Billetterie() {
             <h5 className="card-title">Billet</h5>
             <p className="card-name">S</p>
             <p className="card-text">Valable le 10/07/2027 </p>
-            <a href="/billetterie" className="btn btn-danger">Complet</a>
+            <a href="/Billetterie" className="btn btn-danger">Complet</a>
           </div>
         </div>
       
@@ -41,7 +41,7 @@ function Billetterie() {
             <h5 className="card-title">Billet</h5>
             <p className="card-name">V</p>
             <p className="card-text">Valable le 09/07/2027 </p>
-            <a href="/billetterie" className="btn btn-primary bout">Acheter</a>
+            <a href="/Billetterie" className="btn btn-primary bout">Acheter</a>
           </div>
         </div>
       
@@ -57,7 +57,7 @@ function Billetterie() {
             <p className="card-name">SD</p>
             <p className="card-text">Valable du 10/07/2027 </p>
             <p className="card-text">au 11/07/2027</p>
-            <a href="/billetterie" className="btn btn-primary">Acheter</a>
+            <a href="/Billetterie" className="btn btn-primary">Acheter</a>
           </div>
         </div>
       
@@ -73,7 +73,7 @@ function Billetterie() {
             <p className="card-name">VS</p>
             <p className="card-text">Valable du 09/07/2027 </p>
             <p className="card-text">au 10/07/2027</p>
-            <a href="/billetterie" className="btn btn-primary">Acheter</a>
+            <a href="/Billetterie" className="btn btn-primary">Acheter</a>
           </div>
         </div>
       
@@ -89,7 +89,7 @@ function Billetterie() {
             <p className="card-name">VSD</p>
             <p className="card-text">Valable du 09/07/2027 </p>
             <p className="card-text">au 11/07/2027</p>
-            <a href="/billetterie" className="btn btn-primary">Acheter</a>
+            <a href="/Billetterie" className="btn btn-primary">Acheter</a>
           </div>
         </div>
       
