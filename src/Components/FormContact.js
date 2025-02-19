@@ -38,7 +38,7 @@ function FormContact() {
         .then(res=>{
             console.log(res.data)
         })
-        navigate('/Submitted')
+        navigate('/LiveEvents/Submitted')
     }
 
     //fonction handle: Récupération des données entrées par l'utilisateur

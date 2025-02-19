@@ -31,33 +31,33 @@ function App() {
             <Home />         }>           
           </Route>  
 
-          <Route path="/Programmation"  element={<Programme /> }>
+          <Route path="/LiveEvents/Programmation"  element={<Programme /> }>
           </Route>  
 
-          <Route path="/Programmation/ProgrammeDetails" element={<ProgrammeDetails /> } >
+          <Route path="/LiveEvents/Programmation/ProgrammeDetails" element={<ProgrammeDetails /> } >
           </Route>         
                      
-          <Route path="/Billetterie" element={
+          <Route path="/LiveEvents/Billetterie" element={
             <Billetterie />  }>
           </Route>  
 
-          <Route path="/Informations" element={
+          <Route path="/LiveEvents/Informations" element={
             <Informations />  }>
           </Route>
                 
-          <Route path="/Plan" element={ 
+          <Route path="/LiveEvents/Plan" element={ 
             <Plan />         }>                     
           </Route>    
 
-          <Route path="/Contact" element={            
+          <Route path="/LiveEvents/Contact" element={            
             <Contact />     }>
           </Route>
 
-          <Route path="/Submitted" element={            
+          <Route path="/LiveEvents/Submitted" element={            
             <Submitted />     }>
           </Route>
 
-          <Route path="/Confidential" element={
+          <Route path="/LiveEvents/Confidential" element={
             <Confidential /> }>
 
           </Route>

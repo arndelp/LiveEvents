@@ -18,7 +18,7 @@ function Nav() {
             <nav className="head row ">
                 <div className="logo col-2 d-none d-lg-block">
                     <div >
-                        <Link to="/">
+                        <Link to="/LiveEvents/">
                             <img src='../assets/logo.svg' alt="logo" className="logoSize" />
                         </Link>
                     </div>   
@@ -30,27 +30,27 @@ function Nav() {
                     
                         
                         <li className="navbar__item">
-                            <Link to="/Programmation">
+                            <Link to="/LiveEvents/Programmation">
                                 <h3>Programmation</h3>
                             </Link>
                         </li>
                         <li className="navbar__item">
-                            <Link to="/Billetterie">
+                            <Link to="/LiveEvents/Billetterie">
                                 <h3>Billetterie</h3>
                              </Link>
                         </li>   
                         <li className="navbar__item">
-                            <Link to="/Informations">
+                            <Link to="/LiveEvents/Informations">
                             <h3>Informations</h3>
                             </Link> 
                         </li>        
                         <li className="navbar__item">
-                        <Link to="/Plan">
+                        <Link to="/LiveEvents/Plan">
                             <h3>Plan</h3>
                             </Link>
                         </li>    
                         <li className="navbar__item">
-                            <Link to="/Contact">
+                            <Link to="/LiveEvents/Contact">
                                 <h3>Contact</h3>
                              </Link>
                         </li>            
@@ -78,7 +78,7 @@ function Nav() {
                 </div>
                 <div class="col  d-block d-lg-none">
                 <div className="headLogoM">
-                    <Link to="/">
+                    <Link to="/LiveEvents/">
                         <img src='../assets/logo.svg' alt="logo"  />
                     </Link>
                     </div>
@@ -92,27 +92,27 @@ function Nav() {
                         <ul className=" d-block d-lg-none">                   
                         
                         <li className="navbar__item">
-                            <Link to="/Programmation">
+                            <Link to="/LiveEvents/Programmation">
                                 <a href='/' className="navbar__link nbrArticle">Programmation</a>
                             </Link>
                         </li>
                         <li className="navbar__item">
-                            <Link to="/Billetterie">
+                            <Link to="/LiveEvents/Billetterie">
                                 <a href='/'  className="navbar__link nbrArticle">Billetterie</a>
                              </Link>
                         </li>   
                         <li className="navbar__item">
-                            <Link to="/Informations">
+                            <Link to="/LiveEvents/Informations">
                                 <a href='/' className="navbar__link nbrArticle">Informations</a>
                             </Link>
                         </li>        
                         <li className="navbar__item">
-                            <Link to="/Plan">
+                            <Link to="/LiveEvents/Plan">
                                 <a href='/' className="navbar__link nbrArticle">Plan</a>
                                 </Link>
                         </li>    
                         <li className="navbar__item">
-                            <Link to="/Contact">
+                            <Link to="/LiveEvents/Contact">
                                 <a href='/'  className="navbar__link nbrArticle">Contact</a>
                              </Link>
                         </li>                    

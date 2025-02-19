@@ -16,7 +16,7 @@ function Home() {
         return ( 
               
           <div className='col' >
-            <Link to="/Billetterie">
+            <Link to="/LiveEvents/Billetterie">
               <button className="billet cardHover"><span className="blink" >BILLETTERIE</span></button>
             </Link>
           </div>
@@ -39,7 +39,7 @@ function Home() {
 
           <Billet />
 
-          <Link to="/Plan">
+          <Link to="/LiveEvents/Plan">
             <div className="offset-1 col-10 mapMini">
               <GoogleMap />
             </div>
