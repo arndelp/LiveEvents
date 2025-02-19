@@ -2,6 +2,7 @@ import React from 'react';
 import "../style/Nav.css";
 import {useState} from "react";
 import { Link } from "react-router-dom";
+import logo from "../../public/logo.svg"
 
 /*Fonction l'affichage des liens vers les autres pages dans le header//Burger pour la version mobile */
 
@@ -19,7 +20,7 @@ function Nav() {
                 <div className="logo col-2 d-none d-lg-block">
                     <div >
                         <Link to="/LiveEvents/">
-                            <img src='../logo.png' alt="logo" className="logoSize" />
+                            <img src={logo} alt="logo" className="logoSize" />
                         </Link>
                     </div>   
                 </div>
@@ -79,7 +80,7 @@ function Nav() {
                 <div class="col  d-block d-lg-none">
                 <div className="headLogoM">
                     <Link to="/LiveEvents/">
-                        <img src='../logo.png' alt="logo"  />
+                        <img src={logo} alt="logo"  />
                     </Link>
                     </div>
                 </div>   
