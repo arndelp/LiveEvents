@@ -78,7 +78,7 @@ function FormContact() {
 
                         <div class="row">
                         <ReCAPTCHA
-                            sitekey="6LdKvLkqAAAAAA4lDxCXoJkwK43guHUk53d6bCZ3"
+                            sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
                             onChange={setValue}
                             
                         />
