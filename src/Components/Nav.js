@@ -2,7 +2,7 @@ import React from 'react';
 import "../style/Nav.css";
 import {useState} from "react";
 import { Link } from "react-router-dom";
-import logo from '../logo.svg'
+import logo from '../assets/logo.svg'
 
 /*Fonction l'affichage des liens vers les autres pages dans le header//Burger pour la version mobile */
 
