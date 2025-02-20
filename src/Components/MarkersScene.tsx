@@ -3,6 +3,7 @@ import { useState, useEffect} from "react";
 import {AdvancedMarker, InfoWindow, useAdvancedMarkerRef} from '@vis.gl/react-google-maps';
 import "../style/Markers.css";
 import { Link } from "react-router-dom";
+import scene from "../assets/scene.png";
 
 
                                                         /* Affichage des Markers*/
@@ -58,13 +59,13 @@ const MarkerWithInfoWindow = (props: {pois: Poi[]}) => {
         <InfoWindow position={Val.position} onCloseClick={() => setInfowindowOpen(false)} >
           
           <Link to= "/LiveEvents/Programmation">          
-          <a href="/LiveEvents/Programmation">{Val.name}</a>
+            <a href="/LiveEvents/Programmation">{Val.name}</a>
           </Link>
         </InfoWindow>
         )}
 
         
-        </AdvancedMarker>
+      </AdvancedMarker>
         
       
     ))}
@@ -104,7 +105,7 @@ const handleChangeScenes  = () => setShowResultsScenes(!showResultsScenes)
       <div className="ico">
           <input type="checkbox" checked={showResultsScenes} onChange={handleChangeScenes} />
           { showResultsScenes ? <ResultsScenes /> : null }
-          <img src="../assets/scene.png" width="25em" height= "25em" alt="Scène"/>
+          <img src={scene} width="25em" height= "25em" alt="Scène"/>
       </div>  
       
     </div> 

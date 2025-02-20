@@ -19,7 +19,7 @@ function Nav() {
             <nav className="head row ">
                 <div className="logo col-2 d-none d-lg-block">
                     <div >
-                        <Link to="/">
+                        <Link to="/LiveEvents/">
                             <img src={logo} alt="logo" className="logoSize" />
                         </Link>
                     </div>   

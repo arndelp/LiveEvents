@@ -3,6 +3,12 @@ import { useState, useEffect, useCallback } from "react";
 import { AdvancedMarker, InfoWindow, useAdvancedMarkerRef } from "@vis.gl/react-google-maps";
 import "../style/Markers.css";
 import { Link } from "react-router-dom";
+import boutique from "../assets/boutique.png";
+import camping from "../assets/camping.png";
+import cocktail2 from "../assets/cocktail2.png";
+import entrer from "../assets/entrer.png";
+import parking from "../assets/parking.png";
+import toilettes from "../assets/toilettes.png";
 
 /*Définition du type de Poi*/
 type Poi ={ id: string, position: google.maps.LatLngLiteral,fullIconUrl: string, width:string, height: string, info: string  }
@@ -205,7 +211,7 @@ const Markers = () => {
         <div className="ico">
           <input type="checkbox" checked={showResultsBars} onChange={handleChangeBars} />
           {showResultsBars ? <ResultsBars /> : null}
-          <img src="../assets/cocktail2.png" width="25em" height="25em" alt="Bars" />
+          <img src={cocktail2} width="25em" height="25em" alt="Bars" />
         </div>
       </div>
 
@@ -213,7 +219,7 @@ const Markers = () => {
         <div className="ico">
           <input type="checkbox" checked={showResultsParks} onChange={handleChangeParks} />
           {showResultsParks ? <ResultsParks /> : null}
-          <img src="../assets/parking.png" width="25em" height="25em" alt="Parks" />
+          <img src={parking} width="25em" height="25em" alt="Parks" />
         </div>
       </div>
 
@@ -221,7 +227,7 @@ const Markers = () => {
         <div className="ico">
           <input type="checkbox" checked={showResultsCamps} onChange={handleChangeCamps} />
           {showResultsCamps ? <ResultsCamps /> : null}
-          <img src="../assets/camping.png" width="25em" height="25em" alt="Camps" />
+          <img src={camping} width="25em" height="25em" alt="Camps" />
         </div>
       </div>
 
@@ -229,7 +235,7 @@ const Markers = () => {
         <div className="ico">
           <input type="checkbox" checked={showResultsExits} onChange={handleChangeExits} />
           {showResultsExits ? <ResultsExits /> : null}
-          <img src="../assets/entrer.png" width="25em" height="25em" alt="Camps" />
+          <img src={entrer} width="25em" height="25em" alt="Camps" />
         </div>
       </div>
 
@@ -237,7 +243,7 @@ const Markers = () => {
         <div className="ico">
           <input type="checkbox" checked={showResultsShops} onChange={handleChangeShops} />
           {showResultsShops ? <ResultsShops /> : null}
-          <img src="../assets/boutique.png" width="25em" height="25em" alt="Shop" />
+          <img src={boutique} width="25em" height="25em" alt="Shop" />
         </div>
       </div>
 
@@ -245,7 +251,7 @@ const Markers = () => {
         <div className="ico">
           <input type="checkbox" checked={showResultsWcs} onChange={handleChangeWcs} />
           {showResultsWcs ? <ResultsWcs /> : null}
-          <img src="../assets/toilettes.png" width="25em" height="25em" alt="Shop" />
+          <img src={toilettes} width="25em" height="25em" alt="Shop" />
         </div>
       </div>
     </>
