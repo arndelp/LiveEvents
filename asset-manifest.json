@@ -1,15 +1,16 @@
 {
   "files": {
     "main.css": "/LiveEvents/static/css/main.a2c7d37c.css",
-    "main.js": "/LiveEvents/static/js/main.11538711.js",
+    "main.js": "/LiveEvents/static/js/main.9135a61b.js",
     "static/media/pexels-wendywei-1190298.jpg": "/LiveEvents/static/media/pexels-wendywei-1190298.9f73956ba2257824c655.jpg",
     "static/media/27104127-applaudissement-foule-illumine-par-vibrant-etape-lumieres-a-concert-photo.jpg": "/LiveEvents/static/media/27104127-applaudissement-foule-illumine-par-vibrant-etape-lumieres-a-concert-photo.e142dd9b0b955deaffb9.jpg",
+    "static/media/logo.svg": "/LiveEvents/static/media/logo.eedc6d90905460250146314ba5f87f74.svg",
     "index.html": "/LiveEvents/index.html",
     "main.a2c7d37c.css.map": "/LiveEvents/static/css/main.a2c7d37c.css.map",
-    "main.11538711.js.map": "/LiveEvents/static/js/main.11538711.js.map"
+    "main.9135a61b.js.map": "/LiveEvents/static/js/main.9135a61b.js.map"
   },
   "entrypoints": [
     "static/css/main.a2c7d37c.css",
-    "static/js/main.11538711.js"
+    "static/js/main.9135a61b.js"
   ]
 }
