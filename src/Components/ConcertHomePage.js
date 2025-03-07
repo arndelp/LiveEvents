@@ -11,7 +11,7 @@ export default function ConcertHomePage() {
   const [concerts, setConcerts] = useState([])
 /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
   useEffect(()=>{
-    fetch(' https://concertslives.store/api/concerts ') 
+    fetch('https://concertslives.store/api/concerts') 
     .then((response)=>response.json())
     .then(data=>setConcerts(data.member))
     .catch(error => console.log(error))
