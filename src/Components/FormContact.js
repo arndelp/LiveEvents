@@ -12,7 +12,7 @@ function FormContact() {
     const navigate = useNavigate()
 
     //définition des variables
-    const url ="http://127.0.0.1:8000/api/contacts" 
+    const url ="https://concertslives.store/api/contacts" 
 
     const [data, setData] =useState({
         lastname: "",

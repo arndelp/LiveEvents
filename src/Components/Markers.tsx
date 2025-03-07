@@ -23,7 +23,7 @@ const Markers = () => {
   const [bars, setBars] = useState([])
   console.log(bars);
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/bars')
+    fetch('https://concertslives.store/api/bars')
       .then(response => response.json())
       .then(data => setBars(data.member))
       .catch(error => console.log(error))
@@ -32,7 +32,7 @@ const Markers = () => {
   const [parks, setParks] = useState([])
   console.log(parks);
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/parks')
+    fetch('https://concertslives.store/api/parks')
       .then(response => response.json())
       .then(data => setParks(data.member))
       .catch(error => console.log(error))
@@ -41,7 +41,7 @@ const Markers = () => {
   const [camps, setCamps] = useState([])
   console.log(camps);
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/camps')
+    fetch('https://concertslives.store/api/camps')
       .then(response => response.json())
       .then(data => setCamps(data.member))
       .catch(error => console.log(error))
@@ -50,7 +50,7 @@ const Markers = () => {
   const [exits, setExits] = useState([])
   console.log(exits);
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/doors')
+    fetch('https://concertslives.store/api/doors')
       .then(response => response.json())
       .then(data => setExits(data.member))
       .catch(error => console.log(error))
@@ -59,7 +59,7 @@ const Markers = () => {
   const [shops, setShops] = useState([])
   console.log(shops);
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/shops')
+    fetch('https://concertslives.store/api/shops')
       .then(response => response.json())
       .then(data => setShops(data.member))
       .catch(error => console.log(error))
@@ -68,7 +68,7 @@ const Markers = () => {
   const [wc, setWc] = useState([])
   console.log(wc);
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/wcs')
+    fetch('https://concertslives.store/api/wcs')
       .then(response => response.json())
       .then(data => setWc(data.member))
       .catch(error => console.log(error))

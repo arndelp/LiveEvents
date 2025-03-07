@@ -18,7 +18,7 @@ const  MarkersScene = () => {
 const [scenes, setScenes] = useState([])
 console.log(scenes);
   useEffect(()=>{
-    fetch('http://127.0.0.1:8000/api/scenes')
+    fetch('https://concertslives.store/api/scenes')
     .then(response=>response.json())
     .then(data=>setScenes(data.member))
     .catch(error => console.log(error))     
