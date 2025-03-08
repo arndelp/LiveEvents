@@ -52,7 +52,7 @@ const MarkerWithInfoWindow = (props: {pois: Poi[]}) => {
         ref={markerRef}
         position={Val.position}
         onClick={() => setInfowindowOpen(true)}>
-        <img src={Val.fullIconUrl} width={Val.width} height={Val.height} alt="marker"/>
+        <img src={Val.fullIconUrl} width={Val.width} height={Val.height} alt={Val.name}/>
 
         {infowindowOpen && (
         

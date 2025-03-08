@@ -27,7 +27,7 @@ export default function ConcertHomePage() {
   const listDay1Sch1 = day1sch1.map(Val =>
 <li key={Val.id}>
   <div class="row " >
-    <Card className="max-w-sm drop-shadow-md  pl-0 pr-0" imgSrc={Val.fullImageUrl} imgAlt="{Val.name}" horizontal>
+    <Card className="max-w-sm drop-shadow-md  pl-0 pr-0" imgSrc={Val.fullImageUrl} imgAlt={Val.name} horizontal>
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
       {Val.name}
       </h5>
