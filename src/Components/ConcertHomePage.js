@@ -32,7 +32,7 @@ export default function ConcertHomePage() {
       <div class="card mb-3 mt-6" >
         <div class="row g-0">
           <div class="col-md-7">
-            <img src={Val.fullImageUrl} class="img-fluid rounded" alt={Val.name} />
+            <img src={Val.fullImageUrl} width={150} class="img-fluid rounded" alt={Val.name} />
           </div>
           <div class="col-md-8">
             <div class="card-body">
