@@ -31,9 +31,10 @@ h1.title {
     
 }
 
-.imageHome {
-    display: flex;
+.boutonBilletHome {
+    display:flex;
     justify-content: center;
+    
 }
 
  

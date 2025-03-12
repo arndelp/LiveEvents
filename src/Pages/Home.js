@@ -2,6 +2,8 @@ import ConcertHomePage from "../Components/ConcertHomePage.js"
 import GoogleMap from "../Components/GoogleMap.tsx"
 import BannerAlert from "../Components/BannerAlert.js"
 import { Link } from "react-router-dom";
+import { Button } from "flowbite-react";
+import {  HiShoppingCart } from "react-icons/hi";
 import "../style/Home.css";
 import "../style/Map.css";
 
@@ -15,10 +17,16 @@ function Home() {
     function Billet() {   
         return ( 
               
-          <div className='col' >
+          <div class="row mb-20 mt-20" >
+            <div className="boutonBilletHome ">
             <Link to="/LiveEvents/Billetterie">
-              <button className="billet cardHover"><span className="blink" >BILLETTERIE</span></button>
+            <Button size="xl" gradientDuoTone="redToYellow" >
+              <HiShoppingCart className="mr-2 h-10 w-10" />
+                Billetterie
+            </Button>
+             
             </Link>
+            </div>
           </div>
       
             )
