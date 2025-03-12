@@ -33,9 +33,11 @@ function Home() {
 
           <h1 className="title ">NATION SOUNDS</h1>
 
-        < div className="ConcertHomePage">
-          <ConcertHomePage />
-        </div>
+        <Link to="/LiveEvents/Programmation">
+          <div className="ConcertHomePage">
+            <ConcertHomePage />
+          </div>
+        </Link>
 
           <Billet />
 
