@@ -1,10 +1,9 @@
 import React from "react";
 import {useState} from "react";
 import {APIProvider, Map, MapCameraChangedEvent} from '@vis.gl/react-google-maps';
-
-
 import Markers from "./Markers";
 import MarkersScene from "./MarkersScene";
+import "../style/Map.css";
 
 
 
@@ -22,7 +21,7 @@ export default function GoogleMap  () {
   const [currentPosition] = useState({ lat: 48.64627130950389,    lng: 1.8125529133067797 });
   const [currentZoom] = useState(15.477);
  
-
+// GEO LOCALISATION avec Use position
   // useEffect(() => {
   //   console.log("use eff");
   //   if (latitude && longitude && !error) {
