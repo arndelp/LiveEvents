@@ -20,11 +20,10 @@ function Home() {
           <div class="row mb-20 mt-20" >
             <div className="boutonBilletHome ">
             <Link to="/LiveEvents/Billetterie">
-            <Button size="xl" gradientDuoTone="redToYellow" >
-              <HiShoppingCart className="mr-2 h-10 w-10" />
-                Billetterie
-            </Button>
-             
+              <Button size="xl" gradientDuoTone="redToYellow" >
+                <HiShoppingCart className="mr-2 h-10 w-10" />
+                  Billetterie
+              </Button>             
             </Link>
             </div>
           </div>

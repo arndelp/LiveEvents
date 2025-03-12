@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../style/ScrollToTopButton.css";
+import fleche from "../assets/fleches-vers-le-haut.png";
 
 
 function ScrollToTopButton() {
@@ -32,7 +33,7 @@ function ScrollToTopButton() {
 
   return (
     <div className={`scroll-to-top-button ${visible ? "visible" : ""}`}>
-      <button onClick={scrollToTop}><div><img src="../assets/fleches-vers-le-haut.png" id="fleche" alt="flêche"/></div>Retour</button>
+      <button onClick={scrollToTop}><div><img src={fleche} id="fleche" alt="flêche"/></div>Retour</button>
     </div>
   );
 }
