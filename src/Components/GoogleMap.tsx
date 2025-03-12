@@ -62,7 +62,6 @@ export default function GoogleMap  () {
         /*Affichage dans la console des coordonnées du centre de la carte lors des mouvements */ 
         onCameraChanged={ (ev: MapCameraChangedEvent) =>
         console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)}
-        
         >       
       </Map>
       

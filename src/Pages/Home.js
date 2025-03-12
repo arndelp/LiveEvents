@@ -49,8 +49,10 @@ function Home() {
           <Billet />
 
           <Link to="/LiveEvents/Plan">
-            <div className="offset-1 col-10 mapMini">
-              <GoogleMap />
+            <div className="offset-1 col-10  h-full mb-2" >
+             
+                <GoogleMap />
+                
             </div>
           </Link>
 
