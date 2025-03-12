@@ -32,10 +32,10 @@ export default function ConcertHomePage() {
     <li key={Val.id}>
       <div class="card mb-3 mt-6" >
         <div class="row g-0">
-          <div class="col-md-7 col-lg-10">
+          <div class="col-md-4 ">
             <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
           </div>
-          <div class="col-md-8 col-lg-10">
+          <div class="col-md-8 ">
             <div class="card-body">
               <h5 class="card-title">{Val.name}</h5>
               <p class="card-text">{Val.schedule.schedule}</p>
