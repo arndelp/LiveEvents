@@ -35,7 +35,7 @@ export default function ConcertHomePage() {
           <div class="col-md-7 col-lg-10">
             <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 col-lg-10">
             <div class="card-body">
               <h5 class="card-title">{Val.name}</h5>
               <p class="card-text">{Val.schedule.schedule}</p>
