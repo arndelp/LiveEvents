@@ -31,8 +31,8 @@ export default function ConcertHomePage() {
     <li key={Val.id}>
       <div class="card mb-3 mt-3" >
         <div class="row g-0">
-          <div class="col-md-5">
-            <img src={Val.fullImageUrl} class="img-fluid rounded" alt={Val.name} />
+          <div class="col-md-7">
+            <img src={Val.fullImageUrl} width="100em" class="img-fluid rounded" alt={Val.name} />
           </div>
           <div class="col-md-8">
             <div class="card-body">
