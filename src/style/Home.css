@@ -30,4 +30,10 @@ h1.title {
     
     
 }
+
+.imageHome {
+    display: flex;
+    justify-content: center;
+}
+
  

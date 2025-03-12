@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../style/Home.css";
 
 
 
@@ -31,8 +32,8 @@ export default function ConcertHomePage() {
     <li key={Val.id}>
       <div class="card mb-3 mt-6" >
         <div class="row g-0">
-          <div class="col-md-7">
-            <img src={Val.fullImageUrl} width={150} class="img-fluid rounded" alt={Val.name} />
+          <div class="col-md-7 imageHome">
+            <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
           </div>
           <div class="col-md-8">
             <div class="card-body">
