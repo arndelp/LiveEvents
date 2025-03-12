@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Card } from "flowbite-react";
+
 
 
 /*Function permettant l'affichage des premiers concerts du festival D1S1=Day1 Schedule1*/
@@ -12,6 +12,7 @@ export default function ConcertHomePage() {
 /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
   useEffect(()=>{
     fetch("https://concertslives.store/api/concerts") 
+    
     .then((response)=>response.json())
     .then(data=>setConcerts(data.member))
     .catch(error => console.log(error))
@@ -24,29 +25,29 @@ export default function ConcertHomePage() {
 
 
 /*on liste le contenu de Val , affichage dans des cards*/
+
   const listDay1Sch1 = day1sch1.map(Val =>
-<li key={Val.id}>
-  <div class="row " >
-    <Card className="max-w-sm drop-shadow-md  pl-0 pr-0" imgSrc={Val.fullImageUrl} imgAlt={Val.name} horizontal>
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      {Val.name}
-      </h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
-      {Val.location.location}
-      </p>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
-      {Val.day.day}
-      </p>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
-      {Val.schedule.schedule}
-      </p>
-    </Card>
-  </div>
+    
+    <li key={Val.id}>
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src={Val.fullImageUrl} class="img-fluid rounded-start" alt={Val.name} />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{Val.name.name}</h5>
+              <p class="card-text">{Val.schedule.schedule}</p>
+              <p class="card-text"><small class="text-body-secondary">{Val.location.location}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
-</li>
-
+    </li>
+    
 
 
 

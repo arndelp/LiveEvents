@@ -14,7 +14,7 @@ export default function BannerAlert() {
 
    /*envoi une requête et récupération des données dans la base de données puis les stockent dans alerts avec setAlertss*/
      useEffect(()=>{
-       fetch(' https://concertslives.store/api/alerts ') 
+       fetch('https://concertslives.store/api/alerts') 
        .then((response)=>response.json())
        .then((data)=>{setAlerts(data.member);
         setVisible(true)
