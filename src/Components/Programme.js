@@ -3,7 +3,7 @@ import { useState, useEffect, } from "react";
 import { Link} from "react-router-dom";
 import '../style/Programme.css';
 import ScrollToTopButton from "./ScrollToTopButton";
-import { Dropdown } from "flowbite-react";
+import { Label, Radio } from "flowbite-react";
 
 
 
@@ -92,29 +92,23 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
           <h6>Filtrer par date:</h6>
         </div>
         <div className="col-1 Drop">
-        <Dropdown label="Selectionner" dismissOnClick={true}> 
+        
             {/*Ajout de l'option All (pas de filtre), lors du click affichage de tout les concerts du JSON*/}
             
-            <Dropdown.Item
-                onClick={() => setItem(concerts)}          
-              >
-              All
-            </Dropdown.Item>  
 
             {dayItems.map((Val, id) => {       
               return (
-                <Dropdown.Item                   
-                  /*Appel de la fonction  filtre par jour lors du click */
-                  
-                  key={id}             
-                >
-                  {/*Liste des options possible */}
-                  {Val}
-                </Dropdown.Item>
+                <fieldset className="flex max-w-md flex-col gap-4">
+                  <legend className="mb-4">Choose your favorite country</legend>
+                    <div className="flex items-center gap-2">
+                      <Radio id={id} name="Date" value={() => filterItemLoc(Val)} defaultChecked />
+                      <Label >{Val}</Label>
+                    </div>
+                </fieldset>
               );
             })}
                  
-          </Dropdown> 
+         
         </div>
       </div> 
   
