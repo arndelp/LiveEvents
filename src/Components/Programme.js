@@ -105,7 +105,7 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
               return (
                 <Dropdown.Item                   
                   /*Appel de la fonction  filtre par jour lors du click */
-                  onClick={() => filterItemDay(Val)}
+                  
                   key={id}             
                 >
                   {/*Liste des options possible */}
