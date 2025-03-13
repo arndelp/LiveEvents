@@ -3,6 +3,8 @@ import { useState, useEffect, } from "react";
 import { Link} from "react-router-dom";
 import '../style/Programme.css';
 import ScrollToTopButton from "./ScrollToTopButton";
+import { Dropdown } from "flowbite-react";
+
 
 
 
@@ -90,34 +92,29 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
           <h6>Filtrer par date:</h6>
         </div>
         <div className="col-1 Drop">
-          <select
-            closeMenuOnSelect={true}> 
+        <Dropdown label="Selectionner" dismissOnClick={false}> 
             {/*Ajout de l'option All (pas de filtre), lors du click affichage de tout les concerts du JSON*/}
-            <option>
-              Selectionner
-            </option>
-            <option
-                className="btn-white text-black p-1 px-3 mx-5 fw-bold btn"
+            
+            <Dropdown.Item
                 onClick={() => setItem(concerts)}          
               >
               All
-            </option>        
-            {dayItems.map((Val, id) => {          
-              
+            </Dropdown.Item>  
+
+            {dayItems.map((Val, id) => {       
               return (
-                <option
-                  className="btn-white text-black p-1 px-2 mx-5 btn fw-bold" 
+                <Dropdown.Item                   
                   /*Appel de la fonction  filtre par jour lors du click */
                   onClick={() => filterItemDay(Val)}
                   key={id}             
                 >
                   {/*Liste des options possible */}
                   {Val}
-                </option>
+                </Dropdown.Item>
               );
             })}
                  
-          </select> 
+          </Dropdown> 
         </div>
       </div> 
   
@@ -130,7 +127,7 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
         <div className="col-1 Drop">
           <select 
            label="Scène" 
-           closeMenuOnSelect={true}>
+           >
             <option>
                 Selectionner
             </option>
@@ -166,7 +163,7 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
         </div>
         <div className="col-1 Drop">
           <select
-            closeMenuOnSelect={true}>
+            >
           <option>
               Selectionner
             </option>
