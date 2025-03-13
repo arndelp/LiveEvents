@@ -90,7 +90,8 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
           <h6>Filtrer par date:</h6>
         </div>
         <div className="col-1 Drop">
-          <select> 
+          <select
+            closeMenuOnSelect={true}> 
             {/*Ajout de l'option All (pas de filtre), lors du click affichage de tout les concerts du JSON*/}
             <option>
               Selectionner
@@ -127,7 +128,9 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
             <h6>Filtrer par lieu:</h6>
         </div>
         <div className="col-1 Drop">
-          <select  label="Scène">
+          <select 
+           label="Scène" 
+           closeMenuOnSelect={true}>
             <option>
                 Selectionner
             </option>
@@ -162,7 +165,8 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
           <h6>Filtrer par horaire:</h6>
         </div>
         <div className="col-1 Drop">
-          <select>
+          <select
+            closeMenuOnSelect={true}>
           <option>
               Selectionner
             </option>
