@@ -92,7 +92,7 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
           <h6>Filtrer par date:</h6>
         </div>
         <div className="col-1 Drop">
-        <Dropdown label="Selectionner" dismissOnClick={false}> 
+        <Dropdown label="Selectionner" dismissOnClick={true}> 
             {/*Ajout de l'option All (pas de filtre), lors du click affichage de tout les concerts du JSON*/}
             
             <Dropdown.Item
