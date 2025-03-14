@@ -23,13 +23,8 @@
    height: auto;
    
 }
-
-.btn {
+.vignetteBillet {
    text-align: center;
-   padding-top: 0em;
    margin-top: 2em;
-}
-
-.card-text {
-   padding-top:0.5em;
+   margin-bottom: 2em;
 }
