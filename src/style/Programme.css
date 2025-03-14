@@ -24,16 +24,7 @@
     
 } 
 
-.cardProg {
-    
-    max-width: 600px;
-    padding-inline: 4em;
-    margin-top: 3rem;
-    border: none;
-    font-family: katibeh, Arial, Helvetica, sans-serif;
-    font-size:0.95em;
-    margin: 1em 0em 1em 7em;
-}
+
 .cardHover:hover {
     background-color: var(--gris);
     color:aqua;
@@ -55,9 +46,7 @@
 }
 .kardProg {
     min-height: 80vh;
-    display: flex;  
-    justify-content: center;  
-    padding-bottom: 2em;   
+        
 }
 
 .card-text {
@@ -108,4 +97,9 @@
 
  .textDetails {
     justify-content: left;
+ }
+
+ .CardAProg {
+    display: flex;
+    justify-content: center;
  }

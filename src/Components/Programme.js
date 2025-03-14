@@ -195,7 +195,7 @@ const Details= ({name, location, schedule, day, fullImageUrl, details, details2}
   return (       
     <Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>      
       <div className="row">
-        <div className="col-10 mt-2 mb-2">
+        <div className="  ml-0 mr-0 mt-2 mb-2">
           <Card className="max-w-xs" imgSrc={fullImageUrl} horizontal>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {name}
@@ -221,7 +221,7 @@ const Details= ({name, location, schedule, day, fullImageUrl, details, details2}
     return (
 /*transformation de l'objet item en tableau Val */     
       <div className="row  g-0 kardProg">
-          <div  className="cardProg pb-0" >
+          <div>
               {item.map((Val) => {
                 
                   return (                      
@@ -265,7 +265,9 @@ return (
 
 {/*Appel de la fonction Details en incluant les props Item */}
   </div>  
-    <CardItem  item={item}/> 
+    <div className="CardAProg">
+      <CardItem  item={item}/> 
+    </div>
     <ScrollToTopButton />
   </div>
   
