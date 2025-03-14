@@ -94,27 +94,27 @@ function Nav() {
                         
                         <li className="navbar__item">
                             <Link to="/LiveEvents/Programmation">
-                                <a href='/' className="navbar__link nbrArticle">Programmation</a>
+                                <a href='/LiveEvents/Programmation' className="navbar__link nbrArticle">Programmation</a>
                             </Link>
                         </li>
                         <li className="navbar__item">
                             <Link to="/LiveEvents/Billetterie">
-                                <a href='/'  className="navbar__link nbrArticle">Billetterie</a>
+                                <a href='/LiveEvents/Billetterie'  className="navbar__link nbrArticle">Billetterie</a>
                              </Link>
                         </li>   
                         <li className="navbar__item">
                             <Link to="/LiveEvents/Informations">
-                                <a href='/' className="navbar__link nbrArticle">Informations</a>
+                                <a href='/LiveEvents/Informations' className="navbar__link nbrArticle">Informations</a>
                             </Link>
                         </li>        
                         <li className="navbar__item">
                             <Link to="/LiveEvents/Plan">
-                                <a href='/' className="navbar__link nbrArticle">Plan</a>
+                                <a href='/LiveEvents/Plan' className="navbar__link nbrArticle">Plan</a>
                                 </Link>
                         </li>    
                         <li className="navbar__item">
                             <Link to="/LiveEvents/Contact">
-                                <a href='/'  className="navbar__link nbrArticle">Contact</a>
+                                <a href='/LiveEvents/Contact'  className="navbar__link nbrArticle">Contact</a>
                              </Link>
                         </li>                    
                         </ul>
