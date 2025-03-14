@@ -97,23 +97,33 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
           <h6>Filtrer par date:</h6>
         </div>
         <div className="col-1 Drop">
-        
+          <select> 
             {/*Ajout de l'option All (pas de filtre), lors du click affichage de tout les concerts du JSON*/}
-            
-
-            {dayItems.map((Val, id) => {       
+            <option>
+              Selectionner
+            </option>
+            <option
+                className="btn-white text-black p-1 px-3 mx-5 fw-bold btn"
+                onClick={() => setItem(concerts)}          
+              >
+              All
+            </option>        
+            {dayItems.map((Val, id) => {          
+              
               return (
-                <fieldset className="flex max-w-md flex-col gap-4">
-                  <legend className="mb-4">Choose your favorite country</legend>
-                    <div className="flex items-center gap-2">
-                      <Radio id={id} name="Date" value={() => filterItemLoc(Val)} defaultChecked />
-                      <Label >{Val}</Label>
-                    </div>
-                </fieldset>
+                <option
+                  className="btn-white text-black p-1 px-2 mx-5 btn fw-bold" 
+                  /*Appel de la fonction  filtre par jour lors du click */
+                  onClick={() => filterItemDay(Val)}
+                  key={id}             
+                >
+                  {/*Liste des options possible */}
+                  {Val}
+                </option>
               );
             })}
                  
-         
+          </select> 
         </div>
       </div> 
   
@@ -192,30 +202,26 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
     );
   };  
 /*Affichage des données dans de Card  et envoi dans le composant ProgrammeDetails avec Link */
-  const Details= ({name, location, schedule, day, fullImageUrl, details, details2}) => { 
-    
-    
-
-      
+  const Details= ({name, location, schedule, day, fullImageUrl, details, details2}) => {       
       
     return (       
-      <Link to='/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>       
+      <Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>       
         <div className="cardHover row g-0 pb-2 pt-2">
-                      <div className=" offset-1 col-4">
-                        <img src={fullImageUrl}
-                          alt={concerts.name} 
-                          className="img-fluid rounded" />
-                      </div>
-                    <div className="offset-1 col-6 ">
-                    <div className="card-body g-1">
-                        <h5 className="card-title" > {name}</h5> 
-                        <p className="card-text" >{location}</p>  
-                        <p className="card-text">{day}</p>                
-                        <p className="card-text">{schedule}</p>
-                    </div>
+                <div className=" offset-1 col-4">
+                  <img src={fullImageUrl}
+                    alt={concerts.name} 
+                    className="img-fluid rounded" />
                 </div>
-              </div>     
-              </Link>
+              <div className="offset-1 col-6 ">
+              <div className="card-body g-1">
+                  <h5 className="card-title" > {name}</h5> 
+                  <p className="card-text" >{location}</p>  
+                  <p className="card-text">{day}</p>                
+                  <p className="card-text">{schedule}</p>
+              </div>
+          </div>
+        </div>     
+      </Link>
     );
        
     }
