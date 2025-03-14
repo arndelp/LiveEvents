@@ -25,6 +25,7 @@
 .backcolorfoot {
     background-color: var(--mauve);
     padding-bottom: 0.5em;
+    min-width: 100%;
 }
 
 svg:hover {
