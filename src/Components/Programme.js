@@ -10,23 +10,28 @@ import { Label, Radio } from "flowbite-react";
 
 
 
-function Programme () {
+const Programme = ()  => {
 
     /*concerts est initialement vide*/
     const [concerts, setConcerts] = useState([])
+    /*item est vide au début */
+  const [item, setItem] = useState([]);
+
     /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
     useEffect(()=>{
+      const fetchItem = async () => {
       fetch(' https://concertslives.store/api/concerts ') 
       .then((response)=>response.json())
       .then(data=>setConcerts(data.member))
       .catch(error => console.log(error))
-    });
+      };
+      fetchItem();
+    }, []);
 
 /*Filtre des donnée */
 
 /* Définition de variable */
-/*item est vide au début */
-  const [item, setItem] = useState([]);
+
 /*dayItems = toutes les dates de concerts contenues dans Val. Val= tableau des données résultant de l'utilisation de la méthode map()   */
   const dayItems = [...new Set(concerts.map((Val) => Val.day.day))];
 /*locItems = toutes les scènes de concerts contenues dans Val.   */
