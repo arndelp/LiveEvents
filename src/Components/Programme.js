@@ -78,15 +78,6 @@ const Programme = ()  => {
 
 
 const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems, locItems, schItems  }) => {
-    /*concerts est initialement vide*/
-    const [concerts, setConcerts] = useState([])
-  /*envoi une requête et récupération des données dans tabla concerts de l'Api*/
-  useEffect(()=>{
-    fetch(' https://concertslives.store/api/concerts ') 
-    .then((response)=>response.json())
-    .then(data=>setConcerts(data.member))
-    .catch(error => console.log(error))
-  });
   
     return (
   
