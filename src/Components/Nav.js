@@ -16,52 +16,52 @@ function Nav() {
 
     return (   
        ////////////////////////Format Desktop///////////////////////////////////////////////////////
-            <nav className="head row ">
-                <div className="logo col-2 d-none d-lg-block">
-                    <div >
-                        <Link to="/LiveEvents/">
-                            <img src={logo} alt="logo" className="logoSize" />
-                        </Link>
-                    </div>   
-                </div>
+        <nav className="head row ">
+            <div className="logo col-2 d-none d-lg-block">
+                <div >
+                    <Link to="/LiveEvents/">
+                        <img src={logo} alt="logo" className="logoSize" />
+                    </Link>
+                </div>   
+            </div>
 
-                              
-                <div className="d-none d-lg-block col-8"    >
-                    <ul className="navbar__links ">
+                            
+            <div className="d-none d-lg-block col-8"    >
+                <ul className="navbar__links ">
+                
                     
-                        
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Programmation">
-                                <h3>Programmation</h3>
+                    <li className="navbar__item">
+                        <Link to="/LiveEvents/Programmation">
+                            <h3>Programmation</h3>
+                        </Link>
+                    </li>
+                    <li className="navbar__item">
+                        <Link to="/LiveEvents/Billetterie">
+                            <h3>Billetterie</h3>
                             </Link>
-                        </li>
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Billetterie">
-                                <h3>Billetterie</h3>
-                             </Link>
-                        </li>   
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Informations">
-                            <h3>Informations</h3>
-                            </Link> 
-                        </li>        
-                        <li className="navbar__item">
-                        <Link to="/LiveEvents/Plan">
-                            <h3>Plan</h3>
+                    </li>   
+                    <li className="navbar__item">
+                        <Link to="/LiveEvents/Informations">
+                        <h3>Informations</h3>
+                        </Link> 
+                    </li>        
+                    <li className="navbar__item">
+                    <Link to="/LiveEvents/Plan">
+                        <h3>Plan</h3>
+                        </Link>
+                    </li>    
+                    <li className="navbar__item">
+                        <Link to="/LiveEvents/Contact">
+                            <h3>Contact</h3>
                             </Link>
-                        </li>    
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Contact">
-                                <h3>Contact</h3>
-                             </Link>
-                        </li>            
-                    </ul>
-                </div>
+                    </li>            
+                </ul>
+            </div>
 
 {/* ////////////////////////Format mobile/////////////////////////////////////*/}
             <div class="row topBar">
                 
-                <div class=" col d-block d-lg-none">                       
+                <div class=" col d-block d-lg-none mt-4">                       
                     <div class="btn-group" data-toggle="buttons-checkbox">
                         
                         <button type="button" class="Burger btn btn-default " onClick={handleShowLinks}>
@@ -84,46 +84,46 @@ function Nav() {
                     </Link>
                     </div>
                 </div>   
-               
+            
+            </div>
+            
+        
+            <div class={`row d-lg-none ${showLinks ? "d-block" : "d-none"} `}>   
+                
+                <ul className=" d-block d-lg-none">                   
+                
+                <li className="navbar__item">
+                    <Link to="/LiveEvents/Programmation">
+                        <a href='/LiveEvents/Programmation' className="navbar__link nbrArticle">Programmation</a>
+                    </Link>
+                </li>
+                <li className="navbar__item">
+                    <Link to="/LiveEvents/Billetterie">
+                        <a href='/LiveEvents/Billetterie'  className="navbar__link nbrArticle">Billetterie</a>
+                        </Link>
+                </li>   
+                <li className="navbar__item">
+                    <Link to="/LiveEvents/Informations">
+                        <a href='/LiveEvents/Informations' className="navbar__link nbrArticle">Informations</a>
+                    </Link>
+                </li>        
+                <li className="navbar__item">
+                    <Link to="/LiveEvents/Plan">
+                        <a href='/LiveEvents/Plan' className="navbar__link nbrArticle">Plan</a>
+                        </Link>
+                </li>    
+                <li className="navbar__item">
+                    <Link to="/LiveEvents/Contact">
+                        <a href='/LiveEvents/Contact'  className="navbar__link nbrArticle">Contact</a>
+                        </Link>
+                </li>                    
+                </ul>
+
             </div>
                 
             
-                    <div class={`row d-lg-none ${showLinks ? "d-block" : "d-none"} `}>   
-                        
-                        <ul className=" d-block d-lg-none">                   
-                        
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Programmation">
-                                <a href='/LiveEvents/Programmation' className="navbar__link nbrArticle">Programmation</a>
-                            </Link>
-                        </li>
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Billetterie">
-                                <a href='/LiveEvents/Billetterie'  className="navbar__link nbrArticle">Billetterie</a>
-                             </Link>
-                        </li>   
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Informations">
-                                <a href='/LiveEvents/Informations' className="navbar__link nbrArticle">Informations</a>
-                            </Link>
-                        </li>        
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Plan">
-                                <a href='/LiveEvents/Plan' className="navbar__link nbrArticle">Plan</a>
-                                </Link>
-                        </li>    
-                        <li className="navbar__item">
-                            <Link to="/LiveEvents/Contact">
-                                <a href='/LiveEvents/Contact'  className="navbar__link nbrArticle">Contact</a>
-                             </Link>
-                        </li>                    
-                        </ul>
-
-                    </div>
-                  
-                
-                
-            </nav>
+            
+        </nav>
             
     )
 }

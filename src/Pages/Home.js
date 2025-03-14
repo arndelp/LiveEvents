@@ -32,38 +32,32 @@ function Home() {
       }
 
     return ( 
-        <>
+      <>
        
-      <div className="row background">
+        <div className="row background">
 
           <BannerAlert /> 
 
           <h1 className="title ">NATION SOUNDS</h1>
 
+          
         
-        <Link to='/LiveEvents/Programmation'>
-
-          <div className="ConcertHomePage">
-            <ConcertHomePage />
-          </div>
-
-        </Link>
-
-
-        
-        
+          <Link to="/LiveEvents/Programmation">
+            <div className="ConcertHomePage">
+              <ConcertHomePage />
+            </div>
+          </Link>      
+          
 
           <Billet />
 
           <Link to="/LiveEvents/Plan">
-            <div className="offset-1 col-10  h-full mb-2" >
-             
-                <GoogleMap />
-                
+            <div className="offset-1 col-10  h-full mb-2" >             
+              <GoogleMap />                
             </div>
           </Link>
-
-        </div></>
+        </div>
+      </>
               
                 
       

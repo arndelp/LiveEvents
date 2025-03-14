@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../style/Home.css";
 
 
@@ -44,76 +43,21 @@ export default function ConcertHomePage() {
           </div>
         </div>
       </div>
-    </li>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // <li key={Val.id}>
-      
-    //   <div className="card mb-3" >
-    //     <div className="row g-0">
-    //       <div className="col-5  ">
-       
-    //         {/*Appelle de la fonction gerImageUrl pour récupérer l'image */}
-    //         <img
-    //           src={Val.fullImageUrl}     
-    //           alt={Val.name}  
-    //           className="img-fluid rounded"   
-    //         />
-    //       </div>
-        
-    //       <div className="col-7  cardHover rounded">
-    //         <div className="card-body ">            
-    //           <h5 className="card-title">{Val.name}</h5>
-    //           <p className="card-text">{Val.location.location}</p>
-    //           <p className="card-text">{Val.day.day}</p>
-    //           <p className="card-text">{Val.schedule.schedule}</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-      
-      
-    // </li>
-        
+    </li>        
        
   );
 
 
  /*Affichage de la liste + lien vers Programmation */
 
-return ( 
+return (  
 
- 
-<Link to="/Programmation">
   <div className='row  g-0 kard'>
     <div className="card  pb-0 mt-8 " data-testId="concertHome">   
       <ul >{listDay1Sch1}</ul>
     </div>
   </div>
-</Link>
-)
 
-   
-
-
-
+  )
 
 }

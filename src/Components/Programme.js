@@ -3,10 +3,7 @@ import { useState, useEffect, } from "react";
 import { Link} from "react-router-dom";
 import '../style/Programme.css';
 import ScrollToTopButton from "./ScrollToTopButton";
-
-
-
-
+import { Card } from "flowbite-react";
 
 
 
@@ -46,8 +43,7 @@ const Programme = ()  => {
           
           return newVal.day.day === curcat;
         });
-        setItem(newItem)
-      
+        setItem(newItem)      
       };
 
   /*Filtre par lieux avec la méthode filter() */
@@ -56,8 +52,7 @@ const Programme = ()  => {
           
           return newVal.location.location === curcat2 
         });
-        setItem(newItem)
-      
+        setItem(newItem)      
       };
 
   /*FIltre par horaire avec la méthode filter() */
@@ -69,11 +64,6 @@ const Programme = ()  => {
         setItem(newItem)
       };
 
-      
-
-
-
-   
 /** FIltre des données */
 
 
@@ -82,7 +72,7 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
   const [concerts, setConcerts] = useState([])
   /*envoi une requête et récupération des données dans tabla concerts de l'Api*/
   useEffect(()=>{
-    fetch(' http://127.0.0.1:8000/api/concerts ') 
+    fetch(' https://concertslives.store/api/concerts') 
     .then((response)=>response.json())
     .then(data=>setConcerts(data.member))
     .catch(error => console.log(error))
@@ -156,12 +146,10 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
                   {Val}
                 </option>
             );
-          })}
-              
+          })}              
           </select>       
         </div>
       </div>
-  
   
   
   {/*Filtre par horaire */}
@@ -200,31 +188,35 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
       </>
     );
   };  
+
 /*Affichage des données dans de Card  et envoi dans le composant ProgrammeDetails avec Link */
-  const Details= ({name, location, schedule, day, fullImageUrl, details, details2}) => {       
+const Details= ({name, location, schedule, day, fullImageUrl, details, details2}) => {          
       
-    return (       
-      <Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>       
-        <div className="cardHover row g-0 pb-2 pt-2">
-                <div className=" offset-1 col-4">
-                  <img src={fullImageUrl}
-                    alt={concerts.name} 
-                    className="img-fluid rounded" />
-                </div>
-              <div className="offset-1 col-6 ">
-              <div className="card-body g-1">
-                  <h5 className="card-title" > {name}</h5> 
-                  <p className="card-text" >{location}</p>  
-                  <p className="card-text">{day}</p>                
-                  <p className="card-text">{schedule}</p>
-              </div>
-          </div>
-        </div>     
-      </Link>
-    );
-       
-    }
-  const Card = ({ item }) => {            
+  return (       
+    <Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>      
+      <div className="row">
+        <div className="col-10 mt-2 mb-2">
+          <Card className="max-w-xs" imgSrc={fullImageUrl} horizontal>
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {name}
+                </h5>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  {day}
+                </p>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  {location}
+                </p>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  {schedule}
+                </p>
+          </Card>
+        </div>
+      </div>
+    </Link>
+  );     
+  }
+
+  const CardItem = ({ item }) => {            
     
     return (
 /*transformation de l'objet item en tableau Val */     
@@ -242,19 +234,13 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
                         schedule={Val.schedule.schedule}
                         fullImageUrl={Val.fullImageUrl}
                         details={Val.details} 
-                        details2={Val.details2} />                  
-                   
-                 
-                
+                        details2={Val.details2} />                
               );
             })}
           </div>
       </div>    
     );
-  }
-
- 
-   
+  }  
     
 return (
     /* Appel de la fonction  Button en incluant les props filtre*/
@@ -278,11 +264,10 @@ return (
 />
 
 {/*Appel de la fonction Details en incluant les props Item */}
+  </div>  
+    <CardItem  item={item}/> 
+    <ScrollToTopButton />
   </div>
-  
-      <Card  item={item}/> 
-      <ScrollToTopButton />
-    </div>
   
 </div>
 );
