@@ -1,5 +1,5 @@
 import "./App.css";
-import { HashRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Nav from "./Components/Nav";
 import Foot from "./Components/Foot";
 import Home from "./Pages/Home";
@@ -21,7 +21,7 @@ import Confidential from "./Pages/Confidential";
 
 function App() {
   return (    
-  <HashRouter>
+  <BrowserRouter>
     
       <Nav />     
         
@@ -72,7 +72,7 @@ function App() {
       
     
 
-</HashRouter>
+</BrowserRouter>
    
    
     
