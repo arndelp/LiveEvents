@@ -193,42 +193,48 @@ const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems,
 const Details= ({name, location, schedule, day, fullImageUrl, details, details2}) => {          
       
   return (       
-    <Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>    
-    {/* Format desktop*/   }
-      <div className="row  d-none d-lg-block">
-        <div className=" ml-0 mr-0 mt-2 mb-2">
-          <Card className="max-w-xs" imgSrc={fullImageUrl} horizontal>
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {name}
-                </h5>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
-                  {day}
-                </p>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
-                  {location}
-                </p>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
-                  {schedule}
-                </p>
-          </Card>
-        </div>
-      </div>
 
-    {/* Format mobile */}
-      <div className="row d-block d-lg-none">
-        <Card className="max-w-sm">
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {name}}
-          </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            {location}
-          </p>    
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            {schedule}
-          </p>          
-        </Card>
-      </div>
-    </Link>
+<div>
+  {name}
+</div>
+
+
+    // <Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>    
+    // {/* Format desktop*/   }
+    //   <div className="row  d-none d-lg-block">
+    //     <div className=" ml-0 mr-0 mt-2 mb-2">
+    //       <Card className="max-w-xs" imgSrc={fullImageUrl} horizontal>
+    //             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    //               {name}
+    //             </h5>
+    //             <p className="font-normal text-gray-700 dark:text-gray-400">
+    //               {day}
+    //             </p>
+    //             <p className="font-normal text-gray-700 dark:text-gray-400">
+    //               {location}
+    //             </p>
+    //             <p className="font-normal text-gray-700 dark:text-gray-400">
+    //               {schedule}
+    //             </p>
+    //       </Card>
+    //     </div>
+    //   </div>
+
+    // {/* Format mobile */}
+    //   <div className="row d-block d-lg-none">
+    //     <Card className="max-w-sm">
+    //       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    //         {name}}
+    //       </h5>
+    //       <p className="font-normal text-gray-700 dark:text-gray-400">
+    //         {location}
+    //       </p>    
+    //       <p className="font-normal text-gray-700 dark:text-gray-400">
+    //         {schedule}
+    //       </p>          
+    //     </Card>
+    //   </div>
+    // </Link>
   );     
   }
 
