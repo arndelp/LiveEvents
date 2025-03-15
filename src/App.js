@@ -62,7 +62,7 @@ function App() {
 
           </Route>
 
-          <Route path="*" element={
+          <Route path="/*" element={
             <Home />  }>
 
           </Route>
