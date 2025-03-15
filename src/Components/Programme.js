@@ -194,7 +194,7 @@ const Details= ({name, location, schedule, day, fullImageUrl, details, details2}
       
   return (       
 
-<div>
+<div className="row">
   {name}
 </div>
 
