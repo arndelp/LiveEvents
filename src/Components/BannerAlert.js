@@ -31,7 +31,7 @@ export default function BannerAlert() {
    
     <div className="h-20 sm:h-20 xl:h-20 2xl:h-20" >
       
-      <Carousel slideInterval={500}>
+      <Carousel slide={false}>
         
         <div className="flex h-full items-top justify-center bg-red-600 dark:bg-gray-700 dark:text-white text-yellow-200 text-2xl animate-pulse">
           {Val.message1}

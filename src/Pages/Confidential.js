@@ -8,7 +8,7 @@ function Informations () {
 
     return (
         <>
-        <Link to="/contact">
+        <Link to="/LiveEvents/contact">
                 <Button className="checkRGPDRetour" variant="link">Précédent</Button>
         </Link>
             <div className="textInfo">
