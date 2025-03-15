@@ -61,6 +61,12 @@ function App() {
             <Confidential /> }>
 
           </Route>
+
+          <Route path="*" element={
+            <Home />  }>
+
+          </Route>
+          
           
           
           
