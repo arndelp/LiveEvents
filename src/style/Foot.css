@@ -4,15 +4,16 @@
     display: flex;
     justify-content: center;
     background-color: var(--mauve);
-    text-align: center;
-    margin-bottom: 0;
+    text-align: center;    
     border-top: solid 2px var(--noir);
+    
+    
 }
 .foot {
     display: flex;
     justify-content: center;
     text-align: center;
-    background-color: var(--blanc);
+    background-color: var(--mauve);
       
 
 }
@@ -20,6 +21,7 @@
 .foot {
     display: flex;
     justify-content: space-around;
+    background-color: var(--mauve);
    
 }
 .backcolorfoot {

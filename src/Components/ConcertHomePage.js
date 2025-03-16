@@ -37,7 +37,7 @@ export default function ConcertHomePage() {
           <div class="col-md-8 ">
             <div class="card-body">
               <h5 class="card-title">{Val.name}</h5>
-              <p class="card-text">{Val.schedule.schedule}</p>
+              <p class="card-text pb-2">{Val.schedule.schedule}</p>
               <p class="card-text"><small class="text-body-secondary">{Val.location.location}</small></p>
             </div>
           </div>
