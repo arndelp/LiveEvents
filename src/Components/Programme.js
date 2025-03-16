@@ -93,7 +93,7 @@ const Programme = ()  => {
       React.useEffect(() => {
         setRows(concert);
         
-      },[]);
+      });
 
       return (
        
