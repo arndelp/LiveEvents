@@ -10,14 +10,14 @@ import '../style/Programme.css';
 
 const Programme = ()  => {
 
-  const [DATA, setDATA] = useState([])   
+  const [concert, setConcert] = useState([])   
     
     /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
     useEffect( ()=>{
           const fetchItem = async () => {
            fetch(' http://127.0.0.1:8000/api/concerts ') 
           .then((response)=>response.json())
-          .then(data=>setDATA(data.member))
+          .then(data=>setConcert(data.member))
           .catch(error => console.log(error))
           };
           
@@ -48,10 +48,10 @@ const Programme = ()  => {
           setStatus2(false)
           setStatus3(false)
           /*Appliquer les filtres*/
-          const rows = DATA.filter((Val) => Val.day.day === "09/07/2027");
+          const rows = concert.filter((Val) => Val.day.day === "09/07/2027");
           setRows(rows);
         } else {
-          const rows = DATA.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
+          const rows = concert.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
           setRows(rows);
           console.log(rows);         
         }
@@ -63,10 +63,10 @@ const Programme = ()  => {
           setStatus1(false)
           setStatus3(false)
           /*Appliquer les filtres*/
-          const rows = DATA.filter((Val) => Val.day.day === "10/07/2027");
+          const rows = concert.filter((Val) => Val.day.day === "10/07/2027");
           setRows(rows);
         } else {
-          const rows = DATA.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
+          const rows = concert.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
           setRows(rows);
           console.log(rows);         
         }
@@ -78,10 +78,10 @@ const Programme = ()  => {
           setStatus1(false)
           setStatus2(false)
           /*Appliquer les filtres*/
-          const rows = DATA.filter((Val) => Val.day.day === "11/07/2027");
+          const rows = concert.filter((Val) => Val.day.day === "11/07/2027");
           setRows(rows);
         } else {
-          const rows = DATA.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
+          const rows = concert.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
           setRows(rows);
           console.log(rows);         
         }
@@ -91,7 +91,7 @@ const Programme = ()  => {
 
 
       React.useEffect(() => {
-        setRows(DATA);
+        setRows(concert);
         
       },[]);
 
@@ -111,7 +111,7 @@ const Programme = ()  => {
             <input type="checkbox" id="11/07/2027" value={true} name="11/07/2027" onChange={handleChecked3} onClick={handleChange3} checked = {status3 === 'true'}/>
               
             
-            <button type="reset" onClick={() => setRows(DATA)}>
+            <button type="reset" onClick={() => setRows(concert)}>
               Supprimer les filtres
             </button>
           </form>
