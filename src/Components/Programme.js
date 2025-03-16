@@ -1,300 +1,163 @@
 import React from "react";
 import { useState, useEffect, } from "react";
-
+import { Link} from "react-router-dom";
 import '../style/Programme.css';
 import ScrollToTopButton from "./ScrollToTopButton";
+import { Card } from "flowbite-react";
+
+
 
 
 
 
 const Programme = ()  => {
 
-    /*concerts est initialement vide*/
-    const [concerts, setConcerts] = useState([])
-    /*item est vide au début */
-  const [item, setItem] = useState([]);
-
+  const [DATA, setDATA] = useState([])   
+    
     /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
-    useEffect(()=>{
-      const fetchItem = async () => {
-      fetch(' https://concertslives.store/api/concerts ') 
-      .then((response)=>response.json())
-      .then(data=>setConcerts(data.member))
-      .catch(error => console.log(error))
-      };
-      fetchItem();
-    }, []);
-
-/*Filtre des donnée */
-
-/* Définition de variable */
-
-/*dayItems = toutes les dates de concerts contenues dans Val. Val= tableau des données résultant de l'utilisation de la méthode map()   */
-  const dayItems = [...new Set(concerts.map((Val) => Val.day.day))];
-/*locItems = toutes les scènes de concerts contenues dans Val.   */
-  const locItems = [...new Set(concerts.map((Val) => Val.location.location))];
-/*schItems = toutes les heures de concerts contenues dans Val   */
-  const schItems = [...new Set(concerts.map((Val) => Val.schedule.schedule))]
-
-
-  /* Filtre par jour avec la méthode filter()*/
-   const filterItemDay = (curcat) => {
-        const newItem = concerts.filter((newVal) => {
+    useEffect( ()=>{
+          const fetchItem = async () => {
+           fetch(' http://127.0.0.1:8000/api/concerts ') 
+          .then((response)=>response.json())
+          .then(data=>setDATA(data.member))
+          .catch(error => console.log(error))
+          };
           
-          return newVal.day.day === curcat;
-        });
-        setItem(newItem)      
-      };
-
-  /*Filtre par lieux avec la méthode filter() */
-    const filterItemLoc = (curcat2) => {
-        const newItem = concerts.filter((newVal) => {
+          fetchItem();
           
-          return newVal.location.location === curcat2 
-        });
-        setItem(newItem)      
-      };
+        }, []);
 
-  /*FIltre par horaire avec la méthode filter() */
-      const filterItemSch = (curcat3) => {
-        const newItem = concerts.filter((newVal) => {
-          
-          return newVal.schedule.schedule === curcat3 ;
-        });
-        setItem(newItem)
-      };
-
-/** FIltre des données */
-
-
-const Buttons = ({ filterItemLoc,filterItemDay,filterItemSch, setItem, dayItems, locItems, schItems  }) => {
-  /*concerts est initialement vide*/
-  const [concerts, setConcerts] = useState([])
-  /*envoi une requête et récupération des données dans tabla concerts de l'Api*/
-  useEffect(()=>{
-    fetch(' https://concertslives.store/api/concerts') 
-    .then((response)=>response.json())
-    .then(data=>setConcerts(data.member))
-    .catch(error => console.log(error))
-  });
-    return (
-  
-      <>  
-      {/**MEnu déroulant filtrant le jour du concert */}
-      <div  className=" row">
-        <div className="col-lg-2 offset-lg-5" >
-          <h6>Filtrer par date:</h6>
-        </div>
-        <div className="col-1 Drop">
-          <select> 
-            {/*Ajout de l'option All (pas de filtre), lors du click affichage de tout les concerts du JSON*/}
-            <option>
-              Selectionner
-            </option>
-            <option
-                className="btn-white text-black p-1 px-3 mx-5 fw-bold btn"
-                onClick={() => setItem(concerts)}          
-              >
-              All
-            </option>        
-            {dayItems.map((Val, id) => {          
-              
-              return (
-                <option
-                  className="btn-white text-black p-1 px-2 mx-5 btn fw-bold" 
-                  /*Appel de la fonction  filtre par jour lors du click */
-                  onClick={() => filterItemDay(Val)}
-                  key={id}             
-                >
-                  {/*Liste des options possible */}
-                  {Val}
-                </option>
-              );
-            })}
-                 
-          </select> 
-        </div>
-      </div> 
-  
-  
-  {/*FIltre par lieu */}
-      <div className="row">
-        <div className="col-lg-2 offset-lg-5">
-            <h6>Filtrer par lieu:</h6>
-        </div>
-        <div className="col-1 Drop">
-          <select 
-           label="Scène" 
-           >
-            <option>
-                Selectionner
-            </option>
-            <option
-                className="btn-white text-black p-1 px-3 mx-5 fw-bold btn"
-                onClick={() => setItem(concerts)}
-              >
-                All
-            </option>    
-              {locItems.map((Val, id) => {
-            
-              return (
-                <option
-                  className="btn-white text-black p-1 px-2 mx-5 btn fw-bold"
-                  onClick={() => filterItemLoc(Val)}
-                  key={id}              
-                >
-                  {Val}
-                </option>
-            );
-          })}              
-          </select>       
-        </div>
-      </div>
-  
-  
-  {/*Filtre par horaire */}
-      <div className="row">
-        <div className="col-lg-2 offset-lg-5">
-          <h6>Filtrer par horaire:</h6>
-        </div>
-        <div className="col-1 Drop">
-          <select
-            >
-          <option>
-              Selectionner
-            </option>
-            <option
-                  className="btn-white text-black p-1 px-3 mx-5 fw-bold btn"
-                  onClick={() => setItem(concerts)}
-                >
-                  All
-            </option>    
-            { schItems.map((Val, id) => {          
-              
-              return (
-                <option
-                  className="btn-white text-black p-1 px-2 mx-5 btn fw-bold"
-                  onClick={() => filterItemSch(Val) }
-                  key={id}
-                >
-                  {Val}
-                </option>
-              );
-            })}
-                
-          </select>       
-        </div>
-      </div>
-      </>
-    );
-  };  
-
-/*Affichage des données dans de Card  et envoi dans le composant ProgrammeDetails avec Link */
-const Details= ({name, location, schedule, day, fullImageUrl, details, details2}) => {          
-      
-  return (       
-
-<div className="row">
-  {name}
-</div>
-
-
-    // <Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>    
-    // {/* Format desktop*/   }
-    //   <div className="row  d-none d-lg-block">
-    //     <div className=" ml-0 mr-0 mt-2 mb-2">
-    //       <Card className="max-w-xs" imgSrc={fullImageUrl} horizontal>
-    //             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-    //               {name}
-    //             </h5>
-    //             <p className="font-normal text-gray-700 dark:text-gray-400">
-    //               {day}
-    //             </p>
-    //             <p className="font-normal text-gray-700 dark:text-gray-400">
-    //               {location}
-    //             </p>
-    //             <p className="font-normal text-gray-700 dark:text-gray-400">
-    //               {schedule}
-    //             </p>
-    //       </Card>
-    //     </div>
-    //   </div>
-
-    // {/* Format mobile */}
-    //   <div className="row d-block d-lg-none">
-    //     <Card className="max-w-sm">
-    //       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-    //         {name}}
-    //       </h5>
-    //       <p className="font-normal text-gray-700 dark:text-gray-400">
-    //         {location}
-    //       </p>    
-    //       <p className="font-normal text-gray-700 dark:text-gray-400">
-    //         {schedule}
-    //       </p>          
-    //     </Card>
-    //   </div>
-    // </Link>
-  );     
-  }
-
-  const CardItem = ({ item }) => {            
     
-    return (
-/*transformation de l'objet item en tableau Val */     
-      <div className="row  g-0 kardProg">
-          <div>
-              {item.map((Val) => {
-                
-                  return (                      
-     
-/* définition des variables name, day, shedule, fullImageUrl, details pour la constante Details*/                         
-                  
-                      <Details name={Val.name}
-                        location={Val.location.location}
-                        day={Val.day.day}
-                        schedule={Val.schedule.schedule}
-                        fullImageUrl={Val.fullImageUrl}
-                        details={Val.details} 
-                        details2={Val.details2} />                
-              );
-            })}
-          </div>
-      </div>    
-    );
-  }  
-    
-return (
-    /* Appel de la fonction  Button en incluant les props filtre*/
-    <div className="container-fluid  kardProg">
-    <div className="row">
+      /*Désactivation automatique des checkbox*/
+      const [status1, setStatus1] = React.useState(false)
+      const [status2, setStatus2] = React.useState(false)
+      const [status3, setStatus3] = React.useState(false)
+
+      const handleChange1 = (e) => setStatus1(e.target.value);
+      const handleChange2 = (e) => setStatus2(e.target.value);
+      const handleChange3 = (e) => setStatus3(e.target.value);
+
    
-      <h1 className="col-12 text-center my-3 fw-bold programmationh1">Programmation</h1>
+   
 
-  <div className="dropdown">
-      <Buttons 
-      
-        filterItemDay={filterItemDay} 
-        filterItemLoc={filterItemLoc}
-        filterItemSch={filterItemSch}
+      const [rows, setRows] = React.useState([]);
+
+      /*Condition des CHeckBox*/
+        /*uniquement 09/07/2027*/
+      const handleChecked1 = (e) => {
+        if (e.target.checked) {
+          /*décocher les autres cases*/
+          setStatus2(false)
+          setStatus3(false)
+          /*Appliquer les filtres*/
+          const rows = DATA.filter((Val) => Val.day.day === "09/07/2027");
+          setRows(rows);
+        } else {
+          const rows = DATA.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
+          setRows(rows);
+          console.log(rows);         
+        }
+      };      
+        /*uniquement 10/07/2027*/
+      const handleChecked2 = (e) => {
+        if (e.target.checked) {
+          /*décocher les autres cases*/
+          setStatus1(false)
+          setStatus3(false)
+          /*Appliquer les filtres*/
+          const rows = DATA.filter((Val) => Val.day.day === "10/07/2027");
+          setRows(rows);
+        } else {
+          const rows = DATA.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
+          setRows(rows);
+          console.log(rows);         
+        }
+      };
+        /*uniquement 11/07/2027*/
+      const handleChecked3 = (e) => {
+        if (e.target.checked) {
+          /*décocher les autres cases*/
+          setStatus1(false)
+          setStatus2(false)
+          /*Appliquer les filtres*/
+          const rows = DATA.filter((Val) => Val.day.day === "11/07/2027");
+          setRows(rows);
+        } else {
+          const rows = DATA.filter((Val) => Val.day.day === "09/07/2027" || "10/07/2027" || "11/07/2027" );
+          setRows(rows);
+          console.log(rows);         
+        }
+      };
+
+
+
+
+      React.useEffect(() => {
+        setRows(DATA);
+        
+      },[]);
+
+      return (
+       
+        <div id="App">
+          <h1>Programmation</h1>
+          <form id="filter">
+            <h5>Date</h5>
+            <label>09/07/2027</label>
+            <input type="checkbox" id="09/07/2027" value={true} name="09/07/2027" onChange={handleChecked1} onClick={handleChange1}   checked = {status1 === 'true'} />
+              
+            <label>10/07/2027</label>
+            <input type="checkbox" id="10/07/2027" value={true} name="10/07/2027" onChange={handleChecked2} onClick={handleChange2} checked = {status2 === 'true'}/>
+              
+            <label>11/07/2027</label>
+            <input type="checkbox" id="11/07/2027" value={true} name="11/07/2027" onChange={handleChecked3} onClick={handleChange3} checked = {status3 === 'true'}/>
+              
+            
+            <button type="reset" onClick={() => setRows(DATA)}>
+              Supprimer les filtres
+            </button>
+          </form>
+
+          <table id="records">
+            <thread>
+              <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Jour</th>
+                <th>Scène</th>
+                <th>Horaire</th>
+              </tr>
+            </thread>
+            <tbody>
+              {rows.map((Val,i) => (
+                <tr key={i}>
+                  <td>{Val.id}</td>
+                  <td>{Val.name}</td>
+                  <td>{Val.day.day}</td>
+                  <td>{Val.location.location}</td>
+                  <td>{Val.schedule.schedule}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        
+      )
+
+
+      }
+
  
-        setItem={setItem}
-        dayItems={dayItems}
-        locItems={locItems}
-        schItems={schItems}
-  
-/>
 
-{/*Appel de la fonction Details en incluant les props Item */}
-  </div>  
-    <div className="CardAProg">
-      <CardItem  item={item}/> 
-    </div>
-    <ScrollToTopButton />
-  </div>
+
+
+
+
+
+
+
+
+
   
-</div>
-);
-}
 
 export default Programme ;
