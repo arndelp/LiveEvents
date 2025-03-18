@@ -29,6 +29,13 @@ h1.title {
     justify-content: center;
     
     
+    
+}
+
+.card {
+    border-width: 0.6em;
+    max-width: 70vw;
+    border-color: var(--mauve);
 }
 
 .boutonBilletHome {
@@ -36,5 +43,6 @@ h1.title {
     justify-content: center;
     
 }
+
 
  

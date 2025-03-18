@@ -43,12 +43,35 @@
 
 
 .listCheck {
-    background-color: aquamarine;
+    background-color: var(--gris);
     justify-content: center;
+    margin-right: 0.2em;
     
     
 }
 
-KKard {
-    display: flex;
+.Burger {
+    max-width: 4em;
+}
+
+.BurgerProg {
+    max-width: 4em;
+    margin-right: 0.5em;
+    
+    
+}
+
+.BurgerSituation {
+    display: grid;
+    justify-content: end;
+
+}
+
+.FilterSituation {
+    display: grid;
+    justify-content: end;
+}
+
+.checkBox {
+    margin-right: 0.2em;
 }

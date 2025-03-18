@@ -6,6 +6,7 @@ import { Button } from "flowbite-react";
 import {  HiShoppingCart } from "react-icons/hi";
 import "../style/Home.css";
 import "../style/Map.css";
+import "../style/Programme.css";
 
 
 
@@ -32,35 +33,32 @@ function Home() {
       }
 
     return ( 
-      <>
+        <>
        
-        <div className="row background">
+      <div className="row background">
 
           <BannerAlert /> 
 
           <h1 className="title ">NATION SOUNDS</h1>
 
-          
-        
           <Link to="/LiveEvents/Programmation">
-            <div className="ConcertHomePagelg d-none d-lg-block">
-              <ConcertHomePage />
-            </div>
-            <div className="ConcertHomePage d-block d-lg-none">
-              <ConcertHomePage />
-            </div>
-          </Link>      
-          
+          <div className="ConcertHomePage">
+            <ConcertHomePage />
+          </div>
+          </Link>
+       
 
           <Billet />
 
           <Link to="/LiveEvents/Plan">
-            <div className="offset-1 col-10  h-full mb-2" >             
-              <GoogleMap />                
+            <div className="offset-1 col-10  h-full mb-2" >
+             
+                <GoogleMap />
+                
             </div>
           </Link>
-        </div>
-      </>
+
+        </div></>
               
                 
       
