@@ -513,6 +513,63 @@ const Programme = ()  => {
         }      
       };
 
+      const listDates = dates.map((Val,i) => 
+        <li key={Val.id}>
+          <div class="card mb-3 mt-3" >
+            <div class="row g-0">
+              <div class="col-md-4 ">
+                <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
+              </div>
+              <div class="col-md-8 ">
+                <div class="card-body">
+                  <h5 class="card-title">{Val.name}</h5>
+                  <p class="card-text pb-2">{Val.schedule.schedule}</p>
+                  <p class="card-text"><small class="text-body-secondary ">{Val.location.location}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      );
+
+      const listPlaces = places.map((Val,i) => 
+        <li key={Val.id}>
+          <div class="card mb-3 mt-3" >
+            <div class="row g-0">
+              <div class="col-md-4 ">
+                <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
+              </div>
+              <div class="col-md-8 ">
+                <div class="card-body">
+                  <h5 class="card-title">{Val.name}</h5>
+                  <p class="card-text pb-2">{Val.schedule.schedule}</p>
+                  <p class="card-text"><small class="text-body-secondary ">{Val.location.location}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      );
+
+      const listTimes = times.map((Val,i) => 
+        <li key={Val.id}>
+          <div class="card mb-3 mt-3" >
+            <div class="row g-0">
+              <div class="col-md-4 ">
+                <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
+              </div>
+              <div class="col-md-8 ">
+                <div class="card-body">
+                  <h5 class="card-title">{Val.name}</h5>
+                  <p class="card-text pb-2">{Val.schedule.schedule}</p>
+                  <p class="card-text"><small class="text-body-secondary ">{Val.location.location}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      );
+
       return (
        
         <div id="App" className="row ">
@@ -592,109 +649,32 @@ const Programme = ()  => {
           </form>
 
 {/*Affichage des résultats du filtre par date*/}
-          <table id="records" >
-        
-        <tbody >
-          {dates.map((Val,i) => (
-            
-            <tr key={i} >
-             
-              <div className="displayCardProg row">
-                <div class="card mb-3 maxSize" >
-                  <div class="g-0">
-                    <div class="col-md-4">
-                      <img src={Val.fullImageUrl} class="img-fluid rounded-start" alt={Val.name}/>
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">{Val.name}</h5>
-                        <p class="card-text">{Val.location.location}</p>
-                        <p class="card-text"><small class="text-body-secondary">{Val.day.day}</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                
-            </tr>
-          ))}
-        </tbody>
-      </table>
+<div className='row  g-0 kard'>
+    <div className="card  pb-0 mt-8 " data-testId="concertHome">   
+      <ul >{listDates}</ul>
+    </div>
+  </div>
 
 {/*Affichage des résultats du filtre par lieu*/}
-      <table id="records" >
-        
-        <tbody >
-          {places.map((Val,i) => (
-            
-            <tr key={i} >
-              
-              <div className="displayCardProg row">
-                <div class="card mb-3 maxSize" >
-                  <div class="g-0">
-                    <div class="col-md-4">
-                      <img src={Val.fullImageUrl} class="img-fluid rounded-start" alt={Val.name}/>
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">{Val.name}</h5>
-                        <p class="card-text">{Val.location.location}</p>
-                        <p class="card-text"><small class="text-body-secondary">{Val.day.day}</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                
-            </tr>
-          ))}
-        </tbody>
-      </table>
+<div className='row  g-0 kard'>
+    <div className="card  pb-0 mt-8 " data-testId="concertHome">   
+      <ul >{listPlaces}</ul>
+    </div>
+  </div>
 
 
 {/*Affichage des résultats du filtre par heure*/}
-      <table id="records" >
-        
-        <tbody >
-          {times.map((Val,i) => (
-            
-            <tr key={i} >
-              
-              <div className="displayCardProg row">
-                <div class="card mb-3 maxSize" >
-                  <div class="g-0">
-                    <div class="col-md-4">
-                      <img src={Val.fullImageUrl} class="img-fluid rounded-start" alt={Val.name}/>
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">{Val.name}</h5>
-                        <p class="card-text">{Val.location.location}</p>
-                        <p class="card-text"><small class="text-body-secondary">{Val.day.day}</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                
-            </tr>
-          ))}
-        </tbody>
-      </table>
+<div className='row  g-0 kard'>
+    <div className="card  pb-0 mt-8 " data-testId="concertHome">   
+      <ul >{listTimes}</ul>
+    </div>
+  </div>
 
 
     </div>
-    
-
-    
+      
 
   )
-
-  
-      
-     
-
-
       }
 
  
