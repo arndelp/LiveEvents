@@ -4,7 +4,7 @@ import Nav from "./Components/Nav";
 import Foot from "./Components/Foot";
 import Home from "./Pages/Home";
 import Billetterie from "./Pages/Billetterie";
-import Programme from "./Components/Programme"
+import Programmation from "./Pages/Programmation";
 import Contact from "./Pages/Contact";
 import Informations from "./Pages/Informations";
 import Plan from "./Pages/Plan";
@@ -31,7 +31,7 @@ function App() {
             <Home />         }>           
           </Route>  
 
-          <Route path="/LiveEvents/Programmation"  element={<Programme /> }>
+          <Route path="/LiveEvents/Programmation"  element={<Programmation /> }>
           </Route>  
 
           <Route path="/LiveEvents/Programmation/ProgrammeDetails" element={<ProgrammeDetails /> } >

@@ -1,105 +1,22 @@
-.programmationh1 {
-    font-family: katibeh;
-    font-size: 3.5em;
-}
-
-.dropdown {
-    text-align: left;
-    padding-right: 9em;
-    padding-top: 1em;  
-}
-
-.itemList {
-    padding-right: 100em;
-}
-
-
-.card {    
-    max-width: 600px;
-    padding-inline: 0.5rem;
-    margin-top: 2rem;
-    border: none;
-    font-family: katibeh, Arial, Helvetica, sans-serif;
-    font-size:0.9em; 
+.displayCardProg {
+    display: flex;
+    justify-content: center;
+  
     
-} 
-
-
-.cardHover:hover {
-    background-color: var(--gris);
-    color:aqua;
-}
-
-
-
-.logoSizeM {
-    display:flex;   
-    align-items: center;
-    margin-bottom: 0px;
-}
-
-.kard {
-    
-    display: flex;  
-    justify-content: center;  
-    padding-bottom: 2em;   
-}
-.kardProg {
-    min-height: 80vh;
         
+
 }
 
-.card-text {
-    
-    font-family: katibeh,Arial, Helvetica, sans-serif;    
-    font-size:  1em
-   
-    
-}
-.card-body {
-   text-align: center;
-    line-height: 0.5em;
-    
-   
-}
-
-.card-title {
-    font-size: 1.2em;
-    color: var(--rouge);
-    text-align: center;
+.maxSize {
+    width: 40em;
+    margin-top: 1em;
+    max-width: 90vw;
     
 }
 
-.Drop {
-    margin-bottom: 0.5em;
-     
-     
- }
+.fullPage {
 
- .bigCard {
-    display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 90vh;
- }
+    min-height: 100vh;
+    background-color: var(--gris);
 
- .imageDetails {    
-    max-width: 20vh;   
-   
- }
-
- .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
- }
-
- .textDetails {
-    justify-content: left;
- }
-
- .CardAProg {
-    display: flex;
-    justify-content: center;
- }
+}
