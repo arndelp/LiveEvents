@@ -3,7 +3,7 @@ import { useState, useEffect, } from "react";
 import "../style/Programme.css";
 import { Button } from "flowbite-react";
 import "../style/Home.css";
-import { Card } from "flowbite-react";
+
 
 
 const Programme = ()  => {
@@ -547,7 +547,7 @@ const Programme = ()  => {
           setTimes(dates);                  
         }      
       };
-      const listConcert = concert.map((Val) => 
+      const listConcert = concert2.map((Val) => 
         <li key={Val.id}>
           <div class="card m-5" >
             <div class="row g-0">
