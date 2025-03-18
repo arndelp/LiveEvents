@@ -547,31 +547,9 @@ const Programme = ()  => {
           setTimes(dates);                  
         }      
       };
-      const listConcert = concert2.map((Val,i) => 
+      const listConcert = concert.map((Val) => 
         <li key={Val.id}>
-          <Card
-            className="max-w-lg"
-            imgAlt={Val.name}
-            imgSrc={Val.fullImageUrl}
-          >
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {Val.name}
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              {Val.day.day}
-            </p>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              {Val.location.location}
-            </p>
-            
-          </Card>
-
-
-
-
-
-
-          {/* <div class="card mb-3 mt-3" >
+          <div class="card m-5" >
             <div class="row g-0">
               <div class="col-md-4 ">
                 <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
@@ -584,13 +562,20 @@ const Programme = ()  => {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
         </li>
-      ); 
+      );
+          
 
-      const listDates = dates.map((Val,i) => 
+
+
+
+
+         
+
+      const listDates = dates.map((Val) => 
         <li key={Val.id}>
-          <div class="card mb-3 mt-3" >
+          <div class="card m-5" >
             <div class="row g-0">
               <div class="col-md-4 ">
                 <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
@@ -607,9 +592,9 @@ const Programme = ()  => {
         </li>
       );
 
-      const listPlaces = places.map((Val,i) => 
+      const listPlaces = places.map((Val) => 
         <li key={Val.id}>
-          <div class="card mb-3 mt-3" >
+          <div class="card m-5" >
             <div class="row g-0">
               <div class="col-md-4 ">
                 <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
@@ -626,9 +611,9 @@ const Programme = ()  => {
         </li>
       );
 
-      const listTimes = times.map((Val,i) => 
+      const listTimes = times.map((Val) => 
         <li key={Val.id}>
-          <div class="card mb-3 mt-3" >
+          <div class="card m-5" >
             <div class="row g-0">
               <div class="col-md-4 col-lg-6">
                 <img src={Val.fullImageUrl}  class="img-fluid rounded " alt={Val.name} />
@@ -761,21 +746,21 @@ const Programme = ()  => {
                 
 {/*Affichage des résultats du filtre par date*/}
 <div className='row  g-0 '>
-    <div className="kard  pb-0 mt-8 " data-testId="concertHome">   
+    <div className="  pb-0 mt-8" data-testId="concertHome">   
       <ul >{listConcert}</ul>
     </div>
   </div> 
 
 {/*Affichage des résultats du filtre par date*/}
 <div className='row  g-0 '>
-    <div className="kard  pb-0 mt-8 " data-testId="concertHome">   
+    <div className="  pb-0 mt-8 " data-testId="concertHome">   
       <ul >{listDates}</ul>
     </div>
   </div>
 
 {/*Affichage des résultats du filtre par lieu*/}
 <div className='row  g-0'>
-    <div className="kard pb-0 mt-8 " data-testId="concertHome">   
+    <div className=" pb-0 mt-8 " data-testId="concertHome">   
       <ul >{listPlaces}</ul>
     </div>
   </div>
@@ -783,7 +768,7 @@ const Programme = ()  => {
 
 {/*Affichage des résultats du filtre par heure*/}
 <div className='row  g-0 '>
-    <div className="kard  pb-0 mt-8 " data-testId="concertHome">   
+    <div className="  pb-0 mt-8 " data-testId="concertHome">   
       <ul >{listTimes}</ul>
     </div>
   </div>
