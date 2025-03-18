@@ -43,7 +43,10 @@ function Home() {
           
         
           <Link to="/LiveEvents/Programmation">
-            <div className="ConcertHomePage">
+            <div className="ConcertHomePagelg d-none d-lg-block">
+              <ConcertHomePage />
+            </div>
+            <div className="ConcertHomePage d-block d-lg-none">
               <ConcertHomePage />
             </div>
           </Link>      
