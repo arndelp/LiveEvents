@@ -24,17 +24,11 @@ h1.title {
     
 }
 
-.ConcertHomePagelg {
-    display: flex;
-    justify-content: center;
-    max-width: 50vw;    
-}
 .ConcertHomePage {
     display: flex;
     justify-content: center;
-    max-width: 100vw;    
-    margin-left: 1em;
-    margin-right: 1em;
+    
+    
 }
 
 .boutonBilletHome {

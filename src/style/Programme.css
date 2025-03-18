@@ -20,3 +20,31 @@
     background-color: var(--gris);
 
 }
+
+.kard {
+    display: grid;
+    justify-content: center;
+    
+    
+    
+}
+
+.boutonLegend {
+    display: flex;
+    justify-content: center;
+}
+
+.boutonLegendH1 {
+    display: flex;
+    justify-content: center;
+    font-family: Katibeh, Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+}
+
+
+.listCheck {
+    background-color: aquamarine;
+    justify-content: center;
+    
+    
+}
