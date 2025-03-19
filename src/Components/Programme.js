@@ -777,7 +777,7 @@ return (
                 
 {/*Affichage des résultats sans filtres*/}
  
-      <ListConcert item={concert2} />
+     
 
 
 
