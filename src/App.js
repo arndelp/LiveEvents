@@ -11,18 +11,14 @@ import Plan from "./Pages/Plan";
 import ProgrammeDetails from "./Components/ProgrammeDetails";
 import Submitted from "./Pages/Submitted";
 import Confidential from "./Pages/Confidential";
-
-
-
-
-
+import ScrollToTop from "./Components/ScrollToTop";
 
 
 
 function App() {
   return (    
   <BrowserRouter>
-    
+    <ScrollToTop />    
       <Nav />     
         
         <Routes>

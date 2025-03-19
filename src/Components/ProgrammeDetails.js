@@ -30,7 +30,7 @@ export default function ProgrammeDetails () {
    
         <Card style={{ width: '90vh' }}>
           <div class="container">
-            <Card.Img variant="top" src={fullImageUrl} class="imageDetails " />
+            <Card.Img variant="top" src={fullImageUrl} class="imageDetails mt-2 mb-2" />
           </div>
           <Card.Body>
             <Card.Title class="fs-1 lh-sm link-danger" >{name}</Card.Title>
