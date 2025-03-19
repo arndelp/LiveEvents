@@ -6,6 +6,7 @@ import "../style/Home.css";
 import { Card } from "flowbite-react";
 import burger from '../assets/parametres-curseurs.png';
 import ScrollToTopButton from "./ScrollToTopButton";
+import { Link} from "react-router-dom";
 
 
 const Programme = ()  => {
@@ -66,7 +67,7 @@ const Programme = ()  => {
 
 
 
-        /*changement d'état de checkbox*/
+        /*changement d'état de checkbox lors des clicks*/
         /*DATE*/
       const handleChange1 = (e) => setStatus1(e.target.value);   /* 09/07/2027*/
       const handleChange2 = (e) => setStatus2(e.target.value);   /* 10/07/2027*/
@@ -89,13 +90,14 @@ const Programme = ()  => {
    
 
 
-
-
+/*//////////////////VARIABLES POUR LES FILTRES///////////////////////////////////*/
 
       const [dates, setDates] = React.useState([]);     /*Filtre DATE*/
       const [places, setPlaces] = React.useState([]);          /*Filtre Horaire*/
       const [times, setTimes] = React.useState([]);          /*Filtre Horaire*/
       
+
+/*//////////////////////REGLES POUR LES CHECKBOX////////////////////////////////*/
 
       /*filtre des données en fonction de l'état de la checkbox*/
         /*uniquement 09/07/2027*/
@@ -481,7 +483,7 @@ const Programme = ()  => {
           setStatus15(false)
           
           /*Appliquer les filtres*/
-          const times = concert.filter((Val) => Val.schedule.schedule === "20:00 - 21:00");
+      const times = concert.filter((Val) => Val.schedule.schedule === "20:00 - 21:00");
           setTimes(times);
           setDates([]);
           setPlaces([]);
@@ -550,28 +552,57 @@ const Programme = ()  => {
           setTimes(dates);                  
         }      
       };
-      const listConcert = concert2.map((Val,i) => 
-        <li key={Val.id}>
-          <Card
-            className="max-w-lg"
-            imgAlt={Val.name}
-            imgSrc={Val.fullImageUrl}
-          >
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {Val.name}
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              {Val.day.day}
-            </p>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              {Val.location.location}
-            </p>
-            
-          </Card>
+/*////////////POUR LINK////////////////////////////////*/
+
+
+
+
+
+/*////////////DISPOSITION DES RESULTATS EN CARD////////////////////////////////////////////*/
+
+
+      const listConcert = concert2.map((Val) => 
+        
+                       
+                    <div>                  
+                      <Details name={Val.name}
+                        location={Val.location.location}
+                        day={Val.day.day}
+                        schedule={Val.schedule.schedule}
+                        fullImageUrl={Val.fullImageUrl}
+                        details={Val.details} 
+                        details2={Val.details2} />   
+                    </div>           
+      )
+                  
+
+      const Details= ({id,name, location, schedule, day, fullImageUrl, details, details2}) => { 
+
+        return (
+          < Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{name, location, schedule, day, fullImageUrl, details, details2}}>
+
+          <li key={id}>
+          <div class="card mb-3 mt-3" >
+            <div class="row g-0">
+              <div class="col-md-4 ">
+                <img src={fullImageUrl}  class="img-fluid rounded" alt={name} />
+              </div>
+              <div class="col-md-8 ">
+                <div class="card-body">
+                  <h5 class="card-title">{name}</h5>
+                  <p class="card-text pb-2">{day}</p>
+                  <p class="card-text pb-2">{schedule}</p>
+                  <p class="card-text"><small class="text-body-secondary ">{location}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
+        </Link>
       ); 
+    }
 
-      const listDates = dates.map((Val,i) => 
+      const listDates = dates.map((Val) => 
         <li key={Val.id}>
           <div class="card mb-3 mt-3" >
             <div class="row g-0">
@@ -590,7 +621,7 @@ const Programme = ()  => {
         </li>
       );
 
-      const listPlaces = places.map((Val,i) => 
+      const listPlaces = places.map((Val) => 
         <li key={Val.id}>
           <div class="card mb-3 mt-3" >
             <div class="row g-0">
@@ -609,7 +640,7 @@ const Programme = ()  => {
         </li>
       );
 
-      const listTimes = times.map((Val,i) => 
+      const listTimes = times.map((Val) => 
         <li key={Val.id}>
           <div class="card mb-3 mt-3" >
             <div class="row g-0">
@@ -627,11 +658,11 @@ const Programme = ()  => {
           </div>
         </li>
       );
-
-
+      
+/* /////////////////////////////////////FILTRE///////////////////////////////////////////////////////// 
 
       /*Burger des filtres*/
- const [showLinks, setShowLinks] = useState(true)
+ const [showLinks, setShowLinks] = useState(false)
 
     const handleShowLinks = () => {
         setShowLinks(!showLinks)
@@ -650,7 +681,8 @@ const Programme = ()  => {
                 </button>                    
               </div>                    
             </div>            
-          </div>            
+          </div>   
+          </div>         
           <div class={`row  ${showLinks ? "d-block" : "d-none"} `}>                          
             <ul className="FilterSituation">                   
               <h5>Dates:</h5>
@@ -724,28 +756,30 @@ const Programme = ()  => {
               </li>  
               <li>
                 <div className="boutonLegend">
+                    
+                  <Button className=" ml-2  mr-2 mt-2 mb-2 " color="blue"  onClick={handleShowLinks}>
+                    Voir les résultats
+                  </Button>  
                   <Button className="mt-2 mb-2 " color="failure"  onClick={() =>   setDates([]) & setPlaces([]) & setTimes([]) & setStatus1(false) & setStatus2(false) & setStatus3(false) & setStatus4(false) & setStatus5(false) & setStatus6(false) & setStatus7(false) & setStatus8(false) & setStatus9(false) & setStatus10(false) & setStatus11(false) & setStatus12(false) & setStatus13(false) & setStatus14(false) & setStatus15(false)
                       }>
                     Reset
-                  </Button>    
-                  <Button className=" ml-2 mt-2 mb-2 " color="blue"  onClick={handleShowLinks}>
-                    Fermer filtres
-                  </Button>            
+                  </Button>           
                 </div>
               </li>                                               
             </ul>
           </div>
-          
+        
+{/*//////////////////////////////FIN DES FILTRES//////////////////////////*/}
           
                 
-{/*Affichage des résultats du filtre par date*/}
+{/*Affichage des résultats sans filtres*/}
 <div className='row  g-0 '>
-    <div className="kard  pb-0 mt-8 " data-testId="concertHome">   
+  <div className="kard  pb-0 mt-8 " data-testId="concertHome">   
       <ul >{listConcert}</ul>
-    </div>
-  </div> 
+  </div>
+</div> 
 
-{/*Affichage des résultats du filtre par date*/}
+
 <div className='row  g-0 '>
     <div className="kard  pb-0 mt-8 " data-testId="concertHome">   
       <ul >{listDates}</ul>
@@ -768,15 +802,20 @@ const Programme = ()  => {
   </div>
 
  
-    </div>
+   
     
-       <div>
+       <div className="retour">
        <ScrollToTopButton />
      </div>
-     </>
+    
 
-  )
-      }
+
+     
+</>
+      )
+};
+  export default Programme ;
+      
 
  
 
@@ -785,4 +824,3 @@ const Programme = ()  => {
 
   
 
-export default Programme ;

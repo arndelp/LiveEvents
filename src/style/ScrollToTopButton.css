@@ -1,10 +1,16 @@
 #fleche {
-    width: 4em;
+    width: 3em;
 
 }
 
 .scroll-to-top-button {
     display: flex;
     align-items:  center;
+    justify-content: center;
+}
+
+.HautDePage {
+    
+    display: grid;
     justify-content: center;
 }

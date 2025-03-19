@@ -51,11 +51,11 @@
 }
 
 .Burger {
-    max-width: 4em;
+    max-width: 3.2em;
 }
 
 .BurgerProg {
-    max-width: 4em;
+    max-width: 3.2em;
     margin-right: 0.5em;
     
     
@@ -75,3 +75,5 @@
 .checkBox {
     margin-right: 0.2em;
 }
+
+

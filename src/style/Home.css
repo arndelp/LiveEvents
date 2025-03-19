@@ -33,9 +33,11 @@ h1.title {
 }
 
 .card {
-    border-width: 0.6em;
+    border: none;
     max-width: 70vw;
-    border-color: var(--mauve);
+    background-color: var(--mauve);
+    justify-content: space-around;
+    
 }
 
 .boutonBilletHome {
@@ -43,6 +45,7 @@ h1.title {
     justify-content: center;
     
 }
+
 
 
  
