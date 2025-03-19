@@ -776,8 +776,9 @@ return (
         
                 
 {/*Affichage des résultats sans filtres*/}
- 
-      <ListConcert Val={concert2} />
+ <div className="row">
+    <ListConcert Val={concert2} />
+  </div>
 
 
 
