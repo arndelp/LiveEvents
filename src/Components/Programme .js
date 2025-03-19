@@ -3,7 +3,6 @@ import { useState, useEffect, } from "react";
 import "../style/Programme.css";
 import { Button } from "flowbite-react";
 import "../style/Home.css";
-import { Card } from "flowbite-react";
 import burger from '../assets/parametres-curseurs.png';
 import ScrollToTopButton from "./ScrollToTopButton";
 import { Link} from "react-router-dom";
@@ -16,7 +15,7 @@ const Programme = ()  => {
     /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
     useEffect( ()=>{
           const fetchItem = async () => {
-           fetch(' http://127.0.0.1:8000/api/concerts ') 
+           fetch(' https://concertslives.store/api/concerts ') 
           .then((response)=>response.json())
           .then(data=>setConcert(data.member))
           .catch(error => console.log(error))
@@ -31,7 +30,7 @@ const Programme = ()  => {
 
       useEffect( ()=>{
         const fetchItem2 = async () => {
-         fetch(' http://127.0.0.1:8000/api/concerts ') 
+         fetch(' https://concertslives.store/api/concerts ') 
         .then((response)=>response.json())
         .then(data=>setConcert2(data.member))
         .catch(error => console.log(error))
