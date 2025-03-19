@@ -585,7 +585,7 @@ const Programme = ()  => {
     ); 
   }
 
-  const listConcert = ({ concert2 }) => {
+  const ListConcert = ({ concert2 }) => {
 
     return (           
       <div className="row"> 
@@ -777,7 +777,7 @@ return (
                 
 {/*Affichage des résultats sans filtres*/}
  
-      <listConcert item={concert2} />
+      <ListConcert item={concert2} />
 
 
 
