@@ -585,82 +585,104 @@ const Programme = ()  => {
     ); 
   }
 
-  const ListConcert = ({ concert2 }) => {
+  const ListConcert = ({ concert2 }) => {     
 
-    return (           
-      <div className="row"> 
-        {concert2.map((Val)=>{
-          return (                 
-            <Details name={Val.name}
-              location={Val.location.location}
-              day={Val.day.day}
-              schedule={Val.schedule.schedule}
-              fullImageUrl={Val.fullImageUrl}
-              details={Val.details} 
-              details2={Val.details2} />                                 
-          );
-        })}
-      </div>      
-      );     
-    }
+    return (
+/*transformation de l'objet item en tableau Val */     
+      <div className="row  g-0 kardProg">
+          <div  className="cardProg pb-0" >
+              {concert2.map((Val) => {
+                
+                  return (                   
+     /* définition des variables name, day, shedule, fullImageUrl, details pour la constante Details*/                         
+                      <Details name={Val.name}
+                        location={Val.location.location}
+                        day={Val.day.day}
+                        schedule={Val.schedule.schedule}
+                        fullImageUrl={Val.fullImageUrl}
+                        details={Val.details} 
+                        details2={Val.details2} />             
+                  );
+            })}
+          </div>
+      </div>    
+    );
+  }
+
+  const ListDates = ({ dates }) => {     
+        
+    return (
+/*transformation de l'objet item en tableau Val */     
+      <div className="row  g-0 kardProg">
+          <div  className="cardProg pb-0" >
+              {dates.map((Val) => {
+                
+                  return (                   
+     /* définition des variables name, day, shedule, fullImageUrl, details pour la constante Details*/                         
+                      <Details name={Val.name}
+                        location={Val.location.location}
+                        day={Val.day.day}
+                        schedule={Val.schedule.schedule}
+                        fullImageUrl={Val.fullImageUrl}
+                        details={Val.details} 
+                        details2={Val.details2} />             
+                  );
+            })}
+          </div>
+      </div>    
+    );
+  }
     
 
-  const listDates = dates.map((Val) => 
-    <li key={Val.id}>
-      <div class="card mb-3 mt-3" >
-        <div class="row g-0">
-          <div class="col-md-4 ">
-            <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
+  const ListPlaces = ({ places }) => {     
+        
+    return (
+/*transformation de l'objet item en tableau Val */     
+      <div className="row  g-0 kardProg">
+          <div  className="cardProg pb-0" >
+              {places.map((Val) => {
+                
+                  return (                   
+     /* définition des variables name, day, shedule, fullImageUrl, details pour la constante Details*/                         
+                      <Details name={Val.name}
+                        location={Val.location.location}
+                        day={Val.day.day}
+                        schedule={Val.schedule.schedule}
+                        fullImageUrl={Val.fullImageUrl}
+                        details={Val.details} 
+                        details2={Val.details2} />             
+                  );
+            })}
           </div>
-          <div class="col-md-8 ">
-            <div class="card-body">
-              <h5 class="card-title">{Val.name}</h5>
-              <p class="card-text pb-2">{Val.schedule.schedule}</p>
-              <p class="card-text"><small class="text-body-secondary ">{Val.location.location}</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  );
+      </div>    
+    );
+  }
 
-  const listPlaces = places.map((Val) => 
-    <li key={Val.id}>
-      <div class="card mb-3 mt-3" >
-        <div class="row g-0">
-          <div class="col-md-4 ">
-            <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
+  const ListTimes = ({ times }) => {     
+        
+    return (
+/*transformation de l'objet item en tableau Val */     
+      <div className="row  g-0 kardProg">
+          <div  className="cardProg pb-0" >
+              {times.map((Val) => {
+                
+                  return (                   
+     /* définition des variables name, day, shedule, fullImageUrl, details pour la constante Details*/                         
+                      <Details name={Val.name}
+                        location={Val.location.location}
+                        day={Val.day.day}
+                        schedule={Val.schedule.schedule}
+                        fullImageUrl={Val.fullImageUrl}
+                        details={Val.details} 
+                        details2={Val.details2} />             
+                  );
+            })}
           </div>
-          <div class="col-md-8 ">
-            <div class="card-body">
-              <h5 class="card-title">{Val.name}</h5>
-              <p class="card-text pb-2">{Val.schedule.schedule}</p>
-              <p class="card-text"><small class="text-body-secondary ">{Val.location.location}</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  );
+      </div>    
+    );
+  }
 
-  const listTimes = times.map((Val) => 
-    <li key={Val.id}>
-      <div class="card mb-3 mt-3" >
-        <div class="row g-0">
-          <div class="col-md-4 col-lg-6">
-            <img src={Val.fullImageUrl}  class="img-fluid rounded " alt={Val.name} />
-          </div>
-          <div class="col-md-8 ">
-            <div class="card-body">
-              <h5 class="card-title">{Val.name}</h5>
-              <p class="card-text pb-2">{Val.schedule.schedule}</p>
-              <p class="card-text"><small class="text-body-secondary ">{Val.location.location}</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  );
+  
       
 /* /////////////////////////////////////FILTRE///////////////////////////////////////////////////////// 
 
@@ -776,35 +798,38 @@ return (
         
                 
 {/*Affichage des résultats sans filtres*/}
- <div className="row">
-    <ListConcert concert2={concert2} />
+<div className='row  g-0'>
+  <div className="kard pb-0 mt-8 " data-testId="concertHome">  
+      <ListConcert concert2={concert2} />
   </div>
+</div>
 
-
-
-<div className='row  g-0 '>
-    <div className="kard  pb-0 mt-8 " data-testId="concertHome">   
-      <ul >{listDates}</ul>
-    </div>
+{/*Affichage des résultats du filtre par date*/}
+<div className='row  g-0'>
+  <div className="kard pb-0 mt-8 " data-testId="concertHome">  
+      <ListDates dates={dates} />
   </div>
+</div>
+
 
 {/*Affichage des résultats du filtre par lieu*/}
 <div className='row  g-0'>
-    <div className="kard pb-0 mt-8 " data-testId="concertHome">   
-      <ul >{listPlaces}</ul>
-    </div>
+  <div className="kard pb-0 mt-8 " data-testId="concertHome">  
+      <ListPlaces places={places} />
   </div>
-
+</div>
 
 {/*Affichage des résultats du filtre par heure*/}
-<div className='row  g-0 '>
-    <div className="kard  pb-0 mt-8 " data-testId="concertHome">   
-      <ul >{listTimes}</ul>
-    </div>
+<div className='row  g-0'>
+  <div className="kard pb-0 mt-8 " data-testId="concertHome">  
+      <ListTimes times={times} />
   </div>
-  <div className="retour">
-    <ScrollToTopButton />
-  </div>       
+</div>
+
+
+<div className="retour">
+  <ScrollToTopButton />
+</div>       
 </>
   )
 };
