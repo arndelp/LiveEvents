@@ -38,6 +38,7 @@ export default function ConcertHomePage() {
               <div class="col-md-8 ">
                 <div class="card-body">
                   <h5 class="card-title">{Val.name}</h5>
+                  <p class="card-text pb-2">{Val.day.day}</p>
                   <p class="card-text pb-2">{Val.schedule.schedule}</p>
                   <p class="card-text">{Val.location.location}</p>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Programme from "../Components/Programme ";
+import Programme from "../Components/Programme";
 import "../style/Programme.css";
 
 
