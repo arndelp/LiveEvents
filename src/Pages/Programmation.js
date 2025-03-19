@@ -8,7 +8,7 @@ function Programmation() {
   
   return (
     <>
-    <div className='fullPage overflow'>
+    <div className='fullPage'>
       <Programme />
     </div>
     </>

@@ -79,9 +79,6 @@
 
 .details {
     background-color: var(--gris);
-    overflow: hidden auto;
+   
 }
 
-.overflow {
-    overflow: hidden auto;
-}

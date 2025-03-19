@@ -610,8 +610,8 @@ const Programme = ()  => {
   const ListDates = ({ dates }) => {           
     return (
 /*transformation de l'objet item en tableau Val */     
-      <div className="row  g-0 kardProg">
-          <div  className="cardProg pb-0" >
+      <div className="row  g-0 ">
+          <div  className=" pb-0" >
               {dates.map((Val) => {
                 
                   return (                   
@@ -689,7 +689,7 @@ const handleShowLinks = () => {
     }
 return (
        <>
-        <div id="App" className="row overflow">
+        <div id="App" className="row ">
           <div className="boutonLegendH1">
           <h1>Programmation</h1>
           </div>

@@ -28,7 +28,7 @@
     background-color: var(--mauve);
     padding-bottom: 0.5em;
     align-items: center;
-    overflow-x: hidden ;
+    
 }
 
 svg:hover {

@@ -7,7 +7,7 @@ import "../style/Markers.css";
 const Plan = () => {
     return (
     
-    <div class="row overflow">
+    <div class="row">
         <div>
          <GoogleMap />
         </div>
