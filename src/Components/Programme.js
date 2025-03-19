@@ -561,7 +561,6 @@ const Programme = ()  => {
                   
 
   const Details= ({id ,name, location, schedule, day, fullImageUrl, details, details2}) => { 
-
     return (
       < Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{id, name, location, schedule, day, fullImageUrl, details, details2}}>
         
@@ -585,8 +584,7 @@ const Programme = ()  => {
     ); 
   }
 
-  const ListConcert = ({ concert2 }) => {     
-
+  const ListConcert = ({ concert2 }) => {   
     return (
 /*transformation de l'objet item en tableau Val */     
       <div className="row  g-0 kardProg">
@@ -609,8 +607,7 @@ const Programme = ()  => {
     );
   }
 
-  const ListDates = ({ dates }) => {     
-        
+  const ListDates = ({ dates }) => {           
     return (
 /*transformation de l'objet item en tableau Val */     
       <div className="row  g-0 kardProg">
@@ -634,8 +631,7 @@ const Programme = ()  => {
   }
     
 
-  const ListPlaces = ({ places }) => {     
-        
+  const ListPlaces = ({ places }) => {             
     return (
 /*transformation de l'objet item en tableau Val */     
       <div className="row  g-0 kardProg">
@@ -658,8 +654,7 @@ const Programme = ()  => {
     );
   }
 
-  const ListTimes = ({ times }) => {     
-        
+  const ListTimes = ({ times }) => {             
     return (
 /*transformation de l'objet item en tableau Val */     
       <div className="row  g-0 kardProg">

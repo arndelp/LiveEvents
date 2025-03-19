@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import "../style/Programme.css";
 
 
 
@@ -23,31 +24,31 @@ export default function ProgrammeDetails () {
   const navigate = useNavigate();
   return (
     <>
-    <div className="row">     
-      <div class= "kard mt-8 mb-8 ml-8 mr-8">
+    <div className="row details">     
+      <div class= "kard ">
     
    
-        <Card style={{ width: '80vh' }}>
+        <Card style={{ width: '90vh' }}>
           <div class="container">
             <Card.Img variant="top" src={fullImageUrl} class="imageDetails " />
           </div>
           <Card.Body>
             <Card.Title class="fs-1 lh-sm link-danger" >{name}</Card.Title>
-            <Card.Text class="fs-3 lh-sm">
+            <Card.Text class="fs-4 lh-sm">
               {day}
             </Card.Text>
-            <Card.Text class="fs-3 lh-sm">
+            <Card.Text class="fs-5 lh-sm">
               {place}
             </Card.Text>
-            <Card.Text  class="fs-4 lh-sm">
+            <Card.Text  class="fs-6 lh-sm">
               {details}
             </Card.Text>
-            <Card.Text  class="fs-5 lh-sm">
+            <Card.Text  class="fs-6 lh-sm">
               {details2}
             </Card.Text>
 
       {/*Bouton Retour, utilisation de la méthode react useNavigate */}
-            <Button variant="primary" onClick={() => navigate(-1)}>Retour</Button>
+            <Button variant="primary" onClick={() => navigate(-1)} className="pl-2 pr-2">Retour</Button>
           </Card.Body>
         </Card>
     </div>
