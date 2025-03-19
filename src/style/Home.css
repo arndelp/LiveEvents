@@ -46,6 +46,12 @@ h1.title {
     
 }
 
+.background {
+    overflow: hidden auto;
+}
 
+.overflow {
+    overflow: hidden auto;
+}
 
  

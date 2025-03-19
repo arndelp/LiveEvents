@@ -10,6 +10,7 @@
    padding-bottom: 2em;
    background-size: cover;
    background-image: url("../../public/assets/27104127-applaudissement-foule-illumine-par-vibrant-etape-lumieres-a-concert-photo.jpg");
+   overflow: hidden auto;
 }
 .card-name {
    font-family: katibeh, Arial, Helvetica, sans-serif;
