@@ -5,7 +5,7 @@ import { Button } from "flowbite-react";
 import "../style/Home.css";
 import burger from '../assets/parametres-curseurs.png';
 import ScrollToTopButton from "./ScrollToTopButton";
-import { Link} from "react-router-dom";
+
 
 
 const Programme = ()  => {
@@ -563,8 +563,7 @@ const Programme = ()  => {
   const Details= ({id ,name, location, schedule, day, fullImageUrl, details, details2}) => { 
 
     return (
-      < Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{id, name, location, schedule, day, fullImageUrl, details, details2}}>
-        
+      
           <div class="card mb-3 mt-3" >
             <div class="row g-0">
               <div class="col-md-4 ">
@@ -581,7 +580,7 @@ const Programme = ()  => {
             </div>
           </div>
       
-      </Link>
+      
     ); 
   }
 
