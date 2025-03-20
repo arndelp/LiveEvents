@@ -72,7 +72,7 @@ function FormContact() {
                         <Form.Control className="field" onChange={(e)=>handle(e)} id="message" name="message" value={data.message} as="textarea" rows={5} required></Form.Control>
                         
                         <Form.Check className="checkRGPD " label={"En cochant cette case, je consens au traitement de mes données personnelles afin de permettre à J’ai lu de me répondre de la manière la plus pertinente et ce, conformément à la politique de confidentialité dont j’ai pris connaissance et que j’accepte sans réserve." } id={`checkBox`} required></Form.Check>
-                        <Link to="/LiveEvents/confidential" >
+                        <Link to="/confidential" >
                             <Button className="checkRGPDLink" variant="link">Lire la politique de confidentialité</Button>
                         </Link>
 

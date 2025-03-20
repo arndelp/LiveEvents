@@ -147,34 +147,64 @@ function Billetterie() {
 
     return (      
 <>
-<div className="billetterie">
-    <div className=" row ">   
+<div className="billetterie d-block d-lg-none" >
+    <div className=" vignette">   
    
-        <div className="col-lg  col-12 bill">
+        <div className="col  vignette">
             <BilletV />   
         </div>
-        <div className="col-lg  col-12 bill">
+        <div className="col  vignette">
             <BilletS/>   
         </div>
-        <div className="col-lg  col-12 bill">
+        <div className="col vignette">
             <BilletD/>
         
         </div>
        
        </div>
-    <div className="row">
-    <div className="col-lg  col-12 bill">
+    <div className="vignette">
+    <div className="col  vignette">
             <Pass2joursVS/>
         </div>
-        <div className="col-lg  col-12 bill">
+        <div className="col  vignette">
             <Pass2joursSD/>
         </div>
         
-        <div className="col-lg  col-12 bill">
+        <div className="col  vignette">
             <Pass3joursVSD/>
         </div>
         </div>
-</div>       
+</div>   
+
+<div className="billetterie d-none d-lg-block" >
+    <div className=" bill">   
+   
+        <div className="col  bill">
+            <BilletV />   
+        </div>
+        <div className="col  bill">
+            <BilletS/>   
+        </div>
+        <div className="col bill">
+            <BilletD/>
+        
+        </div>
+       
+       </div>
+    <div className="bill">
+    <div className="col  vignette">
+            <Pass2joursVS/>
+        </div>
+        <div className="col  vignette">
+            <Pass2joursSD/>
+        </div>
+        
+        <div className="col  vignette">
+            <Pass3joursVSD/>
+        </div>
+        </div>
+</div>   
+
 </>
     )
 

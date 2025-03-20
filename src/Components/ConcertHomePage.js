@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../style/Home.css";
-
+import "../style/Programme.css";
 
 
 /*Function permettant l'affichage des premiers concerts du festival D1S1=Day1 Schedule1*/
@@ -11,7 +11,7 @@ export default function ConcertHomePage() {
   const [concerts, setConcerts] = useState([])
 /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
   useEffect(()=>{
-    fetch("https://concertslives.store/api/concerts") 
+    fetch(" https://concertslives.store/api/concerts") 
     
     .then((response)=>response.json())
     .then(data=>setConcerts(data.member))
@@ -28,38 +28,47 @@ export default function ConcertHomePage() {
 
   const listDay1Sch1 = day1sch1.map(Val =>
     
-    
-     <li key={Val.id}>
-          <div class="card m-5" >
-            <div class="row g-0">
-              <div class="col-md-4 ">
-                <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
-              </div>
-              <div class="col-md-8 ">
-                <div class="card-body">
-                  <h5 class="card-title">{Val.name}</h5>
-                  <p class="card-text pb-2">{Val.day.day}</p>
-                  <p class="card-text pb-2">{Val.schedule.schedule}</p>
-                  <p class="card-text">{Val.location.location}</p>
-                </div>
-              </div>
-            </div>
+    <li key={Val.id} className="listCard mt-2">
+    <div class="card " >
+      <div class="row g-0">
+        <div class="col-md-4 ">
+          <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />
+        </div>
+        <div class="col-md-8 ">
+          <div class="card-body">
+            <h5 class="card-title">{Val.name}</h5>
+            <p class="card-text pb-2">{Val.schedule.schedule}</p>
+            <p class="card-text"><small class="text-body-secondary ">{Val.location.location}</small></p>
           </div>
-        </li>  
+        </div>
+      </div>
+    </div>
+  </li>
+    
+
+    
+        
        
   );
 
 
  /*Affichage de la liste + lien vers Programmation */
 
-return (  
+return ( 
 
-  <div className='row  g-0 kard'>
-    <div className="card  pb-0 mt-8 " data-testId="concertHome">   
+ 
+
+  <div className='row  g-0 '>
+    <div className="pb-0 mt-8 " data-testId="concertHome">   
       <ul >{listDay1Sch1}</ul>
     </div>
   </div>
 
-  )
+)
+
+   
+
+
+
 
 }

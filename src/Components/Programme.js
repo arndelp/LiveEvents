@@ -561,6 +561,7 @@ const Programme = ()  => {
                   
 
   const Details= ({id ,name, location, schedule, day, fullImageUrl, details, details2}) => { 
+
     return (
       < Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{id, name, location, schedule, day, fullImageUrl, details, details2}}>
         
@@ -584,7 +585,8 @@ const Programme = ()  => {
     ); 
   }
 
-  const ListConcert = ({ concert2 }) => {   
+  const ListConcert = ({ concert2 }) => {     
+
     return (
 /*transformation de l'objet item en tableau Val */     
       <div className="row  g-0 kardProg">
@@ -607,11 +609,12 @@ const Programme = ()  => {
     );
   }
 
-  const ListDates = ({ dates }) => {           
+  const ListDates = ({ dates }) => {     
+        
     return (
 /*transformation de l'objet item en tableau Val */     
-      <div className="row  g-0 ">
-          <div  className=" pb-0" >
+      <div className="row  g-0 kardProg">
+          <div  className="cardProg pb-0" >
               {dates.map((Val) => {
                 
                   return (                   
@@ -631,7 +634,8 @@ const Programme = ()  => {
   }
     
 
-  const ListPlaces = ({ places }) => {             
+  const ListPlaces = ({ places }) => {     
+        
     return (
 /*transformation de l'objet item en tableau Val */     
       <div className="row  g-0 kardProg">
@@ -654,7 +658,8 @@ const Programme = ()  => {
     );
   }
 
-  const ListTimes = ({ times }) => {             
+  const ListTimes = ({ times }) => {     
+        
     return (
 /*transformation de l'objet item en tableau Val */     
       <div className="row  g-0 kardProg">
@@ -689,7 +694,7 @@ const handleShowLinks = () => {
     }
 return (
        <>
-        <div id="App" className="row ">
+        <div id="App" >
           <div className="boutonLegendH1">
           <h1>Programmation</h1>
           </div>
@@ -703,7 +708,7 @@ return (
             </div>            
           </div>   
           </div>         
-          <div class={`row  ${showLinks ? "d-block" : "d-none"} `}>                          
+          <div class={`  ${showLinks ? "d-block" : "d-none"} `}>                          
             <ul className="FilterSituation">                   
               <h5>Dates:</h5>
               <li className="navbar__item">

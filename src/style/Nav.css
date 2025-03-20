@@ -5,6 +5,10 @@
     align-items: center;
     border-bottom: solid 2px var(--noir);
     padding-top: 0em;
+    min-width:100vw;
+    
+    margin: 0;
+    padding: 0;
     
 }
 

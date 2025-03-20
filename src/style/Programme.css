@@ -1,10 +1,6 @@
 .displayCardProg {
     display: flex;
     justify-content: center;
-  
-    
-        
-
 }
 
 .maxSize {
@@ -24,6 +20,7 @@
 .kard {
     display: grid;
     justify-content: center;
+    min-height: 90vh;
     
     
     
@@ -79,6 +76,13 @@
 
 .details {
     background-color: var(--gris);
-   
+}
+
+.boutonRetourDetail {
+    margin-left:1em;
+    
+    margin-top: 2em;
+    margin-bottom: 1em;
+    
 }
 

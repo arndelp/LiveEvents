@@ -5,14 +5,15 @@
 
 .contact {
     
-    display: flex;
+    
     justify-content: center;    
     background-color: var(--gris);      
-    min-height: 100vh;   
-    width: 100vw;
-    padding-right: 3em; 
-    padding-left: 3em;
-    
+    min-height: 100vh;  
+    max-width: 100vw; 
+    padding-left: 4em;
+    padding-right: 4em;
+
+   
     
        
 }

@@ -34,10 +34,10 @@ export default function GoogleMap  () {
   return (
     //////////////////////////// Affichage de la carte GoogleMap///////////
      
-    <APIProvider apiKey={API_KEY} libraries={['marker']} onLoad={() => console.log('Maps API has loaded.')}>
+    <APIProvider apiKey={API_KEY} libraries={['marker']} onLoad={() => console.log('Maps API has loaded.')} >
 
 {/*En premier les markers pour que la légende soit en haut de la carte*/}
-    
+   <div > 
       <div className="checkboxes">
         <div className= "checkbox">
           {/*ici les markers*/}
@@ -51,7 +51,7 @@ export default function GoogleMap  () {
 
 {/*Ensuite la carte, avec une taille de 100% de largeur de l'écran et 100% de hauteur de l'écran */}
 {/*Définition de la position par défaut du centre de la carte et du zoom par défaut, puis des options pour le mouvement de la carte */}
-    
+    <div >
       <Map
         className="Gmap"
         defaultCenter={currentPosition}
@@ -64,6 +64,8 @@ export default function GoogleMap  () {
         console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)}
         >       
       </Map>
+      </div>
+      </div>
       
     </APIProvider>
     
