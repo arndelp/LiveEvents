@@ -15,10 +15,15 @@ import ScrollToTop from "./Components/ScrollToTop";
 
 
 
+
+
+
+
+
 function App() {
   return (    
   <BrowserRouter>
-    <ScrollToTop />    
+    <ScrollToTop />
       <Nav />     
         
         <Routes>
@@ -57,11 +62,16 @@ function App() {
             <Confidential /> }>
 
           </Route>
-
-                   
-        </Routes>   
           
-    <Foot />   
+          
+          
+        </Routes>
+       
+    
+          
+    <Foot />
+      
+    
 
 </BrowserRouter>
    

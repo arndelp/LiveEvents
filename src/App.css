@@ -30,7 +30,7 @@
   --mauve: #af74c7;
   --rouge: #ff0000;
   --noir: #000000;
-  --gris: #949494;
+  --gris: #d1cece;
 
 
      
@@ -42,20 +42,9 @@
 /****************App.css******************/
 
 
-.background {
-    background-size: cover;
-    background-image: url(../public/assets/pexels-wendywei-1190298.jpg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.background {
-  font-family: Katibeh, Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: var(--rouge);
-}
+
+  
+
 
 
 
