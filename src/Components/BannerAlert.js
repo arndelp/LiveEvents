@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import { Carousel } from "flowbite-react";
-import "../style/BannerAlert.css";
+
 
 
 
