@@ -15,7 +15,7 @@ const Programme = ()  => {
     /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
     useEffect( ()=>{
           const fetchItem = async () => {
-           fetch("https://concertslives.store/api/concerts") 
+           fetch("http://127.0.0.1:8000/api/concerts") 
           .then((response)=>response.json())
           .then(data=>setConcert(data.member))
           .catch(error => console.log(error))
@@ -30,7 +30,7 @@ const Programme = ()  => {
 
     useEffect( ()=>{
       const fetchItem2 = async () => {
-        fetch("https://concertslives.store/api/concerts") 
+        fetch("http://127.0.0.1:8000/api/concerts") 
       .then((response)=>response.json())
       .then(data=>setConcert2(data.member))
       .catch(error => console.log(error))
@@ -798,33 +798,18 @@ return (
         
                 
 {/*Affichage des résultats sans filtres*/}
-<div className='row  g-0'>
+<div >
   <div className="kard pb-0 mt-8 " data-testId="concertHome">  
       <ListConcert concert2={concert2} />
-  </div>
-</div>
-
-{/*Affichage des résultats du filtre par date*/}
-<div className='row  g-0'>
-  <div className="kard pb-0 mt-8 " data-testId="concertHome">  
       <ListDates dates={dates} />
-  </div>
-</div>
-
-
-{/*Affichage des résultats du filtre par lieu*/}
-<div className='row  g-0'>
-  <div className="kard pb-0 mt-8 " data-testId="concertHome">  
       <ListPlaces places={places} />
+      <ListTimes times={times} />
+
   </div>
 </div>
 
-{/*Affichage des résultats du filtre par heure*/}
-<div className='row  g-0'>
-  <div className="kard pb-0 mt-8 " data-testId="concertHome">  
-      <ListTimes times={times} />
-  </div>
-</div>
+
+
 
 
 <div className="retour">

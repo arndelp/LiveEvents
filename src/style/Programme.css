@@ -10,12 +10,8 @@
     
 }
 
-.fullPage {
-
-    min-height: 100vh;
+.fullPage {   
     background-color: var(--gris);
-
-
 }
 
 .kard {
