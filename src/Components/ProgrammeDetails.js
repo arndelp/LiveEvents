@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { Button } from "flowbite-react";
 import "../style/Programme.css";
 
 
@@ -25,7 +25,7 @@ export default function ProgrammeDetails () {
   return (
     <>
     <div >     
-      <div class= "kard mt-4 mb-4">
+      <div class= "kard pt-4 pb-4">
     
    
         <Card style={{ width: '90vh' }}>
@@ -48,7 +48,7 @@ export default function ProgrammeDetails () {
             </Card.Text>
 
       {/*Bouton Retour, utilisation de la méthode react useNavigate */}
-            <Button variant="primary" onClick={() => navigate(-1)} className="boutonRetourDetail">Retour</Button>
+            <Button color="blue" onClick={() => navigate(-1)} className="boutonRetourDetail">Retour</Button>
           </Card.Body>
         </Card>
     </div>

@@ -10,14 +10,19 @@
     
 }
 
-.fullPage {   
+.fullPage {
+
+
     background-color: var(--gris);
+   
+
 }
 
 .kard {
     display: grid;
     justify-content: center;
     min-height: 90vh;
+    background-color: var(--gris);
     
     
     
@@ -83,3 +88,27 @@
     
 }
 
+.progBody {
+    display: grid;
+    justify-content: center;
+    font-family: Katibeh, Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
+.cardh:hover {
+    background-color: var(--rouge);
+
+}
+
+.card:hover {
+    background-color: none;
+    
+}
+
+.cardh {
+    border: none;
+    max-width: 70vw;
+    background-color: var(--mauve);
+    justify-content: space-around;
+    
+}

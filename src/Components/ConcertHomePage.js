@@ -29,7 +29,7 @@ export default function ConcertHomePage() {
   const listDay1Sch1 = day1sch1.map(Val =>
     
     <li key={Val.id} className="listCard mt-2">
-    <div class="card " >
+    <div class="card cardh" >
       <div class="row g-0">
         <div class="col-md-4 ">
           <img src={Val.fullImageUrl}  class="img-fluid rounded" alt={Val.name} />

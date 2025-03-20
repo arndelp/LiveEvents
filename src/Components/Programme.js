@@ -1,11 +1,13 @@
 import React from "react";
 import { useState, useEffect, } from "react";
-import "../style/Programme.css";
 import { Button } from "flowbite-react";
-import "../style/Home.css";
 import burger from '../assets/parametres-curseurs.png';
 import ScrollToTopButton from "./ScrollToTopButton";
 import { Link} from "react-router-dom";
+import "../style/Programme.css";
+import "../style/Home.css";
+
+
 
 
 const Programme = ()  => {
@@ -15,7 +17,7 @@ const Programme = ()  => {
     /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
     useEffect( ()=>{
           const fetchItem = async () => {
-           fetch("https://concertslives.store/api/concerts") 
+           fetch("http://127.0.0.1:8000/api/concerts") 
           .then((response)=>response.json())
           .then(data=>setConcert(data.member))
           .catch(error => console.log(error))
@@ -30,7 +32,7 @@ const Programme = ()  => {
 
     useEffect( ()=>{
       const fetchItem2 = async () => {
-        fetch("https://concertslives.store/api/concerts") 
+        fetch("http://127.0.0.1:8000/api/concerts") 
       .then((response)=>response.json())
       .then(data=>setConcert2(data.member))
       .catch(error => console.log(error))
@@ -565,13 +567,13 @@ const Programme = ()  => {
     return (
       < Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{id, name, location, schedule, day, fullImageUrl, details, details2}}>
         
-          <div class="card mb-3 mt-3" >
+          <div class="row card cardh mb-3 mt-3" >
             <div class="row g-0">
               <div class="col-md-4 ">
                 <img src={fullImageUrl}  class="img-fluid rounded" alt={name} />
               </div>
               <div class="col-md-8 ">
-                <div class="card-body">
+                <div class="card-body progBody">
                   <h5 class="card-title">{name}</h5>
                   <p class="card-text pb-2">{day}</p>
                   <p class="card-text pb-2">{schedule}</p>
