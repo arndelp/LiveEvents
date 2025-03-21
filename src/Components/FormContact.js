@@ -50,7 +50,7 @@ function FormContact() {
 
     return (
         <>
-            <div class="contacth1">
+            <div className="contacth1">
                 <h1>Besoin d'un renseignement?  <br></br> Contactez-nous! </h1>
             </div>
             <div >
