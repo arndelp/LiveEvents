@@ -48,17 +48,14 @@ function FormContact() {
         console.log(newdata)
     }
 
-    
-
-
     return (
-        <div class="row">
+        <>
             <div class="contacth1">
                 <h1>Besoin d'un renseignement?  <br></br> Contactez-nous! </h1>
             </div>
             <div >
                 <form onSubmit={(e)=> submit(e)} >
-                    <Form.Group className="mb-5">
+                    <Form.Group className="pb-5">
                         <Form.Label className="label">Nom</Form.Label>
                         <Form.Control  className="field" onChange={(e)=>handle(e)} id="lastname" name="lastname" value={data.lastname} type="text" required></Form.Control>
 
@@ -76,26 +73,24 @@ function FormContact() {
                             <Button className="checkRGPDLink" variant="link">Lire la politique de confidentialité</Button>
                         </Link>
 
-                        <div class="row">
+                        
                         <ReCAPTCHA
                             sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
                             onChange={setValue}
                             
                         />
-                        </div>
+                        
 
                         <div class="submitbutton ">
                             <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' disabled={!value} >
                                 Envoyer
                             </Button>
-                        </div> 
-                        
-                        
+                        </div>                                                 
                        
                     </Form.Group>
                 </form>
             </div>
-        </div>
+            </>
     )
     
 }

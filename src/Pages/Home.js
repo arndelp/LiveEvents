@@ -41,7 +41,7 @@ function Home() {
           </div>
           
         <div className="row">
-          <h1 className="title ">NATION SOUNDS</h1>
+          <h1 className="title pt-2">NATION SOUNDS</h1>
         </div>
         
           <Link to="/LiveEvents/Programmation">
