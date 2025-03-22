@@ -30,16 +30,21 @@
   --mauve: #af74c7;
   --rouge: #f76c6c;
   --noir: #000000;
-  --gris: #d1adc2;
-
-
-     
+  --gris: #d1adc2;    
 
 }
 
 
 
 /****************App.css******************/
+
+h4 {
+  font-size: 1.2em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
 
 
 

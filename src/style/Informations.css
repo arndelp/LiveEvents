@@ -5,7 +5,20 @@
     background-color: var(--gris);
 }
 
+
+
 .titreConf {
     display: flex;
     justify-content: center;
+    font-size: 2em;
+   
+}
+
+.ScrollConf {
+    background-color: var(--gris);
+    margin-bottom: 0;
+}
+
+.checkRGPDRetour {
+    background-color: var(--gris);
 }

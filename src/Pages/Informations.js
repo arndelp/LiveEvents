@@ -22,7 +22,7 @@ function Informations () {
         <p>Parkings 5€/jour, 12€/3jour <br/></p>
         <br/>
                
-        <h5>À vélo <br/></h5>
+        <h4>À vélo <br/></h4>
         <p>La commune de Rambouillet se situe sur les itinéraires cyclables de : <br /> 
         La Véloscénie (de Paris au Mont-Saint-Michel)<br /> 
         Du Paris-Brest-Paris<br />
@@ -30,7 +30,7 @@ function Informations () {
         Parc à vélo gratuit</p>
         <br/>
         
-        <h5>En train <br/></h5>
+        <h4>En train <br/></h4>
         <p>TER REMI semi direct - départ gare de Montparnasse, arrêt Rambouillet (35 minutes)<br/>
         Ou Transilien N depuis Paris Montparnasse, arrêt Rambouillet (55 minutes)<br/></p>
         <p>PASS NAVIGO zone 5<br/>

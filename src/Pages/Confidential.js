@@ -8,12 +8,14 @@ function Informations () {
 
     return (
         <>
-        <Link to="/LiveEvents/contact">
-                <Button className="checkRGPDRetour" variant="link">Précédent</Button>
-        </Link>
+        <div className="checkRGPDRetour">
+            <Link to="/LiveEvents/contact">
+                    <Button  variant="link">Précédent</Button>
+            </Link>
+        </div>
             <div className="textInfo">
                 <dix class="titreConf">
-                    <h3>Données personnelles et politique de confidentialité<br/><br/></h3>
+                    <h1>Données personnelles et politique de confidentialité<br/><br/></h1>
                 </dix>
                 <p>À l’occasion de votre visite sur le Site de Nation Sounds (ci-après, le « Site »), Live Events est amené à collecter et traiter des données personnelles.<br/></p>
                 <p>La présente politique de confidentialité a donc vocation à informer les Utilisateurs de la manière dont le Site traite les données personnelles.La politique de confidentialité décrit les types de Données personnelles reçues ou collectées sur le Site ; les conditions d’utilisation des Données personnelles ; les choix offerts à l’Utilisateur concernant la collecte des Données personnelles et les mesures qui sont prises pour protéger la sécurité de ces Données personnelles.

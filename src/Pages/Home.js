@@ -23,7 +23,7 @@ function Home() {
             <Link to="/LiveEvents/Billetterie">
               <Button size="xl" gradientDuoTone="redToYellow" >
                 <HiShoppingCart className="mr-2 h-10 w-10" />
-                  Billetterie
+                  <h2>Billetterie</h2>
               </Button>             
             </Link>
             </div>
@@ -41,7 +41,7 @@ function Home() {
           </div>
           
         <div className="row">
-          <h1 className="title pt-2">NATION SOUNDS</h1>
+          <h1 className="title pt-3  ">NATION SOUNDS</h1>
         </div>
         
           <Link to="/LiveEvents/Programmation">
