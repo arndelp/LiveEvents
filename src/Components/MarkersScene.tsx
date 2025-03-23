@@ -60,7 +60,7 @@ const MarkerWithInfoWindow = (props: {pois: Poi[]}) => {
         <InfoWindow position={Val.position} onCloseClick={() => setInfowindowOpen(false)} >
           
           <Link to= "/LiveEvents/Programmation">          
-            <a href="/LiveEvents/Programmation">{Val.name}</a>
+            <p>{Val.name}</p>
             <Button className="checkRGPDLink" variant="link">Voir le programme</Button>
           </Link>
         </InfoWindow>
