@@ -9,6 +9,7 @@ import cocktail2 from "../assets/cocktail2.png";
 import entrer from "../assets/entrer.png";
 import parking from "../assets/parking.png";
 import toilettes from "../assets/toilettes.png";
+import Button from 'react-bootstrap/Button';
 
 /*Définition du type de Poi*/
 type Poi ={ id: string, position: google.maps.LatLngLiteral,fullIconUrl: string, width:string, height: string, info: string  }
@@ -126,9 +127,9 @@ const Markers = () => {
             {infoWindowShown && (
 
               <InfoWindow position={Val.position} onClose={handleClose} >
-
-                <Link to="/Informations">
+                <Link to="/LiveEvents/Informations">
                   <p>{Val.info}</p>
+                <Button className="checkRGPDLink" variant="link">Voir plus d'infos</Button>
                 </Link>
               </InfoWindow>
             )}

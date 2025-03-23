@@ -138,11 +138,6 @@ function Billetterie() {
       
             )
       }
-
-
-
-
-
     
 
     return (      

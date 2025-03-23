@@ -4,6 +4,7 @@ import {AdvancedMarker, InfoWindow, useAdvancedMarkerRef} from '@vis.gl/react-go
 import "../style/Markers.css";
 import { Link } from "react-router-dom";
 import scene from "../assets/scene.png";
+import Button from 'react-bootstrap/Button';
 
 
                                                         /* Affichage des Markers*/
@@ -60,6 +61,7 @@ const MarkerWithInfoWindow = (props: {pois: Poi[]}) => {
           
           <Link to= "/LiveEvents/Programmation">          
             <a href="/LiveEvents/Programmation">{Val.name}</a>
+            <Button className="checkRGPDLink" variant="link">Voir le programme</Button>
           </Link>
         </InfoWindow>
         )}
