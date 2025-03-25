@@ -10,13 +10,16 @@ export default function ConcertHomePage() {
   /*concerts est initialement vide*/
   const [concerts, setConcerts] = useState([])
 /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
-  useEffect(()=>{
-    fetch(" https://concertslives.store/api/concerts") 
-    
-    .then((response)=>response.json())
-    .then(data=>setConcerts(data.member))
-    .catch(error => console.log(error))
-  });
+  /*utilisation de la promesse*/
+    useEffect(()=>{
+      const fetchItemConcerts = async () => {
+        fetch("https://concertslives.store/api/concerts") 
+        .then((response)=>response.json())
+        .then(data=>setConcerts(data.member))
+        .catch(error => console.log(error))
+        };   
+        fetchItemConcerts();   
+      }, []);
 
 
   /*on met dans Val les concerts ayant la date et l'horaire  */

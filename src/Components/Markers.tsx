@@ -21,59 +21,75 @@ const Markers = () => {
   /* La constante bars est vide à l'initiale */
   
   /*Récupération des données par document */
-  const [bars, setBars] = useState([])
-  console.log(bars);
-  useEffect(() => {
-    fetch('https://concertslives.store/api/bars')
-      .then(response => response.json())
-      .then(data => setBars(data.member))
-      .catch(error => console.log(error))
+  const [bars, setBars] = useState([]) 
+    useEffect( ()=>{
+      const fetchItemBars = async () => {
+        fetch("https://concertslives.store/api/bars") 
+        .then((response)=>response.json())
+        .then(data=>setBars(data.member))
+        .catch(error => console.log(error))
+        };      
+      fetchItemBars();          
+    }, []);
+
+  const [parks, setParks] = useState([])  
+    useEffect( ()=>{
+      const fetchItemParks = async () => {
+        fetch("https://concertslives.store/api/parks") 
+        .then((response)=>response.json())
+        .then(data=>setParks(data.member))
+        .catch(error => console.log(error))
+        };    
+      fetchItemParks();          
   }, []);
 
-  const [parks, setParks] = useState([])
-  console.log(parks);
-  useEffect(() => {
-    fetch('https://concertslives.store/api/parks')
-      .then(response => response.json())
-      .then(data => setParks(data.member))
-      .catch(error => console.log(error))
-  }, []);
+  const [camps, setCamps] = useState([]) 
+    useEffect( ()=>{
+      const fetchItemCamps = async () => {
+        fetch("https://concertslives.store/api/camps") 
+        .then((response)=>response.json())
+        .then(data=>setCamps(data.member))
+        .catch(error => console.log(error))
+        };      
+      fetchItemCamps();          
+    }, []);
 
-  const [camps, setCamps] = useState([])
-  console.log(camps);
-  useEffect(() => {
-    fetch('https://concertslives.store/api/camps')
-      .then(response => response.json())
-      .then(data => setCamps(data.member))
-      .catch(error => console.log(error))
-  }, []);
 
-  const [exits, setExits] = useState([])
-  console.log(exits);
-  useEffect(() => {
-    fetch('https://concertslives.store/api/doors')
-      .then(response => response.json())
-      .then(data => setExits(data.member))
-      .catch(error => console.log(error))
-  }, []);
+  const [exits, setExits] = useState([]) 
+    useEffect( ()=>{
+      const fetchItemExits = async () => {
+        fetch("https://concertslives.store/api/doors") 
+        .then((response)=>response.json())
+        .then(data=>setExits(data.member))
+        .catch(error => console.log(error))
+        };
+      fetchItemExits();          
+    }, []);
 
-  const [shops, setShops] = useState([])
-  console.log(shops);
-  useEffect(() => {
-    fetch('https://concertslives.store/api/shops')
-      .then(response => response.json())
-      .then(data => setShops(data.member))
-      .catch(error => console.log(error))
-  }, []);
+  const [shops, setShops] = useState([])  
+    useEffect( ()=>{
+      const fetchItemShops = async () => {
+        fetch("https://concertslives.store/api/shops") 
+        .then((response)=>response.json())
+        .then(data=>setShops(data.member))
+        .catch(error => console.log(error))
+        };      
+      fetchItemShops();          
+    }, []);
 
-  const [wc, setWc] = useState([])
-  console.log(wc);
-  useEffect(() => {
-    fetch('https://concertslives.store/api/wcs')
-      .then(response => response.json())
-      .then(data => setWc(data.member))
-      .catch(error => console.log(error))
-  }, []);
+  const [wc, setWc] = useState([])  
+    useEffect( ()=>{
+      const fetchItemWc = async () => {
+        fetch("https://concertslives.store/api/wcs") 
+        .then((response)=>response.json())
+        .then(data=>setWc(data.member))
+        .catch(error => console.log(error))
+        };      
+      fetchItemWc();          
+    }, []);
+
+
+
 
   // Deux types de markers (avec et sans infowindows)
 
@@ -114,8 +130,6 @@ const Markers = () => {
 
     return (
       <>
-
-
         {props.pois.map((Val: Poi) => (
           <AdvancedMarker
             key={Val.id}
@@ -139,7 +153,7 @@ const Markers = () => {
     );
   };
 
-
+/*Variable et fonction pour l'affichage des POI, par défaut "affiché"*/
 
   const [showResultsBars, setShowResultsBars] = React.useState(true)
   const handleChangeBars = () => setShowResultsBars(!showResultsBars)

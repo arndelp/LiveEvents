@@ -13,16 +13,18 @@ export default function BannerAlert() {
   const [visible, setVisible] = useState(false)
 
    /*envoi une requête et récupération des données dans la base de données puis les stockent dans alerts avec setAlertss*/
-     useEffect(()=>{
-       fetch('https://concertslives.store/api/alerts') 
-       .then((response)=>response.json())
-       .then((data)=>{setAlerts(data.member);
-        setVisible(true)
-        console.log(alerts)
-     })
-       .catch(error => console.log(error))
-       
-     });
+    useEffect(()=>{    
+      const fetchItemAlerts = async () => {
+        fetch("https://concertslives.store/api/alerts") 
+      .then((response)=>response.json())
+      .then(data=>setAlerts(data.member))
+      .catch(error => console.log(error))
+      setVisible(true)
+      };
+      
+      fetchItemAlerts();
+      
+    }, []);
 
 /* Création du caroussel et map des données*/
 

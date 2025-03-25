@@ -17,13 +17,16 @@ const  MarkersScene = () => {
 
 /*idem pour scenes */
 const [scenes, setScenes] = useState([])
-console.log(scenes);
-  useEffect(()=>{
-    fetch('https://concertslives.store/api/scenes')
-    .then(response=>response.json())
+  useEffect( ()=>{
+    const fetchItemScenes = async () => {
+    fetch("https://concertslives.store/api/scenes") 
+    .then((response)=>response.json())
     .then(data=>setScenes(data.member))
-    .catch(error => console.log(error))     
-  },[]);
+    .catch(error => console.log(error))
+    };
+    
+    fetchItemScenes();          
+  }, []);
 
 
 
@@ -32,19 +35,12 @@ console.log(scenes);
   /*Utilisation de la méthode map() pour transformer les données, puis les affilier à un composant google map AdvancedMarker */
 /*Markers avec infoWindow */
 const MarkerWithInfoWindow = (props: {pois: Poi[]}) => {
-  // `markerRef` and `marker` are needed to establish the connection between
-  // the marker and infowindow (if you're using the Marker component, you
-  // can use the `useMarkerRef` hook instead).
+  // `markerRef`  est nécessaire pour établir la connection entre le marker et le infoWindows
   const [markerRef] = useAdvancedMarkerRef();
-
+//par défaut infowindow fermée
   const [infowindowOpen, setInfowindowOpen] = useState(false);
 
-  // clicking the marker will toggle the infowindow
   
-
-  // if the maps api closes the infowindow, we have to synchronize our state
-  
-
   return (
     <>
     {props.pois.map( (Val: Poi) => (
@@ -64,31 +60,15 @@ const MarkerWithInfoWindow = (props: {pois: Poi[]}) => {
             <Button className="checkRGPDLink" variant="link">Voir le programme</Button>
           </Link>
         </InfoWindow>
-        )}
-
-        
-      </AdvancedMarker>
-        
-      
+        )}        
+      </AdvancedMarker>     
     ))}
-
-  
-     
-
     </>
   );
 };
 
-
-
-
-
-
 const [showResultsScenes, setShowResultsScenes] = React.useState(true)
 const handleChangeScenes  = () => setShowResultsScenes(!showResultsScenes)
-
-
-
 
 
  /*Scènes */
@@ -97,20 +77,18 @@ const handleChangeScenes  = () => setShowResultsScenes(!showResultsScenes)
   pois={scenes}   
   /> 
  )
-
-
   return (
     <>    
 {/*Affichage conditionnel ds icones avec une checkbox une checkbox (Appel du composant des icones + fonction d'affichage/cache des icones handleChange...*/} 
-    <div className="legend">
-     
-      <div className="ico">
-          <input type="checkbox" checked={showResultsScenes} onChange={handleChangeScenes} />
-          { showResultsScenes ? <ResultsScenes /> : null }
-          <img src={scene} width="25em" height= "25em" alt="Scène"/>
-      </div>  
+      <div className="legend">
       
-    </div> 
+        <div className="ico">
+            <input type="checkbox" checked={showResultsScenes} onChange={handleChangeScenes} />
+            { showResultsScenes ? <ResultsScenes /> : null }
+            <img src={scene} width="25em" height= "25em" alt="Scène"/>
+        </div>  
+        
+      </div> 
     </>
   );
 };

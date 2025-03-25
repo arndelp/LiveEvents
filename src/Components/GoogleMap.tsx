@@ -6,14 +6,6 @@ import MarkersScene from "./MarkersScene";
 import "../style/Map.css";
 
 
-
-
-
-
-////API Key///////////
-
-
-
 export default function GoogleMap  () {
   //const {latitude, longitude, error} = usePosition();
   const API_KEY = 'AIzaSyDyFJl07pOphogij6mYHfO311l_LpvJ85g'
@@ -21,15 +13,6 @@ export default function GoogleMap  () {
   const [currentPosition] = useState({ lat: 48.64627130950389,    lng: 1.8125529133067797 });
   const [currentZoom] = useState(15.477);
  
-// GEO LOCALISATION avec Use position
-  // useEffect(() => {
-  //   console.log("use eff");
-  //   if (latitude && longitude && !error) {
-  //     // Fetch weather data here.
-  //     setCurrentPosition({ lat: latitude, lng: longitude });
-  //     setCurrentZoom(17);
-  //   }
-  // }, [latitude, longitude, error]);
 
   return (
     //////////////////////////// Affichage de la carte GoogleMap///////////
@@ -43,8 +26,6 @@ export default function GoogleMap  () {
           {/*ici les markers*/}
           <MarkersScene />
           <Markers  />
-          
-
         </div>    
       </div>
       
