@@ -10,7 +10,7 @@ export default function ConcertHomePage() {
   /*concerts est initialement vide*/
   const [concerts, setConcerts] = useState([])
 /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
-  /*utilisation de la promesse*/
+  /*utilisation requêtes asynchrones*/
     useEffect(()=>{
       const fetchItemConcerts = async () => {
         fetch("https://concertslives.store/api/concerts") 
