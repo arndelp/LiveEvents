@@ -37,7 +37,7 @@ function Home() {
       <div className="background " style={{overflow: "hidden"}}>
         <div className="row">
           <BannerAlert /> 
-          </div>
+        </div>
           
         <div className="row">
           <h1 className="title pt-3">NATION SOUNDS</h1>
