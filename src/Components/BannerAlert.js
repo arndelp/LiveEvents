@@ -13,17 +13,14 @@ export default function BannerAlert() {
   const [visible, setVisible] = useState(false)
 
    /*envoi une requête et récupération des données dans la base de données puis les stockent dans alerts avec setAlertss*/
-    useEffect(()=>{    
-      const fetchItemAlerts = async () => {
-        fetch("https://concertslives.store/api/alerts") 
-      .then((response)=>response.json())
-      .then(data=>setAlerts(data.member))
-      .catch(error => console.log(error))
+   useEffect(()=>{
+    const apiCallAlerts = async () => {
+      const apiCallPromise = await fetch("https://concertslives.store/api/alerts") 
+      const apiCallObj = await  apiCallPromise.json();
+      setAlerts(apiCallObj)
+      };         
+      apiCallAlerts();
       setVisible(true)
-      };
-      
-      fetchItemAlerts();
-      
     }, []);
 
 /* Création du caroussel et map des données*/
@@ -33,7 +30,7 @@ export default function BannerAlert() {
    
     <div className="h-20 sm:h-20 xl:h-20 2xl:h-20" >
       
-      <Carousel slide={false}>
+      <Carousel   slide={false}>
         
         <div className="flex h-full items-top justify-center bg-red-600 dark:bg-gray-700 dark:text-white text-yellow-200 text-2xl animate-pulse">
           {Val.message1}
