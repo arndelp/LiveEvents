@@ -78,7 +78,7 @@ const uniqScheduleConcerts=uniqScheduleConcert.sort(function compare(a,b){
 
 // idem pour les autres filtres, pas besoin de trie alphabétique
 const uniqLocationConcerts = _.uniqBy(concertsFilteredDay , 'location' );  
-const uniqStyleConcerts = _.uniqBy(concertsFilteredDay, 'style')
+const uniqStyleConcerts = _.uniqBy(concertsFilteredDay, 'style');
 
 
 ////////////////////////////////////////Fonctions//////////////////////////////////////
