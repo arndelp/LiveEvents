@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../style/ScrollToTopButton.css";
 import fleche from "../assets/fleches-vers-le-haut.png";
 
 
