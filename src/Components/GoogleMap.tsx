@@ -193,11 +193,12 @@ return (
         disableDefaultUI>
 
             
-        {markerData.map(({id, latitude, longitude, type, zIndex, details, name}) => {          
+       
+        {markerData.map(({id, latitude, longitude, type, zIndex, details, name}) => {  
+                  
           // Affichage des icones avec condition de "type" et de la checkbox activée  
-          if (type === "scene" && sceneChecked ) {           
-            return (
-              
+          if (type === "scene" && sceneChecked )            
+            return (              
               <React.Fragment >                          
                 <AdvancedMarkerWithRef                  
                   onMarkerClick={(
@@ -210,9 +211,9 @@ return (
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
-          }
+          
 
-          if (type === 'bar' && barChecked) {
+          if (type === 'bar' && barChecked) 
             return (                  
               <React.Fragment >                 
                 <AdvancedMarkerWithRef
@@ -226,9 +227,9 @@ return (
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
-          }
+          
 
-          if (type === 'parking' && parkChecked) {
+          if (type === 'parking' && parkChecked) 
             return (                  
               <React.Fragment >                 
                 <AdvancedMarkerWithRef
@@ -242,9 +243,9 @@ return (
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
-          }
+          
 
-          if (type === 'door' && exitChecked) {
+          if (type === 'door' && exitChecked) 
             return (                  
               <React.Fragment >                 
                 <AdvancedMarkerWithRef
@@ -258,9 +259,9 @@ return (
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
-          }
+          
 
-          if (type === 'shop' && shopChecked) {
+          if (type === 'shop' && shopChecked) 
             return (                  
               <React.Fragment >                 
                 <AdvancedMarkerWithRef
@@ -274,9 +275,9 @@ return (
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
-          }
+          
 
-          if (type === 'wc' && wcChecked) {
+          if (type === 'wc' && wcChecked) 
             return (                  
               <React.Fragment >                 
                 <AdvancedMarkerWithRef
@@ -290,9 +291,9 @@ return (
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
-          }
+          
 
-          if (type === 'camping' && campChecked) {
+          if (type === 'camping' && campChecked) 
             return (                  
               <React.Fragment >                 
                 <AdvancedMarkerWithRef
@@ -306,8 +307,10 @@ return (
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
-          }         
-        })}
+             
+          
+        }
+        )}
           
          {/* condition d'affichage et contenu de l'infowindow  */}
 

@@ -84,10 +84,8 @@ const uniqStyleConcerts = _.uniqBy(concertsFilteredDay, 'style');
 ////////////////////////////////////////Fonctions//////////////////////////////////////
 
 const handleShowResults = () => {
-  return ( 
-    setShowResults(true),
-    setShowLinks(false)
-  );
+    setShowResults(true);
+    setShowLinks(false);
 }
 
 const handleShowLinks = () => {
