@@ -39,9 +39,9 @@ export default function BannerAlert() {
           {Val.message1}
         </div>
         
-        {/* <div className="flex h-full items-top justify-center bg-amber-400 dark:bg-gray-700 dark:text-white text-red-600 text-2xl animate-pulse">
+        <div className="flex h-full items-top justify-center bg-amber-400 dark:bg-gray-700 dark:text-white text-red-600 text-2xl animate-pulse">
           {Val.message2}
-        </div>   */}
+        </div>  
         
       </Carousel>
 
