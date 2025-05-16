@@ -195,7 +195,7 @@ return (
             
        
         {markerData.map(({id, latitude, longitude, type, zIndex, details, name}) => {  
-                  
+                 
           // Affichage des icones avec condition de "type" et de la checkbox activée  
           if (type === "scene" && sceneChecked )            
             return (              
@@ -307,8 +307,8 @@ return (
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
-             
-          
+          return (null)
+           
         }
         )}
           
