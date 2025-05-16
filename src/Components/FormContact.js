@@ -9,6 +9,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 
 function FormContact() {
+
     const navigate = useNavigate()
 
     //définition des variables
@@ -76,10 +77,8 @@ function FormContact() {
                         
                         <ReCAPTCHA
                             sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
-                            onChange={setValue}
-                            
-                        />
-                        
+                            onChange={setValue}                            
+                        />                        
 
                         <div class="submitbutton ">
                             <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' disabled={!value} >
@@ -90,8 +89,7 @@ function FormContact() {
                     </Form.Group>
                 </form>
             </div>
-            </>
-    )
-    
+        </>
+    )    
 }
 export default FormContact;

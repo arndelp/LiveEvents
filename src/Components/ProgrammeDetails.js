@@ -18,44 +18,38 @@ export default function ProgrammeDetails () {
   const fullImageUrl = location.state.fullImageUrl
   const details = location.state.details
   const details2 = location.state.details2
-
-
-
   const navigate = useNavigate();
+
   return (
     <>
-    <div >     
-      <div class= "kard pt-4 pb-4">
-    
-   
-        <Card style={{ width: '90vh' }}>
-          <div class="container">
-            <Card.Img variant="top" src={fullImageUrl} class="imageDetails mt-2" />
-          </div>
-          <Card.Body>
-            <Card.Title class="fs-1 lh-sm link-danger" >{name}</Card.Title>
-            <Card.Text class="fs-3 lh-sm">
-              {day}
-            </Card.Text>
-            <Card.Text class="fs-3 lh-sm">
-              {place}
-            </Card.Text>
-            <Card.Text  class="fs-4 lh-sm">
-              {details}
-            </Card.Text>
-            <Card.Text  class="fs-5 lh-sm">
-              {details2}
-            </Card.Text>
+      <div >     
+        <div class= "kard pt-4 pb-4">     
+          <Card style={{ width: '90vh' }}>
+            <div class="container">
+              <Card.Img variant="top" src={fullImageUrl} class="imageDetails mt-2" />
+            </div>
+            <Card.Body>
+              <Card.Title class="fs-1 lh-sm link-danger" >{name}</Card.Title>
+              <Card.Text class="fs-3 lh-sm">
+                {day}
+              </Card.Text>
+              <Card.Text class="fs-3 lh-sm">
+                {place}
+              </Card.Text>
+              <Card.Text  class="fs-4 lh-sm">
+                {details}
+              </Card.Text>
+              <Card.Text  class="fs-5 lh-sm">
+                {details2}
+              </Card.Text>
 
-      {/*Bouton Retour, utilisation de la méthode react useNavigate */}
-            <Button color="blue" onClick={() => navigate(-1)} className="boutonRetourDetail">Retour</Button>
-          </Card.Body>
-        </Card>
-    </div>
-    
-  </div>
-    
-        </>
+        {/*Bouton Retour, utilisation de la méthode react useNavigate */}
+              <Button color="blue" onClick={() => navigate(-1)} className="boutonRetourDetail">Retour</Button>
+            </Card.Body>
+          </Card>
+      </div>      
+    </div>    
+  </>
   )
 }
 

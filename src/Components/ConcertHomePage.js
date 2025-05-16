@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import "../style/Home.css";
-import "../style/Programme.css";
+
 
 
 /*Function permettant l'affichage des premiers concerts du festival D1S1=Day1 Schedule1*/
@@ -12,19 +11,18 @@ export default function ConcertHomePage() {
 /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
   /*utilisation requêtes asynchrones*/
     useEffect(()=>{
-      const fetchItemConcerts = async () => {
-        fetch("https://concertslives.store/api/concerts") 
-        .then((response)=>response.json())
-        .then(data=>setConcerts(data.member))
-        .catch(error => console.log(error))
+      const apiCallConcerts = async () => {
+        const apiCallPromise = await fetch("https://concertslives.store/api/concerts") 
+        const apiCallObj = await apiCallPromise.json();
+        setConcerts(apiCallObj);
         };   
-        fetchItemConcerts();   
+        apiCallConcerts();           
       }, []);
-
+     
 
   /*on met dans Val les concerts ayant la date et l'horaire  */
   const day1sch1 = concerts.filter(Val =>
-    Val.day.day === "09/07/2027" && Val.schedule.schedule === "18:00 - 19:00");  
+    Val.day === "09/07/2027" && Val.schedule === "18:00 - 19:00");  
 
 
 /*on liste le contenu de Val , affichage dans des cards*/
@@ -40,17 +38,13 @@ export default function ConcertHomePage() {
         <div class="col-md-8 ">
           <div class="card-body">
             <h5 class="card-title">{Val.name}</h5>
-            <p class="card-text pb-2">{Val.schedule.schedule}</p>
-            <p class="card-text"><small class="text-body-secondary ">{Val.location.location}</small></p>
+            <p class="card-text pb-2">{Val.schedule}</p>
+            <p class="card-text"><small class="text-body-secondary ">{Val.location}</small></p>
           </div>
         </div>
       </div>
     </div>
-  </li>
-    
-
-    
-        
+  </li>     
        
   );
 
@@ -58,15 +52,11 @@ export default function ConcertHomePage() {
  /*Affichage de la liste + lien vers Programmation */
 
 return ( 
-
- 
-
   <div className='row  g-0 '>
     <div className="pb-0 mt-8 " data-testId="concertHome">   
       <ul >{listDay1Sch1}</ul>
     </div>
   </div>
-
 )
 
    

@@ -4,9 +4,8 @@ import BannerAlert from "../Components/BannerAlert.js"
 import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
 import {  HiShoppingCart } from "react-icons/hi";
-import "../style/Home.css";
-import "../style/Map.css";
-import "../style/Programme.css";
+import ScrollToTopButton from "../Components/ScrollToTopButton.js";
+
 
 
 
@@ -23,7 +22,7 @@ function Home() {
             <Link to="/LiveEvents/Billetterie">
               <Button size="xl" gradientDuoTone="redToYellow" >
                 <HiShoppingCart className="mr-2 h-10 w-10" />
-                  <h2>Billetterie</h2>
+                  Billetterie
               </Button>             
             </Link>
             </div>
@@ -41,7 +40,7 @@ function Home() {
           </div>
           
         <div className="row">
-          <h1 className="title pt-3  ">NATION SOUNDS</h1>
+          <h1 className="title pt-3">NATION SOUNDS</h1>
         </div>
         
           <Link to="/LiveEvents/Programmation">
@@ -60,12 +59,15 @@ function Home() {
             </div>
 
             <div className="d-block d-lg-none GmapMiniSmall  col-10 offset-1  ">
-              <GoogleMap />
+              <GoogleMap />              
             </div>
-                
+           
             
-          </Link>
+          </Link>  
 
+        </div>
+        <div className="marginMap">
+        <ScrollToTopButton/>
         </div>
         </>
               

@@ -21,8 +21,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 
-
-
 /***************Couleurs******************/
 
 :root {
@@ -30,26 +28,639 @@
   --mauve: #af74c7;
   --rouge: #f76c6c;
   --noir: #000000;
-  --gris: #d1adc2;    
-
+  --gris: #d1adc2;     
+  --vert: #C3F1D5;
 }
 
+/****************** Balises *****************/
+a {
+  text-decoration: none;
+}
 
+a:hover {
+  color: var(--rouge);  
+}
 
-/****************App.css******************/
+svg:hover {
+  background-color: var(--rouge);
+}
 
-h4 {
-  font-size: 1.2em;
+h1.title {
+  font-size: 5em;
 }
 
 h2 {
   font-size: 1.6em;
 }
 
+h3 {
+  justify-content: space-between;
+  margin-inline: 1em;
+  color: var(--noir);
+}
+
+h3:hover {
+  color: var(--rouge);
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+input {
+  
+  min-width: 2em;
+  min-height: 2em;
+  margin: 1em 0.5em 1em 2em ;
+  border:0.5em
+}
 
 
+
+ul {
+  list-style: none;
+  font-family: Katibeh, Arial, Helvetica, sans-serif;
+  font-size: 1.5em;    
+}
+
+ul:hover {
+  color: var(--rouge);
+}
+
+/******************ID************************/
+#suiveznous {
+  font-family: Katibeh, Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  padding-bottom:0.4em;
+  display: flex;
+  justify-content: center;
+  background-color: var(--mauve);
+  text-align: center;    
+  border-top: solid 2px var(--noir);   
+}
+
+#fleche {
+  width: 3em;
+}
+
+
+ul:hover {
+  color: var(--rouge);
+}
+
+
+/******************Classes*******************/
+/* A */
+
+
+/* B */
+
+
+.backcolorfoot {
+  background-color: var(--mauve);
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0; 
+  display: flex;
+  text-align: center;
+  justify-content: space-around;    
+  padding-bottom: 1.5em;
+  
+}
+
+.backcolorfootDesk {
+  background-color: var(--mauve);
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0; 
+  padding-top: 1em;
+  border-top: solid 2px var(--noir);
+}
+
+.backcolorfootMobile {
+  background-color: var(--mauve);
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0; 
+  padding-top: 1em;
+  border-top: solid 2px var(--noir);
+   
+}
+
+
+
+.background {    
+  background-color: var(--gris);    
+  align-items: center;
+  justify-content: center;
+  font-family: Katibeh, Arial, Helvetica, sans-serif;  
+  justify-content: center;
+  text-align: center;
+  color: var(--rouge);
+}
+
+.backgroundMap {
+  max-height: max-content;
+  min-height: 100vh;
+  background-color: var(--vert);
+}
+
+.bill {
+  padding-top: 1em;   
+  display: flex;
+  justify-content: space-around;      
+}
+
+.billet {
+  font-size: 3em;   
+  display: flexbox;
+  justify-content: center;   
+  padding: 0 1em 0.3em 1em;    
+  border-radius: 1em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  background-color: var(--rouge);
+  color: var(--blanc);    
+}
+
+.billetterie { 
+  justify-content: space-around;
+  min-height: 100vh;   
+  background-size: cover;
+  background-color: var(--gris);
+}
+
+.boutonBilletHome {
+  display:flex;
+  justify-content: center;    
+}
+
+.boutonFilterErase {
+  margin-right: 0.5em;
+}
+
+.boutonFilterResult {
+  margin-left: 0.5em;
+}
+
+
+.boutonLegend {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.boutonLegendH1 {
+  display: flex;
+  justify-content: center;
+  font-family: Katibeh, Arial, Helvetica, sans-serif;
+  font-size: xx-large;
+  padding-top: 0.5em;
+}
+
+.boutonRetourDetail {
+  margin-left:1em;  
+  margin-top: 2em;
+  margin-bottom: 1em;    
+}
+
+.boutonSubmit {    
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  max-width: 4.2em;
+  border-style: none;
+}
+
+.Burger {
+  max-width: 4em;
+  display: flex;
+  align-items: center;  
+  background-color:var(--mauve);   
+  left: 0.5em;
+  margin-bottom: 1.1em;    
+ }
+
+.BurgerProg {
+  display: flex;
+  margin-right: 1em;
   
 
+}
+
+.h2BurgerProg {
+  margin-inline: 0.5em;
+}
+
+.BurgerSituation {
+  display: grid;
+  
+}
+
+.BurgerSituationMap {
+  display: grid;
+  justify-content: end;
+  background-color: var(--vert);
+  border-radius: 0;
+
+}
+
+/* c */
+
+.card {
+  border: none;
+  max-width: 70vw;
+  background-color: var(--mauve);
+  justify-content: space-around;    
+}
+
+.card-name {
+  font-family: katibeh, Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  padding-bottom: 0.5em;
+}
+
+.card-fond {
+  background-color: var(--gris);
+  max-width: 15em;
+  height: auto;   
+}
+
+.cardh {
+  border: none;
+  max-width: 70vw;
+  background-color: var(--mauve);
+  justify-content: space-around;    
+}
+
+.cardh:hover {
+  background-color: var(--rouge);
+}
+
+.checkboxes {
+  display: flex;
+  justify-content: center;
+  padding-right: 0.5em;   
+  background-color:var(--vert);     
+}
+
+.checkbox {
+  padding-inline: 0.5em;   
+  display: flex;      
+}
+
+.checkBox {
+  margin-right: 0.2em;
+}
+
+
+
+.checkRGPD {
+  margin-top: 3em;  
+  font-size: 0.8em;
+  max-width: 90vw;
+  
+} 
+
+.checkRGPDLink {
+  margin-top: 1em;
+   min-width: fit-content;
+   margin-bottom: 1em;
+  
+} 
+
+.checkRGPDRetour {
+    background-color: var(--gris);
+}
+
+.contact {    
+  justify-content: center;    
+  background-color: var(--gris);      
+  min-height: 100vh;  
+  max-width: 100vw; 
+  padding-left: 4em;
+  padding-right: 4em;      
+}
+
+.contacth1 {
+  justify-content: center;
+  text-align: center;
+  background-color: var(--gris);   
+  margin-bottom: 0;
+  padding-top: 0.5em;
+  font-family: Katibeh;
+  font-size: 3em;     
+}
+
+.ConcertHomePage {
+  display: flex;
+  justify-content: center;   
+}
+
+/* D */
+
+.details {
+  background-color: var(--gris);
+}
+
+.displayCardProg {
+  display: flex;
+  justify-content: center;
+}
+
+/* E */
+
+/* F */
+
+.field {
+  margin-left: 0;
+  border-radius: 5px;
+}
+
+.FilterSituation {
+  display: grid;
+  justify-content: end;
+}
+
+.foot {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;    
+  padding-bottom: 1.5em;
+}
+
+
+
+.fullPage {
+  background-color: var(--gris);
+  display: grid;
+  justify-content: center;
+}
+
+.fullpageProg {
+  min-height: 100vh;
+}
+
+/* G */
+
+.Gmap {
+ height:100vh;
+ 
+ padding: 0em 0em 0em 0em;
+ width: auto;
+ background-color: var(--vert);
+
+ 
+}
+
+.GmapMini {     
+  max-width: 100vw;
+  min-height: 50vh;
+  margin-bottom: 4em;  
+}
+
+.GmapMiniSmall {     
+  max-width: 100vw;
+  max-height: 100vh;
+  
+  
+}
+
+/* H */
+
+.HautDePage {    
+  display: grid;
+  justify-content: center;
+}
+
+.head {
+  /* position: fixed;
+  z-index: 10; */
+  display:flex;
+  background-color: var(--mauve);
+  align-items: center;
+  border-bottom: solid 2px var(--noir);
+  padding-top: 0em;
+  min-width:100vw;    
+  margin: 0;
+  padding: 0;  
+  
+}
+
+.headLogoM {
+  align-items: center;
+  padding-top: 1.5em;
+     
+}
+
+.headTitle {      
+  font-family: Katibeh, Arial, Helvetica, sans-serif;
+  padding-top: 0.8em;
+  font-size: 1.8em;
+    
+}
+
+/* I */
+
+.ico {
+  display: flex;  
+  background-color:var(--vert);
+  justify-content: center;
+  align-items: center;
+}
+
+.icoMobile {
+  display: flex;  
+  background-color:var(--vert);
+  justify-content: center;
+  align-items: center;
+  margin-inline: 0em;
+}
+
+/* J */
+
+/* K */
+
+.kard {
+  display: grid;
+  justify-content: center;
+  min-height: 90vh;
+  background-color: var(--gris);   
+}
+
+/* L */
+
+.label {
+  margin-top: 2em;
+  margin-bottom: 0.5em;        
+}
+
+.listCheck {
+  background-color: var(--gris);
+  justify-content: center;
+  margin-right: 0.2em;    
+}
+
+.logo {
+  display: flex;
+  align-items: center;   
+}
+
+.logoSize {
+  width: 10em;    
+  right: 0rem;
+  margin-bottom: 1rem;    
+}
+
+/* M */
+
+.Map {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 4em;
+}
+
+.marginMap {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  background-color: var(--gris);
+}
+
+.maxSize {
+  width: 40em;
+  margin-top: 1em;
+  max-width: 90vw;    
+}
+
+.menuFilter {
+  display: grid;
+  justify-content: left;
+  margin-left: 2em;
+  align-items: center;
+  background-color: var(--gris);
+}
+
+.mobileMenu {
+  min-height: 80vh;
+}
+
+/* N */
+
+.navbar__item {
+  padding: 0.75em 0 0.75em 0;
+  font-size: larger;
+}
+
+.navbar__link {
+  display: flex;    
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+  align-items: center;
+  text-decoration: none;
+  color: black;    
+}  
+
+.navbar__links {    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0em;    
+}
+
+.navbar__link:hover {
+  color: var(--rouge);
+}
+
+/* O */
+
+/* P */
+
+.plan {
+  min-height: auto;
+}
+
+.progBody {
+  display: grid;
+  justify-content: center;
+  font-family: Katibeh, Arial, Helvetica, sans-serif;
+  font-size: 2em;
+}
+
+/* Q */
+
+/* R */
+.retour {
+  margin-top: 1em;
+  bottom:  0em;
+}
+/* S */
+
+.ScrollConf {
+  margin-bottom: 1em;
+  background-color: var(--gris);
+  margin-bottom: 0;
+}
+
+.scroll-to-top-button {
+  display: flex;
+  align-items:  center;
+  justify-content: center;
+}
+
+.submitbutton {
+  display: flex;
+  justify-content: center;
+}
+
+/* T */
+
+.textInfo {
+  min-height: 100vh;  
+  padding: 2em 2em 2em 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--gris);
+}
+
+.textSubmitted {
+  font-size: x-large;    
+}
+
+.titreConf {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;   
+}
+
+.topBar {
+  display: flex;
+}
+
+/* U */
+
+/* V */
+
+.vignetteBillet {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.vignette {
+  display: grid;
+  justify-content: space-around;
+}
+
+/* W */
+
+/* X */
+
+/* Y */ 
+
+/* Z */
 
 
 

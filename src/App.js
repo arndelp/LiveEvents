@@ -61,16 +61,13 @@ function App() {
           <Route path="/LiveEvents/Confidential" element={
             <Confidential /> }>
 
-          </Route>
+          </Route>         
           
           
-          
-        </Routes>
-       
+        </Routes>       
     
           
-    <Foot />
-      
+    <Foot />      
     
 
 </BrowserRouter>

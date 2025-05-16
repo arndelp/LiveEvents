@@ -1,4 +1,3 @@
-import "../style/Billetterie.css"
 import { Button, Card } from "flowbite-react";
 
 

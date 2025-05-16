@@ -1,4 +1,3 @@
-import "../style/Informations.css";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import ScrollToTopButton from "../Components/ScrollToTopButton";
