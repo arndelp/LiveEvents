@@ -16,8 +16,7 @@ import {
   useAdvancedMarkerRef,
   AdvancedMarkerAnchorPoint
 } from '@vis.gl/react-google-maps';
-import apiKey from "../key/apiKey.js";
-import mapId from "../key/mapId.js";
+
 
 const GoogleMap = () => {
   
