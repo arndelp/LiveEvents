@@ -1,11 +1,11 @@
-import React from "react";
 import { useState, useEffect } from "react";
+import React from "react";
 import { Carousel } from "flowbite-react";
 
 
 
 
-const BannerAlert= () => {
+export default function BannerAlert() {
 
    /*alerts est initialement vide*/
   const [alerts, setAlerts] = useState([])
@@ -54,7 +54,7 @@ const BannerAlert= () => {
   return (
       <>
    
-        {listAlert}
+      {listAlert}
       
       </>
   
@@ -62,4 +62,4 @@ const BannerAlert= () => {
 }
   
 }
-export default BannerAlert;
+
