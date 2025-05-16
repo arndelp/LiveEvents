@@ -83,8 +83,11 @@ const uniqStyleConcerts = _.uniqBy(concertsFilteredDay, 'style');
 
 ////////////////////////////////////////Fonctions//////////////////////////////////////
 
-const handleShowResults = () => {setShowResults(true);
-    setShowLinks(false);
+const handleShowResults = () => {
+  return ( 
+    setShowResults(true),
+    setShowLinks(false)
+  );
 }
 
 const handleShowLinks = () => {
@@ -217,7 +220,7 @@ const ListConcert = ({concerts}) => {
                         </p>                        
                       </div>
                     </>
-                  );      
+                  );
                 })} 
 
               <h2 className="titleFilter">Filtrer par style:</h2>    
