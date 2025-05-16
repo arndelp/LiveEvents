@@ -1,6 +1,5 @@
 import React, { useState}  from 'react';
 import Axios from 'axios';
-import "../style/FormContact.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +8,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 
 function FormContact() {
-
     const navigate = useNavigate()
 
     //définition des variables
@@ -49,9 +47,12 @@ function FormContact() {
         console.log(newdata)
     }
 
+    
+
+
     return (
         <>
-            <div className="contacth1">
+            <div class="contacth1">
                 <h1>Besoin d'un renseignement?  <br></br> Contactez-nous! </h1>
             </div>
             <div >
@@ -68,28 +69,36 @@ function FormContact() {
                        
                         <Form.Label className="label">Message</Form.Label>
                         <Form.Control className="field" onChange={(e)=>handle(e)} id="message" name="message" value={data.message} as="textarea" rows={5} required></Form.Control>
+                        <div>
+                        <Form.Check className="checkRGPD " label={"En cochant cette case, je consens au traitement de mes données personnelles afin de permettre à LiveEvents de me répondre de la manière la plus pertinente et ce, conformément à la politique de confidentialité dont j’ai pris connaissance et que j’accepte sans réserve." } id={`checkBox`} required></Form.Check>
+                        </div>
                         
-                        <Form.Check className="checkRGPD " label={"En cochant cette case, je consens au traitement de mes données personnelles afin de permettre à J’ai lu de me répondre de la manière la plus pertinente et ce, conformément à la politique de confidentialité dont j’ai pris connaissance et que j’accepte sans réserve." } id={`checkBox`} required></Form.Check>
                         <Link to="/LiveEvents/Confidential" >
-                            <Button className="checkRGPDLink" variant="link">Lire la politique de confidentialité</Button>
+                            <Button className="checkRGPDLink" variant="link" >Lire la politique de confidentialité</Button>
                         </Link>
-
                         
+
+                        <div >
                         <ReCAPTCHA
                             sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
-                            onChange={setValue}                            
-                        />                        
+                            onChange={setValue}
+                            
+                        />
+                        </div>
 
                         <div class="submitbutton ">
                             <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' disabled={!value} >
                                 Envoyer
                             </Button>
-                        </div>                                                 
+                        </div> 
+                        
+                        
                        
                     </Form.Group>
                 </form>
             </div>
-        </>
-    )    
+            </>
+    )
+    
 }
 export default FormContact;
