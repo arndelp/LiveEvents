@@ -123,7 +123,7 @@ return (
 
 
   return (   
-    <APIProvider apiKey= {apiKey} libraries={['marker']}>
+    <APIProvider apiKey= "AIzaSyDyFJl07pOphogij6mYHfO311l_LpvJ85g" libraries={['marker']}>
       <>
       <div className='backgroundMap' style={{overflow: "hidden"}}>        
                                  
@@ -183,7 +183,7 @@ return (
        
         {/* Affichage de la Map */}
       <Map
-        mapId={mapId}
+        mapId="d17a67bf932afd78"
         maxZoom={20}
         minZoom={10}
         defaultZoom={15.477}
