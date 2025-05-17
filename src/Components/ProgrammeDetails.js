@@ -44,10 +44,10 @@ export default function ProgrammeDetails () {
             <Card.Text class="fs-3 lh-sm">
               {style}
             </Card.Text>
-            <Card.Text  class="fs-4 lh-sm">
+            <Card.Text  class="fs-4 lh-sm mt-3">
               {details}
             </Card.Text>
-            <Card.Text  class="fs-5 lh-sm">
+            <Card.Text  class="fs-5 lh-sm mt-3">
               {details2}
             </Card.Text>
 
