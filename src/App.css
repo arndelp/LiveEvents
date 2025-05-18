@@ -244,20 +244,19 @@ ul:hover {
   margin-bottom: 1.1em;    
  }
 
-.BurgerProg {
+ .BurgerProg {
   display: flex;
-  margin-right: 1em;
-  
-
+  justify-content: center;
+  margin-top: 0.5em;
 }
 
 .h2BurgerProg {
-  margin-inline: 0.5em;
+  margin-right: 0.5em;  
 }
 
 .BurgerSituation {
   display: grid;
-  
+  justify-content: center;  
 }
 
 .BurgerSituationMap {
@@ -609,6 +608,14 @@ ul:hover {
   display: flex;
   align-items:  center;
   justify-content: center;
+}
+
+.sponsor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
+  margin-bottom: 2em;
 }
 
 .submitbutton {

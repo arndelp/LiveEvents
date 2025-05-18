@@ -86,6 +86,10 @@ const uniqStyleConcerts = _.uniqBy(concertsFilteredDay, 'style');
 const handleShowResults = () => {
     setShowResults(true);
     setShowLinks(false);
+    window.scrollTo({
+      top: 0,      
+      behavior: "smooth",
+    });
 }
 
 const handleShowLinks = () => {
@@ -104,6 +108,10 @@ const reset = () => {
   allRadioButtons.forEach(value=>value.checked = false);  
   setConcertsFiltered(concerts); 
   setDayChecked(false);
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }
 
 const handleCheckedOther = (e)=>{
