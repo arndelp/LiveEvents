@@ -187,7 +187,7 @@ const ListConcert = ({concerts}) => {
     <>
       <div className="fullpageProg">                
         <div>                       
-          <div class="btn-group BurgerSituation col-6  offset-6 " data-toggle="buttons-checkbox">                                  
+          <div class="btn-group BurgerSituation  " data-toggle="buttons-checkbox">                                  
             <button type="button" class="BurgerProg btn btn-default " onClick={handleShowLinks}>   
               <h2 className="h2BurgerProg">Filtres</h2>                     
               <img src={curseur} alt='burger' ></img>                        

@@ -250,9 +250,7 @@ ul:hover {
   margin-top: 0.5em;
 }
 
-.h2BurgerProg {
-  margin-right: 0.5em;  
-}
+
 
 .BurgerSituation {
   display: grid;
@@ -429,6 +427,10 @@ ul:hover {
 }
 
 /* H */
+
+.h2BurgerProg {
+  margin-right: 0.5em;  
+}
 
 .HautDePage {    
   display: grid;
