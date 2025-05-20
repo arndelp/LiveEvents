@@ -1,6 +1,4 @@
 name: Deploy React App
-env:
-  REACT_APP_GOOGLE_MAP:  ${{ secrets.API_KEY }}
 permissions:
   contents: write
 on:
