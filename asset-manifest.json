@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/LiveEvents/static/css/main.2659b1f6.css",
-    "main.js": "/LiveEvents/static/js/main.8f90bd14.js",
+    "main.js": "/LiveEvents/static/js/main.1eed8c7b.js",
     "static/media/sponsor2.png": "/LiveEvents/static/media/sponsor2.6bdacc4198ee2b62c249.png",
     "static/media/camping.png": "/LiveEvents/static/media/camping.051cef88db635a28367c.png",
     "static/media/cocktail2.png": "/LiveEvents/static/media/cocktail2.a3af51432e0ef2f9e0f1.png",
@@ -13,10 +13,10 @@
     "static/media/entrer.png": "/LiveEvents/static/media/entrer.d1f5473fee01522348f4.png",
     "index.html": "/LiveEvents/index.html",
     "main.2659b1f6.css.map": "/LiveEvents/static/css/main.2659b1f6.css.map",
-    "main.8f90bd14.js.map": "/LiveEvents/static/js/main.8f90bd14.js.map"
+    "main.1eed8c7b.js.map": "/LiveEvents/static/js/main.1eed8c7b.js.map"
   },
   "entrypoints": [
     "static/css/main.2659b1f6.css",
-    "static/js/main.8f90bd14.js"
+    "static/js/main.1eed8c7b.js"
   ]
 }
