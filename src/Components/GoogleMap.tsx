@@ -306,7 +306,7 @@ const handleShowLinks = () => {
          
           <InfoWindow          
             anchor={selectedMarker}
-            pixelOffset={[0, 20]}
+            pixelOffset={[0, 0]}
             onCloseClick={handleInfowindowCloseClick}>
             <h4>{selectedName}</h4>
             <p>{selectedDetails}</p>  
@@ -320,7 +320,7 @@ const handleShowLinks = () => {
          
           <InfoWindow          
             anchor={selectedMarker}
-            pixelOffset={[0, 20]}
+            pixelOffset={[0, 0]}
             onCloseClick={handleInfowindowCloseClick}>
             <h4>{selectedName}</h4>
             <p>{selectedDetails}</p>   
@@ -334,7 +334,7 @@ const handleShowLinks = () => {
          
           <InfoWindow          
             anchor={selectedMarker}
-            pixelOffset={[0, 20]}
+            pixelOffset={[0, 0]}
             onCloseClick={handleInfowindowCloseClick}>
             <h4>{selectedName}</h4>
             <p>{selectedDetails}</p>                      
