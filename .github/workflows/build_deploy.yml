@@ -20,8 +20,12 @@ jobs:
           node-version: 18
       - name: Install
         run: npm install
+        env:
+          REACT_APP_GOOGLE_MAP: ${{ secrets.API_KEY }}
       - name: Build
         run: npm run build
+        env:
+          REACT_APP_GOOGLE_MAP: ${{ secrets.API_KEY }}
       - name: Deploy 🚀
         env:
           REACT_APP_GOOGLE_MAP: ${{ secrets.API_KEY }}
