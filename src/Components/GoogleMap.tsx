@@ -16,6 +16,8 @@ import {
   useAdvancedMarkerRef,
   AdvancedMarkerAnchorPoint
 } from '@vis.gl/react-google-maps';
+import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 
 //Type de l'apiKey en string (ne pas oublier le point d'exclamation final)
@@ -35,6 +37,7 @@ const GoogleMap = () => {
    
 const [markerData, setMarkerData] = useState([]);  
 const [selectedId, setSelectedId] = useState<string | null>(null);
+const [selectedType, setSelectedType] = useState<string | null>(null);
 const [selectedDetails, setSelectedDetails] = useState<string | null>(null);
 const [selectedName, setSelectedName] = useState<string | null>(null); 
 const [selectedMarker, setSelectedMarker] =
@@ -45,10 +48,11 @@ const [showLinks, setShowLinks] = useState(false);
 
 //Lors du click sur le marker, sélection de l'id, des détails et du nom du marker nécessaire à l'affichage de l'infowindow
 const onMarkerClick = useCallback(
-  (name: string | null, details: string | null, id: string | null,   marker ?: google.maps.marker.AdvancedMarkerElement) => {
+  (name: string | null, details: string | null, id: string | null, type: string,  marker ?: google.maps.marker.AdvancedMarkerElement) => {
     setSelectedId(id);
     setSelectedDetails(details);
     setSelectedName(name);
+    setSelectedType(type);
     
     if (marker) {
       setSelectedMarker(marker);       
@@ -66,6 +70,9 @@ const onMapClick = useCallback(() => {
   setSelectedId(null);
   setSelectedMarker(null);
   setInfoWindowShown(false);
+  setSelectedType(null);
+  setSelectedDetails(null);
+  setSelectedName(null);
 }, []);
 //Fermeture de l'infowindow lorsqu'on click sur la croix de fermeture
 const handleInfowindowCloseClick = useCallback(
@@ -183,7 +190,7 @@ const handleShowLinks = () => {
                 <AdvancedMarkerWithRef                  
                   onMarkerClick={(
                     marker: google.maps.marker.AdvancedMarkerElement
-                  ) => onMarkerClick(name,details,id, marker)}                        
+                  ) => onMarkerClick(name,details,id,type, marker)}                        
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
@@ -199,7 +206,7 @@ const handleShowLinks = () => {
                 <AdvancedMarkerWithRef
                   onMarkerClick={(
                     marker: google.maps.marker.AdvancedMarkerElement
-                  ) => onMarkerClick(name,details,id, marker)}                        
+                  ) => onMarkerClick(name,details,id,type, marker)}                        
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
@@ -215,7 +222,7 @@ const handleShowLinks = () => {
                 <AdvancedMarkerWithRef
                   onMarkerClick={(
                     marker: google.maps.marker.AdvancedMarkerElement
-                  ) => onMarkerClick(name,details,id, marker)}                        
+                  ) => onMarkerClick(name,details,id,type, marker)}                        
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
@@ -231,7 +238,7 @@ const handleShowLinks = () => {
                 <AdvancedMarkerWithRef
                   onMarkerClick={(
                     marker: google.maps.marker.AdvancedMarkerElement
-                  ) => onMarkerClick(name,details,id, marker)}                        
+                  ) => onMarkerClick(name,details,id,type, marker)}                        
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
@@ -247,7 +254,7 @@ const handleShowLinks = () => {
                 <AdvancedMarkerWithRef
                   onMarkerClick={(
                     marker: google.maps.marker.AdvancedMarkerElement
-                  ) => onMarkerClick(name,details,id, marker)}                        
+                  ) => onMarkerClick(name,details,id,type, marker)}                        
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
@@ -263,7 +270,7 @@ const handleShowLinks = () => {
                 <AdvancedMarkerWithRef
                   onMarkerClick={(
                     marker: google.maps.marker.AdvancedMarkerElement
-                  ) => onMarkerClick(name,details,id, marker)}                        
+                  ) => onMarkerClick(name,details,id,type, marker)}                        
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
@@ -279,7 +286,7 @@ const handleShowLinks = () => {
                 <AdvancedMarkerWithRef
                   onMarkerClick={(
                     marker: google.maps.marker.AdvancedMarkerElement
-                  ) => onMarkerClick(name,details,id, marker)}                        
+                  ) => onMarkerClick(name,details,id,type, marker)}                        
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
@@ -295,15 +302,44 @@ const handleShowLinks = () => {
           
          {/* condition d'affichage et contenu de l'infowindow  */}
 
-        {infoWindowShown && selectedMarker && (
-          <InfoWindow
+         {infoWindowShown && selectedMarker && selectedType === "scene" && (
+         
+          <InfoWindow          
             anchor={selectedMarker}
-            pixelOffset={[0, 0]}
+            pixelOffset={[0, 20]}
             onCloseClick={handleInfowindowCloseClick}>
             <h4>{selectedName}</h4>
-            <p>{selectedDetails}</p>            
+            <p>{selectedDetails}</p>  
+            <Link to= "/LiveEvents/Programmation">            
+              <Button className="checkRGPDLink" variant="link">Voir le programme</Button>
+            </Link>   
           </InfoWindow>
-        )}
+          )}
+        
+        {infoWindowShown && selectedMarker  && (selectedType === "camping" || selectedType === "parking" || selectedType === "door" ) && (
+         
+          <InfoWindow          
+            anchor={selectedMarker}
+            pixelOffset={[0, 20]}
+            onCloseClick={handleInfowindowCloseClick}>
+            <h4>{selectedName}</h4>
+            <p>{selectedDetails}</p>   
+              <Link to="/LiveEvents/Informations">                  
+                <Button className="checkRGPDLink" variant="link">Voir plus d'informations</Button>
+              </Link>        
+          </InfoWindow>
+          )}
+          
+         {infoWindowShown && selectedMarker  && (selectedType === "bar" || selectedType === "wc" ) && (
+         
+          <InfoWindow          
+            anchor={selectedMarker}
+            pixelOffset={[0, 20]}
+            onCloseClick={handleInfowindowCloseClick}>
+            <h4>{selectedName}</h4>
+            <p>{selectedDetails}</p>                      
+          </InfoWindow>
+          )}
         
       </Map>
     </div>        
@@ -314,7 +350,7 @@ const handleShowLinks = () => {
 };
 
 
-// Définition du marker
+// Définition du marker 
 export const AdvancedMarkerWithRef = (
   props: AdvancedMarkerProps & {
     onMarkerClick: (marker: google.maps.marker.AdvancedMarkerElement) => void;
