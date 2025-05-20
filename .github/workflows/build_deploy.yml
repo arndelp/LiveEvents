@@ -1,4 +1,6 @@
 name: Deploy React App
+env:
+  REACT_APP_GOOGLE_MAP: ${{ secrets.REACT_APP_GOOGLE_MAP }}
 permissions:
   contents: write
 on:
@@ -21,6 +23,8 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy 🚀
+        env:
+          REACT_APP_GOOGLE_MAP: ${{ secrets.REACT_APP_GOOGLE_MAP }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build 

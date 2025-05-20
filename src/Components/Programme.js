@@ -166,7 +166,7 @@ const ListConcert = ({concerts}) => {
       <div  className="cardProg pb-0" >
         {concerts.map((Val) => {                    
           return (                   
-        /* définition des variables name, day, shedule, fullImageUrl, details pour la constante Details*/                         
+        /* définition des variables name, day, shedule, fullImageUrl, details pour la variable Details*/                         
             <Details name={Val.name}
               style={Val.style}
               location={Val.location}

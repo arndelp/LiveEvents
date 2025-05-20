@@ -18,6 +18,9 @@ import {
 } from '@vis.gl/react-google-maps';
 
 
+//Type de l'apiKey en string (ne pas oublier le point d'exclamation final)
+export const apiKey : string = process.env.REACT_APP_GOOGLE_MAP!;
+
 const GoogleMap = () => {
   
   //Récupération des données par l'API en utilisant une promesse
@@ -95,11 +98,11 @@ const handleShowLinks = () => {
   setShowLinks(!showLinks);    
 }
 
-////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
   return (   
-    <APIProvider apiKey= "AIzaSyDyFJl07pOphogij6mYHfO311l_LpvJ85g" libraries={['marker']}>
+    <APIProvider apiKey= {apiKey} libraries={['marker']}>
       <>
       <div className='backgroundMap' style={{overflow: "hidden"}}>        
                                  
