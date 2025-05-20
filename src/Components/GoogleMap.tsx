@@ -330,7 +330,7 @@ const handleShowLinks = () => {
           </InfoWindow>
           )}
           
-         {infoWindowShown && selectedMarker  && (selectedType === "bar" || selectedType === "wc" ) && (
+         {infoWindowShown && selectedMarker  && (selectedType === "bar" || selectedType === "wc" || selectedType === "shop" ) && (
          
           <InfoWindow          
             anchor={selectedMarker}
