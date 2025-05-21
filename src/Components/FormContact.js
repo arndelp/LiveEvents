@@ -59,16 +59,16 @@ function FormContact() {
                 <form onSubmit={(e)=> submit(e)} >
                     <Form.Group className="pb-5">
                         <Form.Label className="label">Nom</Form.Label>
-                        <Form.Control  className="field" onChange={(e)=>handle(e)} id="lastname" name="lastname" value={data.lastname} type="text" required></Form.Control>
+                        <Form.Control  className="field" onChange={(e)=>handle(e)} id="lastname" name="lastname" value={data.lastname} type="text" maxLength={50} required></Form.Control>
 
                         <Form.Label className="label">Prénom</Form.Label>
-                        <Form.Control className="field" onChange={(e)=>handle(e)} id="firstname" name="firstname" value={data.firstname} type="text" required></Form.Control>
+                        <Form.Control className="field" onChange={(e)=>handle(e)} id="firstname" name="firstname" value={data.firstname} type="text" maxLength={50} required></Form.Control>
 
                         <Form.Label className="label">email</Form.Label>
-                        <Form.Control className="field" onChange={(e)=>handle(e)} id="email" name="email" value={data.email} type="email" required></Form.Control>
+                        <Form.Control className="field" onChange={(e)=>handle(e)} id="email" name="email" value={data.email} type="email" maxLength={50} required></Form.Control>
                        
                         <Form.Label className="label">Message</Form.Label>
-                        <Form.Control className="field" onChange={(e)=>handle(e)} id="message" name="message" value={data.message} as="textarea" rows={5} required></Form.Control>
+                        <Form.Control className="field" onChange={(e)=>handle(e)} id="message" name="message" value={data.message} as="textarea" rows={5} maxLength={500} required></Form.Control>
                         <div>
                         <Form.Check className="checkRGPD " label={"En cochant cette case, je consens au traitement de mes données personnelles afin de permettre à LiveEvents de me répondre de la manière la plus pertinente et ce, conformément à la politique de confidentialité dont j’ai pris connaissance et que j’accepte sans réserve." } id={`checkBox`} required></Form.Check>
                         </div>
