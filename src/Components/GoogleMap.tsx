@@ -325,7 +325,7 @@ const handleShowLinks = () => {
             <h4>{selectedName}</h4>
             <p>{selectedDetails}</p>   
               <Link to="/LiveEvents/Informations">                  
-                <Button className="checkRGPDLink" variant="link">Voir plus d'informations</Button>
+                <Button className="checkRGPDLink" variant="link">&lsaquo;&lsaquo;Infos&rsaquo;&rsaquo;</Button>
               </Link>        
           </InfoWindow>
           )}
