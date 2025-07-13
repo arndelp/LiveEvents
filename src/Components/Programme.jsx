@@ -123,16 +123,38 @@ const handleCheckedOther = (e)=>{
 
   // Récupération des données de l'API
   useEffect( ()=>{
+    // création d'un controller d'annulation
+    const controller = new AbortController();
+
     const apiCallConcerts = async () => {
-      const apiCallPromise = await fetch("https://concertslives.store/api/concerts")
-      const apiCallObj = await apiCallPromise.json();
-      setConcerts(apiCallObj)    
-      setConcertsFiltered(apiCallObj)            
-      };
-      apiCallConcerts();          
+
+      try {
+          //attache du signal tu controller à la requête fetch
+        const apiCallPromise = await fetch("https://concertslives.store/api/concerts ", {
+          signal: controller.signal,
+        });
+
+        if (!apiCallPromise.ok) throw new Error("Pas de réponse réseau");
+        const apiCallObj = await apiCallPromise.json();
+        setConcerts(apiCallObj)    
+        setConcertsFiltered(apiCallObj) 
+        } catch (error) {
+          if (error.name === 'AbortError') {
+            console.error('Requête des datas concerts annulée');
+            } else {
+            console.error("Erreur lors de la requête Concert:", error);
+            }
+          }          
+        };
+      apiCallConcerts();
+       // Nettoyage quand le composant se démonte :  
+        return () => { controller.abort();    
+        };    
       }, []);
 
     
+
+     
 // Vignette d'affichage et lien vers détails avec props          
 const Details= ({id ,name, style, location, schedule, day, fullImageUrl, details, details2}) => {    
     return (
@@ -161,24 +183,24 @@ const Details= ({id ,name, style, location, schedule, day, fullImageUrl, details
 const ListConcert = ({concerts}) => {    
   return (
   /*transformation de l'objet item en tableau Val */ 
-  <div class={`  ${showResults ? "d-block" : "d-none"} `}>     
-    <div className="row  g-0 kardProg">
-      <div  className="cardProg pb-0" >
-        {concerts.map((Val) => {                    
-          return (                   
-        /* définition des variables name, day, shedule, fullImageUrl, details pour la variable Details*/                         
-            <Details name={Val.name}
-              style={Val.style}
-              location={Val.location}
-              day={Val.day}
-              schedule={Val.schedule}
-              fullImageUrl={Val.fullImageUrl}
-              details={Val.details} 
-              details2={Val.details2} />             
-          );
-        })}
-      </div>
-    </div>  
+    <div class={`  ${showResults ? "d-block" : "d-none"} `}>     
+      <div className="row  g-0 kardProg">
+        <div  className="cardProg pb-0" >
+          {concerts.map((Val) => {                    
+            return (                   
+          /* définition des variables name, day, shedule, fullImageUrl, details pour la variable Details*/                         
+              <Details name={Val.name}
+                style={Val.style}
+                location={Val.location}
+                day={Val.day}
+                schedule={Val.schedule}
+                fullImageUrl={Val.fullImageUrl}
+                details={Val.details} 
+                details2={Val.details2} />             
+            );
+          })}
+        </div>
+      </div>  
     </div>  
   );
 }    

@@ -11,15 +11,37 @@ export default function ConcertHomePage() {
 /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
   /*utilisation requêtes asynchrones*/
     useEffect(()=>{
+       // création d'un controller d'annulation
+      const controller = new AbortController();
+
       const apiCallConcerts = async () => {
-        const apiCallPromise = await fetch("https://concertslives.store/api/concerts") 
-        const apiCallObj = await apiCallPromise.json();
-        setConcerts(apiCallObj);
+
+        try {
+          const apiCallPromise = await fetch("https://concertslives.store/api/concerts", {
+            signal: controller.signal,
+          });
+
+          if (!apiCallPromise.ok) throw new Error("Pas de réponse réseau");
+          const apiCallObj = await apiCallPromise.json();
+          setConcerts(apiCallObj);
+        }catch (error) {
+          if (error.name === 'AbortError') {
+            console.error('Requête des datas concerts annulée');
+            } else {
+            console.error("Erreur lors de la requête Concert:", error);
+            }
+          }          
         };   
-        apiCallConcerts();           
+        apiCallConcerts();  
+          // Nettoyage quand le composant se démonte :  
+          return () => { controller.abort();    
+        };             
       }, []);
      
 
+
+
+      
   /*on met dans Val les concerts ayant la date et l'horaire  */
   const day1sch1 = concerts.filter(Val =>
     Val.day === "09/07/2027" && Val.schedule === "18:00 - 19:00");  

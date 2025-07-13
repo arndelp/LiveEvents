@@ -1,10 +1,10 @@
-import ConcertHomePage from "../Components/ConcertHomePage.js"
-import GoogleMap from "../Components/GoogleMap.tsx"
-import BannerAlert from "../Components/BannerAlert.js"
+import ConcertHomePage from "../Components/ConcertHomePage.jsx"
+import GoogleMap from "../Components/GoogleMap.js"
+import BannerAlert from "../Components/BannerAlert.jsx"
 import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
 import {  HiShoppingCart } from "react-icons/hi";
-import ScrollToTopButton from "../Components/ScrollToTopButton.js";
+import ScrollToTopButton from "../Components/ScrollToTopButton.jsx";
 
 
 

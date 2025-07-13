@@ -24,16 +24,39 @@ import Button from 'react-bootstrap/Button';
 export const apiKey : string = process.env.REACT_APP_GOOGLE_MAP!;
 
 const GoogleMap = () => {
+
+
+
+
   
   //Récupération des données par l'API en utilisant une promesse
   useEffect( ()=>{
+    const controller = new AbortController();
+
     const apiCallMarkers = async () => {
-       const apiCallPromise = await fetch("https://concertslives.store/api/markers")
-       const apiCallObj = await apiCallPromise.json();
-       setMarkerData(apiCallObj)     
-     };
+      try {
+        const apiCallPromise = await fetch("https://concertslives.store/api/markers", {
+          signal: controller.signal,
+        });
+        if (!apiCallPromise.ok) throw new Error("Pas de connexion réseau");
+
+        const apiCallObj = await apiCallPromise.json();
+        setMarkerData(apiCallObj);     
+      } catch (error) {
+        if (error instanceof Error) {
+        console.error("Requête des datas POI annulée");
+      } else {
+        console.error("Erreur lors de la requête POI:", error);
+        }
+      }
+    };
      apiCallMarkers();   
-}, []);
+  }, []);
+
+
+
+
+
    
 const [markerData, setMarkerData] = useState([]);  
 const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -349,7 +372,6 @@ const handleShowLinks = () => {
   );  
 };
 
-
 // Définition du marker 
 export const AdvancedMarkerWithRef = (
   props: AdvancedMarkerProps & {
@@ -372,8 +394,6 @@ return (
   </AdvancedMarker>
   );
 };
-
-
 
 export default GoogleMap;
 

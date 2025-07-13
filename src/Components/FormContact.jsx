@@ -19,35 +19,42 @@ function FormContact() {
         email: "",
         message:""         
     })
-
+// état du recaptcha
     const [value, setValue] = useState(null)
-    //fonction affichage état du recaptcha
+    
     
 
     //fonction submit utilisant le client HTTP Axios, permet le POST des data à l'url de l'api
     function submit(e){
-        e.preventDefault(); //empêche la soumission du formulaire        
+        e.preventDefault(); //empêche la soumission du formulaire   
         Axios.post(url,{
             lastname: data.lastname,
             firstname: data.firstname,
             email: data.email,
             message: data.message
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',                
+            }
         })
         .then(res=>{
             console.log(res.data)
+            navigate('/LiveEvents/Submitted')
         })
-        navigate('/LiveEvents/Submitted')
-    }
+        .catch(err => {
+            console.error("Erreur lors de l'envoi :", err);
+            alert("Une erreur s'est produite lors de l'envoi du message.");
+        });        
+    }   
 
-    //fonction handle: Récupération des données entrées par l'utilisateur
+     //fonction handle: Récupération des données entrées par l'utilisateur
     function handle(e){
         const newdata={...data }
         newdata[e.target.id] = e.target.value
         setData(newdata)
         console.log(newdata)
     }
-
-    
 
 
     return (
@@ -70,7 +77,7 @@ function FormContact() {
                         <Form.Label className="label">Message</Form.Label>
                         <Form.Control className="field" onChange={(e)=>handle(e)} id="message" name="message" value={data.message} as="textarea" rows={5} maxLength={500} required></Form.Control>
                         <div>
-                        <Form.Check className="checkRGPD " label={"En cochant cette case, je consens au traitement de mes données personnelles afin de permettre à LiveEvents de me répondre de la manière la plus pertinente et ce, conformément à la politique de confidentialité dont j’ai pris connaissance et que j’accepte sans réserve." } id={`checkBox`} required></Form.Check>
+                            <Form.Check className="checkRGPD " label={"En cochant cette case, je consens au traitement de mes données personnelles afin de permettre à LiveEvents de me répondre de la manière la plus pertinente et ce, conformément à la politique de confidentialité dont j’ai pris connaissance et que j’accepte sans réserve." } id={`checkBox`} required></Form.Check>
                         </div>
                         
                         <Link to="/LiveEvents/Confidential" >
@@ -79,21 +86,18 @@ function FormContact() {
                         
 
                         <div >
-                        <ReCAPTCHA
-                            sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
-                            onChange={setValue}
-                            
-                        />
+                            <ReCAPTCHA
+                                sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
+                                onChange={setValue}
+                                
+                            />
                         </div>
 
                         <div class="submitbutton ">
                             <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' disabled={!value} >
                                 Envoyer
                             </Button>
-                        </div> 
-                        
-                        
-                       
+                        </div>                  
                     </Form.Group>
                 </form>
             </div>

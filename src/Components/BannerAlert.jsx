@@ -12,16 +12,37 @@ export default function BannerAlert() {
 
   const [visible, setVisible] = useState(false)
 
-   /*envoi une requête et récupération des données dans la base de données puis les stockent dans alerts avec setAlertss*/
-   useEffect(()=>{
-    const apiCallAlerts = async () => {
-      const apiCallPromise = await fetch("https://concertslives.store/api/alerts") 
-      const apiCallObj = await  apiCallPromise.json();
-      setAlerts(apiCallObj)
-      };         
-      apiCallAlerts();
-      setVisible(true)
-    }, []);
+
+
+
+
+     /*envoi une requête et récupération des données dans la base de données puis les stockent dans alerts avec setAlertss*/
+  useEffect(()=>{
+     // création d'un controller d'annulation
+      const controller = new AbortController();
+      
+      const apiCallAlerts = async () => {
+        try {
+          const apiCallPromise = await fetch("https://concertslives.store/api/alerts", {
+                signal: controller.signal,
+              });
+          const apiCallObj = await  apiCallPromise.json();
+        setAlerts(apiCallObj)
+        }catch (error) {
+        if (error.name === 'AbortError') {
+          console.error("Requête des datas d'Alert annulée");
+        } else {
+          console.error("Erreur lors de la requête Alert:", error);
+        }
+      }
+    };         
+    apiCallAlerts();
+    setVisible(true)
+  }, []);
+
+
+
+
 
 /* Création du caroussel et map des données*/
 

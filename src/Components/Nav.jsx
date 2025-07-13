@@ -35,7 +35,7 @@ function Nav() {
                     <li className="navbar__item">
                         <Link to="/LiveEvents/Billetterie">
                             <h3>Billetterie</h3>
-                            </Link>
+                        </Link>
                     </li>   
                     <li className="navbar__item">
                         <Link to="/LiveEvents/Informations">
@@ -43,9 +43,9 @@ function Nav() {
                         </Link> 
                     </li>        
                     <li className="navbar__item">
-                    <Link to="/LiveEvents/Plan">
-                        <h3>Plan</h3>
-                    </Link>
+                        <Link to="/LiveEvents/Plan">
+                            <h3>Plan</h3>
+                        </Link>
                     </li>    
                     <li className="navbar__item">
                         <Link to="/LiveEvents/Contact">
@@ -80,40 +80,60 @@ function Nav() {
             </div>
             
         
-            <div class={`row d-lg-none ${showLinks ? "d-block" : "d-none"} `}>                     
+           <div className={`row d-lg-none ${showLinks ? "d-block" : "d-none"} `}>                           
                 <ul className=" d-block d-lg-none mobileMenu">                   
                     <li className="navbar__item">
-                        <Link to="/LiveEvents/">
-                            <a href='/' className="navbar__link nbrArticle" onClick={handleShowLinks}>Accueil</a>
+                        <Link 
+                            to="/LiveEvents/"
+                            className="navbar__link nbrArticle"
+                            onClick={handleShowLinks}
+                            >
+                                Accueil
                         </Link>
                     </li>
                     <li className="navbar__item">
-                        <Link to="/LiveEvents/Programmation">
-                            <a href='/' className="navbar__link nbrArticle" onClick={handleShowLinks}>Programmation</a>
+                        <Link 
+                            to="/LiveEvents/Programmation"
+                            className="navbar__link nbrArticle" 
+                            onClick={handleShowLinks}
+                            >
+                                Programmation
                         </Link>
                     </li>
                     <li className="navbar__item">
-                        <Link to="/LiveEvents/Billetterie">
-                            <a href='/'  className="navbar__link nbrArticle" onClick={handleShowLinks}>Billetterie</a>
+                        <Link to="/LiveEvents/Billetterie"
+                            className="navbar__link nbrArticle" 
+                            onClick={handleShowLinks}
+                            >
+                                Billetterie
                         </Link>
                     </li>   
                     <li className="navbar__item">
-                        <Link to="/LiveEvents/Informations">
-                            <a href='/' className="navbar__link nbrArticle" onClick={handleShowLinks}>Informations</a>
+                        <Link to="/LiveEvents/Informations"
+                            className="navbar__link nbrArticle" 
+                            onClick={handleShowLinks}
+                            >
+                                Informations
                         </Link>
                     </li>        
                     <li className="navbar__item">
-                        <Link to="/LiveEvents/Plan">
-                            <a href='/' className="navbar__link nbrArticle" onClick={handleShowLinks}>Plan</a>
-                            </Link>
+                        <Link to="/LiveEvents/Plan"
+                            className="navbar__link nbrArticle"
+                            onClick={handleShowLinks}
+                            >
+                                Plan
+                        </Link>
                     </li>    
                     <li className="navbar__item">
-                        <Link to="/LiveEvents/Contact">
-                            <a href='/'  className="navbar__link nbrArticle" onClick={handleShowLinks}>Contact</a>
+                        <Link to="/LiveEvents/Contact"
+                            className="navbar__link nbrArticle"
+                            onClick={handleShowLinks}
+                            >
+                                Contact
                         </Link>
                     </li>                    
                 </ul>
-            </div>               
+            </div>
         </nav>            
     )
 }      
