@@ -1,4 +1,4 @@
-import GoogleMap from "../Components/GoogleMap.jsx";
+import GoogleMap from "../Components/GoogleMap.tsx";
 
 
 

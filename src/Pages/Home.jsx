@@ -1,5 +1,5 @@
 import ConcertHomePage from "../Components/ConcertHomePage.jsx"
-import GoogleMap from "../Components/GoogleMap.jsx"
+import GoogleMap from "../Components/GoogleMap.tsx"
 import BannerAlert from "../Components/BannerAlert.jsx"
 import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
