@@ -1,5 +1,5 @@
 import ConcertHomePage from "../Components/ConcertHomePage.jsx"
-import GoogleMap from "../Components/GoogleMap.tsx"
+//import GoogleMap from "../Components/GoogleMap.tsx"
 import BannerAlert from "../Components/BannerAlert.jsx"
 import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
@@ -51,7 +51,7 @@ function Home() {
          
 
           <Billet />
-
+{/*
           <Link to="/LiveEvents/Plan">
             
             <div className="d-none d-lg-block GmapMini  col-8 offset-2  ">
@@ -64,7 +64,7 @@ function Home() {
            
             
           </Link>  
-
+*/}
         </div>
         <div className="marginMap">
         <ScrollToTopButton/>
