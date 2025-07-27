@@ -42,10 +42,7 @@ function FormContact() {
             console.log(res.data)
             navigate('/LiveEvents/Submitted')
         })
-        .catch(err => {
-            console.error("Erreur lors de l'envoi :", err);
-            alert("Une erreur s'est produite lors de l'envoi du message.");
-        });        
+        navigate('/LiveEvents/Submitted')    
     }   
 
      //fonction handle: Récupération des données entrées par l'utilisateur
@@ -88,8 +85,7 @@ function FormContact() {
                         <div >
                             <ReCAPTCHA
                                 sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
-                                onChange={setValue}
-                                
+                                onChange={setValue}                                
                             />
                         </div>
 
