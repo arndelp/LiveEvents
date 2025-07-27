@@ -34,15 +34,18 @@ function FormContact() {
             message: data.message
         }, {
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',                
+                'Content-Type': 'application/ld+json',
+                'Accept': 'application/ld+json',                
             }
         })
         .then(res=>{
             console.log(res.data)
             navigate('/LiveEvents/Submitted')
         })
-        navigate('/LiveEvents/Submitted')    
+        .catch(err => {
+            console.error("Erreur lors de l'envoi :", err);
+            alert("Une erreur s'est produite lors de l'envoi du message.");
+        });        
     }   
 
      //fonction handle: Récupération des données entrées par l'utilisateur
