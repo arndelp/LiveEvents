@@ -20,7 +20,7 @@ function FormContact() {
         message:"Coucou"         
     })
 // état du recaptcha
-    const [value, setValue] = useState(null)
+   // const [value, setValue] = useState(null)
     
     
 
@@ -93,7 +93,7 @@ function FormContact() {
                         </div>
 */}
                         <div class="submitbutton ">
-                            <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' disabled={!value} >
+                            <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' /*disabled={!value}*/ >
                                 Envoyer
                             </Button>
                         </div>                  
