@@ -84,14 +84,14 @@ function FormContact() {
                             <Button className="checkRGPDLink" variant="link" >Lire la politique de confidentialité</Button>
                         </Link>
                         
-
+{/*}
                         <div >
                             <ReCAPTCHA
                                 sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
                                 onChange={setValue}                                
                             />
                         </div>
-
+*/}
                         <div class="submitbutton ">
                             <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' disabled={!value} >
                                 Envoyer
