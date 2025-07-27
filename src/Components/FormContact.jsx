@@ -44,7 +44,12 @@ function FormContact() {
         })
         .catch(err => {
             console.error("Erreur lors de l'envoi :", err);
-            alert("Une erreur s'est produite lors de l'envoi du message.");
+            if (err.response) {
+                console.error("Statut HTTP :", err.response.status);
+                console.error("Données de la réponse :", err.response.data);
+            } else {
+                console.error("Pas de réponse serveur");
+            }
         });        
     }   
 
