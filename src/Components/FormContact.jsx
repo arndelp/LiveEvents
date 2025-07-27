@@ -34,8 +34,8 @@ function FormContact() {
             message: data.message
         }, {
             headers: {
-                'Content-Type': 'application/ld+json',
-                'Accept': 'application/ld+json',                
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',                
             }
         })
         .then(res=>{
