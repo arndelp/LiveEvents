@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
-//import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 function FormContact() {
@@ -14,13 +14,13 @@ function FormContact() {
     const url ="https://concertslives.store/api/contacts" 
 
     const [data, setData] =useState({
-        lastname: "DELPIERRE",
-        firstname: "Arnaud",
-        email: "arndelp80@gmail.com",
-        message:"Coucou"         
+        lastname: "",
+        firstname: "",
+        email: "",
+        message:""         
     })
 // état du recaptcha
-   // const [value, setValue] = useState(null)
+   const [value, setValue] = useState(null)
     
     
 
@@ -84,16 +84,16 @@ function FormContact() {
                             <Button className="checkRGPDLink" variant="link" >Lire la politique de confidentialité</Button>
                         </Link>
                         
-{/*}
+
                         <div >
                             <ReCAPTCHA
                                 sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
                                 onChange={setValue}                                
                             />
                         </div>
-*/}
+
                         <div class="submitbutton ">
-                            <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' /*disabled={!value}*/ >
+                            <Button variant="secondary" size="lg" className="boutonSubmit" type='submit' disabled={!value} >
                                 Envoyer
                             </Button>
                         </div>                  
