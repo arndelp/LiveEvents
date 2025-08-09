@@ -1,11 +1,4 @@
 import React, {useCallback, useState, useEffect} from 'react';
-import scene from "../assets/scene.png";
-import cocktail2 from "../assets/cocktail2.png";
-import parking from "../assets/parking.png";
-import entrer from "../assets/entrer.png";
-import boutique from "../assets/boutique.png";
-import toilettes from "../assets/toilettes.png";
-import camping from "../assets/camping.png";
 import curseur from '../assets/parametres-curseurs.png';
 import {
   AdvancedMarker,
