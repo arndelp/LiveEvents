@@ -8,6 +8,9 @@ export default function ConcertHomePage() {
 
   /*concerts est initialement vide*/
   const [concerts, setConcerts] = useState([])
+
+  const [errorMessage, setErrorMessage] = useState(null); //message d'erreur du fetch
+
 /*envoi une requête et récupération des données dans 'dataConcerts.json' puis les stockent dans concerts avec setConcerts*/
   /*utilisation requêtes asynchrones*/
     useEffect(()=>{
@@ -17,8 +20,9 @@ export default function ConcertHomePage() {
       const apiCallConcerts = async () => {
 
         try {
-          const apiCallPromise = await fetch("https://concertslives.store/api/concerts", {
-            signal: controller.signal,
+          const apiCallPromise = await fetch("https://concertslives.store/api/concerts", 
+          {
+            signal: controller.signal,   // on passe l'objet controller avec la propriété signal au fetch, afin de pouvoir arrêter la requête plus tard avec controller.abort() 
           });
 
           if (!apiCallPromise.ok) throw new Error("Pas de réponse réseau");
@@ -26,10 +30,11 @@ export default function ConcertHomePage() {
           setConcerts(apiCallObj);
         }catch (error) {
           if (error.name === 'AbortError') {
-            console.error('Requête des datas concerts annulée');
-            } else {
-            console.error("Erreur lors de la requête Concert:", error);
+            // Requête annulée (pas grave)
+            return;
             }
+            // Message pour l'utilisateur
+            setErrorMessage("Impossible de charger la liste des concerts. Veuillez réessayer plus tard.");
           }          
         };   
         apiCallConcerts();  
@@ -76,6 +81,7 @@ export default function ConcertHomePage() {
 return ( 
   <div className='row  g-0 '>
     <div className="pb-0 mt-8 " data-testId="concertHome">   
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}  
       <ul >{listDay1Sch1}</ul>
     </div>
   </div>

@@ -35,19 +35,24 @@ const GoogleMap = () => {
 
     const apiCallMarkers = async () => {
       try {
-        const apiCallPromise = await fetch("https://concertslives.store/api/markers", {
-          signal: controller.signal,
-        });
-        if (!apiCallPromise.ok) throw new Error("Pas de connexion réseau");
+        const apiCallPromise = await fetch("https://concertslives.store/api/markers", 
+          {
+            signal: controller.signal,
+          }
+        );
+        if (!apiCallPromise.ok) 
+          throw new Error("Pas de connexion réseau");
 
         const apiCallObj = await apiCallPromise.json();
         setMarkerData(apiCallObj);     
       } catch (error) {
-        if (error instanceof Error) {
-        console.error("Requête des datas POI annulée");
-      } else {
-        console.error("Erreur lors de la requête POI:", error);
-        }
+        if (error instanceof Error) {    // pour typescript
+          if (error.name=== 'AbortError') {
+          // Requête annulée
+          return;
+          }
+          setErrorMessage("Impossible de charger les POI. Veuillez réessayer plus tard.");
+        }       
       }
     };
      apiCallMarkers();   
@@ -67,7 +72,7 @@ const [selectedMarker, setSelectedMarker] =
   useState<google.maps.marker.AdvancedMarkerElement | null>(null);
 const [infoWindowShown, setInfoWindowShown] = useState(false);
 const [showLinks, setShowLinks] = useState(false); 
- 
+const [errorMessage, setErrorMessage] = useState<string | null>(null); // état pour l'erreur du fetch
 
 //Lors du click sur le marker, sélection de l'id, des détails et du nom du marker nécessaire à l'affichage de l'infowindow
 const onMarkerClick = useCallback(
@@ -149,47 +154,54 @@ const handleShowLinks = () => {
           <div className='d-none d-lg-block'>
             <div className='ico'> 
               <input type="checkbox" checked={sceneChecked} onChange={handleChangeScene}/>
-              <img src={scene} width="35em" height= "35em" alt="Scène"/>
+              <img src={`${process.env.PUBLIC_URL}/assets/POI/scene.png`} width="35em" height= "35em" alt="Scène"/>
               <input type="checkbox" checked={barChecked} onChange={handleChangeBar}/>
-              <img src={cocktail2} width="35em" height= "35em" alt="bar"/>
+              <img src={`${process.env.PUBLIC_URL}/assets/POI/cocktail2.png`} width="35em" height= "35em" alt="bar"/>
               <input type="checkbox" checked={parkChecked} onChange={handleChangePark}/>
-              <img src={parking} width="35em" height= "35em" alt="parking"/>
+              <img src={`${process.env.PUBLIC_URL}/assets/POI/parking.png`} width="35em" height= "35em" alt="parking"/>
               <input type="checkbox" checked={exitChecked} onChange={handleChangeExit}/>
-              <img src={entrer} width="35em" height= "35em" alt="parking"/>
+              <img src={`${process.env.PUBLIC_URL}/assets/POI/entrer.png`} width="35em" height= "35em" alt="exit"/>
               <input type="checkbox" checked={shopChecked} onChange={handleChangeShop}/>
-              <img src={boutique} width="35em" height= "35em" alt="shop"/>
+              <img src={`${process.env.PUBLIC_URL}/assets/POI/boutique.png`} width="35em" height= "35em" alt="shop"/>
               <input type="checkbox" checked={wcChecked} onChange={handleChangeWc}/>
-              <img src={toilettes} width="35em" height= "35em" alt="wc"/>
+              <img src={`${process.env.PUBLIC_URL}/assets/POI/toilettes.png`} width="35em" height= "35em" alt="wc"/>
               <input type="checkbox" checked={campChecked} onChange={handleChangeCamp}/>
-              <img src={camping} width="35em" height= "35em" alt="camping"/>
+              <img src={`${process.env.PUBLIC_URL}/assets/POI/camping.png`} width="35em" height= "35em" alt="camping"/>
             </div>
           </div> 
           <div className='d-block d-lg-none'>
             <div > 
               <div className='icoMobile'>
                 <input type="checkbox" checked={sceneChecked} onChange={handleChangeScene}/>
-                <img src={scene} width="35em" height= "35em" alt="Scène"/>
+                <img src={`${process.env.PUBLIC_URL}/assets/POI/scene.png`} width="35em" height= "35em" alt="Scène"/>
                 <input type="checkbox" checked={barChecked} onChange={handleChangeBar}/>
-                <img src={cocktail2} width="35em" height= "35em" alt="bar"/>
+                <img src={`${process.env.PUBLIC_URL}/assets/POI/cocktail2.png`} width="35em" height= "35em" alt="bar"/>
                 </div>
                 <div className='icoMobile'>
                 <input type="checkbox" checked={parkChecked} onChange={handleChangePark}/>
-                <img src={parking} width="35em" height= "35em" alt="parking"/>   
+                <img src={`${process.env.PUBLIC_URL}/assets/POI/parking.png`} width="35em" height= "35em" alt="parking"/>   
                 <input type="checkbox" checked={exitChecked} onChange={handleChangeExit}/>
-                <img src={entrer} width="35em" height= "35em" alt="parking"/>
+                <img src={`${process.env.PUBLIC_URL}/assets/POI/entrer.png`} width="35em" height= "35em" alt="exit"/>
                 </div>
                 <div className='icoMobile'>
                 <input type="checkbox" checked={shopChecked} onChange={handleChangeShop}/>
-                <img src={boutique} width="35em" height= "35em" alt="shop"/>
+                <img src={`${process.env.PUBLIC_URL}/assets/POI/boutique.png`} width="35em" height= "35em" alt="shop"/>
                 <input type="checkbox" checked={wcChecked} onChange={handleChangeWc}/>
-                <img src={toilettes} width="35em" height= "35em" alt="wc"/>
+                <img src={`${process.env.PUBLIC_URL}/assets/POI/toilettes.png`} width="35em" height= "35em" alt="wc"/>
                 <input type="checkbox" checked={campChecked} onChange={handleChangeCamp}/>
-                <img src={camping} width="35em" height= "35em" alt="camping"/>
+                <img src={`${process.env.PUBLIC_URL}/assets/POI/camping.png`} width="35em" height= "35em" alt="camping"/>
               </div>
             </div>
           </div>
         </div>   
-       
+
+        { /* Affichage de l'erreur du fetch si nécessaire */}
+        {errorMessage && (
+          <div style={{ color: "red", textAlign: "center", margin: "1em" }}>
+            {errorMessage}
+          </div>
+        )}
+
         {/* Affichage de la Map */}
       <Map
         mapId="d17a67bf932afd78"
@@ -217,7 +229,7 @@ const handleShowLinks = () => {
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
-                  <img src={scene} width={45} height={45} alt="scene"/>                                     
+                  <img src={`${process.env.PUBLIC_URL}/assets/POI/scene.png`} width={45} height={45} alt="scene"/>                                     
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
@@ -233,7 +245,7 @@ const handleShowLinks = () => {
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
-                  <img src={cocktail2} width={40} height={40} alt="bar"/>                  
+                  <img src={`${process.env.PUBLIC_URL}/assets/POI/cocktail2.png`} width={40} height={40} alt="bar"/>                  
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
@@ -249,7 +261,7 @@ const handleShowLinks = () => {
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
-                  <img src={parking} width={30} height={30} alt="parking"/>                  
+                  <img src={`${process.env.PUBLIC_URL}/assets/POI/parking.png`} width={30} height={30} alt="parking"/>                  
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
@@ -265,7 +277,7 @@ const handleShowLinks = () => {
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
-                  <img src={entrer} width={30} height={30} alt="exit"/>                  
+                  <img src={`${process.env.PUBLIC_URL}/assets/POI/entrer.png`} width={30} height={30} alt="exit"/>                  
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
@@ -281,7 +293,7 @@ const handleShowLinks = () => {
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
-                  <img src={boutique} width={30} height={30} alt="shop"/>                  
+                  <img src={`${process.env.PUBLIC_URL}/assets/POI/boutique.png`} width={30} height={30} alt="shop"/>                  
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
@@ -297,7 +309,7 @@ const handleShowLinks = () => {
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
-                  <img src={toilettes} width={30} height={30} alt="wc"/>                  
+                  <img src={`${process.env.PUBLIC_URL}/assets/POI/toilettes.png`} width={30} height={30} alt="wc"/>                  
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );
@@ -313,7 +325,7 @@ const handleShowLinks = () => {
                   position={{lat: parseFloat( latitude ),lng: parseFloat( longitude )}}
                   anchorPoint={AdvancedMarkerAnchorPoint['CENTER']}
                   zIndex={zIndex}>
-                  <img src={camping} width={30} height={30} alt="wc"/>                  
+                  <img src={`${process.env.PUBLIC_URL}/assets/POI/camping.png`} width={30} height={30} alt="wc"/>                  
                 </AdvancedMarkerWithRef>
               </React.Fragment>
             );

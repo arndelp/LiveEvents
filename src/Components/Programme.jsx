@@ -20,6 +20,7 @@ const [concertsFilteredDay, setConcertsFilteredDay] = useState([]);
 const [dayChecked, setDayChecked] =React.useState(false);
 const [showLinks, setShowLinks] = useState(false);
 const [showResults, setShowResults] = useState(true);
+const [errorMessage, setErrorMessage] = useState(null); //message d'erreur du fetch
 
 
 
@@ -124,30 +125,36 @@ const handleCheckedOther = (e)=>{
   // Récupération des données de l'API
   useEffect( ()=>{
     // création d'un controller d'annulation
-    const controller = new AbortController();
+    const controller = new AbortController(); //API JavaScript native qui sert à annuler une requête réseau
 
     const apiCallConcerts = async () => {
 
       try {
-          //attache du signal tu controller à la requête fetch
-        const apiCallPromise = await fetch("https://concertslives.store/api/concerts ", {
-          signal: controller.signal,
-        });
+          //attache du signal du controller à la requête fetch
+        const apiCallPromise = await fetch("https://concertslives.store/api/concerts ", 
+          {
+            signal: controller.signal,    // on passe l'objet controller avec la propriété signal au fetch, afin de pouvoir arrêter la requête plus tard avec controller.abort() 
+          }
+        );
 
-        if (!apiCallPromise.ok) throw new Error("Pas de réponse réseau");
+        if (!apiCallPromise.ok) 
+          throw new Error("Pas de réponse réseau");
+
         const apiCallObj = await apiCallPromise.json();
         setConcerts(apiCallObj)    
         setConcertsFiltered(apiCallObj) 
+
         } catch (error) {
           if (error.name === 'AbortError') {
-            console.error('Requête des datas concerts annulée');
-            } else {
-            console.error("Erreur lors de la requête Concert:", error);
+            // Requête annulée (pas grave)
+            return;
             }
+            // Message pour l'utilisateur
+            setErrorMessage("Impossible de charger la liste des concerts. Veuillez réessayer plus tard.");
           }          
         };
       apiCallConcerts();
-       // Nettoyage quand le composant se démonte :  
+       // Nettoyage : on annule la requête si le composant se démonte
         return () => { controller.abort();    
         };    
       }, []);
@@ -186,6 +193,7 @@ const ListConcert = ({concerts}) => {
     <div class={`  ${showResults ? "d-block" : "d-none"} `}>     
       <div className="row  g-0 kardProg">
         <div  className="cardProg pb-0" >
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}  
           {concerts.map((Val) => {                    
             return (                   
           /* définition des variables name, day, shedule, fullImageUrl, details pour la variable Details*/                         
