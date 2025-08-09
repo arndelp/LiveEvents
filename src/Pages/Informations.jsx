@@ -1,7 +1,18 @@
-import sponsor2 from "../assets/sponsor2.png";
+
 
 
 function Informations () {
+    const pub = [];
+
+        for (let i=1; i<=13; i++) {
+            pub.push(i)
+        }              
+        const partenaires = pub.map(i =>                                        
+            
+                    <div className="sponsor">
+                    <img key={i} src={`${process.env.PUBLIC_URL}/assets/partenaires/pub${i}.png`} alt={`pub${i}`} className=" pubLogo" />
+                    </div>         
+        )
 
     return (
         <>
@@ -45,12 +56,7 @@ function Informations () {
 
             </p>
             
-            <div className="sponsor">
-                
-                <div className="row">
-                    <img src={sponsor2} alt="sponsors" ></img>
-                </div>
-            </div>  
+             {partenaires}
                 
 
         </div>
