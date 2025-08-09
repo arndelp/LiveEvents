@@ -1,5 +1,4 @@
 import React, {useCallback, useState, useEffect} from 'react';
-import curseur from '../assets/parametres-curseurs.png';
 import {
   AdvancedMarker,
   AdvancedMarkerProps,
@@ -136,7 +135,7 @@ const handleShowLinks = () => {
                                  
         <div className="btn-group BurgerSituationMap" data-toggle="buttons-checkbox">                                  
           <button type="button" className="BurgerProg btn btn-default " onClick={handleShowLinks}>                        
-            <img src={curseur} alt='burger' ></img>                        
+            <img src={`${process.env.PUBLIC_URL}/assets/parametres-curseurs.png`} alt='burger' ></img>                        
           </button>                    
         </div>      
         

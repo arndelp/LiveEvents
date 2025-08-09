@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect} from "react";
 import { Link} from "react-router-dom";
-import curseur from "../assets/parametres-curseurs.png";
 import { Button } from "flowbite-react";
 import ScrollToTopButton from "./ScrollToTopButton";
 
@@ -220,7 +219,7 @@ const ListConcert = ({concerts}) => {
           <div class="btn-group BurgerSituation  " data-toggle="buttons-checkbox">                                  
             <button type="button" class="BurgerProg btn btn-default " onClick={handleShowLinks}>   
               <h2 className="h2BurgerProg">Filtres</h2>                     
-              <img src={curseur} alt='burger' ></img>                        
+              <img src={`${process.env.PUBLIC_URL}/assets/parametres-curseurs.png`} alt='curseur' ></img>                        
             </button>                    
           </div>                    
         </div>            

@@ -1,8 +1,7 @@
 import React from 'react';
 import {useState} from "react";
 import { Link } from "react-router-dom";
-import logo from '../assets/logo.svg';
-import burger from '../assets/burger.png';
+
 /*Fonction l'affichage des liens vers les autres pages dans le header//Burger pour la version mobile */
 
 function Nav() {
@@ -18,7 +17,7 @@ function Nav() {
             <div className="logo col-2 d-none d-lg-block ">
                 <div >
                     <Link to="/LiveEvents/">
-                        <img src={logo} alt="logo" className="logoSize" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className="logoSize" />
                     </Link>
                 </div>   
             </div>
@@ -61,7 +60,7 @@ function Nav() {
                 <div class=" col d-block d-lg-none mt-4">                       
                     <div class="btn-group" data-toggle="buttons-checkbox">                        
                         <button type="button" class="Burger btn btn-default " onClick={handleShowLinks}>                            
-                            <img src={burger} alt='burger' ></img>                            
+                            <img src={`${process.env.PUBLIC_URL}/assets/burger.png`} alt='burger' ></img>                            
                         </button>                        
                     </div>                    
                 </div>
@@ -73,7 +72,7 @@ function Nav() {
                 <div class="col-3 pr-0 d-block d-lg-none">
                 <div className="headLogoM">
                     <Link to="/LiveEvents/">
-                        <img src={logo} alt="logo"  />
+                        <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo"  />
                     </Link>
                     </div>
                 </div>                  
