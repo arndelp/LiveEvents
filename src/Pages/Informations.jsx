@@ -6,6 +6,10 @@ function Informations () {
 
     return (
         <>
+
+        <div className="contacth1">
+            <h1> Informations </h1>
+        </div>
        
         <div className="textInfo">
             <h4>Horaires<br/></h4>
@@ -47,6 +51,9 @@ function Informations () {
 
             </p>            
            
+            <div className="contacth1">
+                <h1> Nos partenaires </h1>
+            </div>
             
             <Sponsor/>                   
                 
