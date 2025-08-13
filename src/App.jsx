@@ -15,11 +15,6 @@ import ScrollToTop from "./Components/ScrollToTop";
 
 
 
-
-
-
-
-
 function App() {
   return (    
   <BrowserRouter>

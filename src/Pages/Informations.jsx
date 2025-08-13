@@ -1,21 +1,12 @@
-
+import React from 'react';
+import Sponsor from "../Components/Sponsor";
 
 
 function Informations () {
-    const pub = [];
-
-        for (let i=1; i<=13; i++) {
-            pub.push(i)
-        }              
-        const partenaires = pub.map(i =>                                        
-            
-                    <div className="sponsor">
-                    <img key={i} src={`${process.env.PUBLIC_URL}/assets/partenaires/pub${i}.png`} alt={`pub${i}`} className=" pubLogo" />
-                    </div>         
-        )
 
     return (
         <>
+       
         <div className="textInfo">
             <h4>Horaires<br/></h4>
             <p>Ouverture des portes le vendredi 09/07/2027 17:00<br/></p>
@@ -54,9 +45,10 @@ function Informations () {
 
             Les caravanes et habitats motorisés sont interdits.
 
-            </p>
+            </p>            
+           
             
-             {partenaires}
+            <Sponsor/>                   
                 
 
         </div>
