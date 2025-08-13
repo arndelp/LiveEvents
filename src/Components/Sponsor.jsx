@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from "react-router-dom";
+
 
 const Sponsor = () => {
 
@@ -37,7 +39,9 @@ const Sponsor = () => {
 
         const partenaires = pub.map(item =>  
         <div className="sponsor">
-            <img key={item.id} src={item.fullImageUrl} alt={item.name} className=" pubLogo" />
+            <Link to= {item.link}>
+                <img key={item.id} src={item.fullImageUrl} alt={item.name} className=" pubLogo" />
+            </Link>
         </div>  
     )
     
