@@ -37,13 +37,7 @@ const Sponsor = () => {
                 };    
         }, []);
 
-        const partenaires = pub.map(item =>  
-        <div className="sponsor">
-            <Link to= {item.link}>
-                <img key={item.id} src={item.fullImageUrl} alt={item.name} className=" pubLogo" />
-            </Link>
-        </div>  
-    )
+       
     
     return (
         <>
@@ -52,10 +46,15 @@ const Sponsor = () => {
                 {errorMessage}
             </div>
         )}
-        <div>      
-            {partenaires}
+        <div  className="sponsor ">      
+           { pub.map(item => (    
+       
+            <Link  key={item.id} to= {item.link}>
+                <img key={item.id} src={item.fullImageUrl} alt={item.name}  />
+            </Link>
+        ))}
         </div>
-        </> 
+        </>  
     )
 
 }

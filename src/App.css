@@ -592,27 +592,6 @@ ul:hover {
 
 
 
-.pubLogo {
-  display: flex;
-  min-width: 15em;
-  max-width: 20em;
-  margin-inline: 2em;
-  margin-bottom: 2em;
-  margin-top: 2em;
-  max-height: 11em;  
-}
-
-@media (max-width: 900px) {
-  .pubLogo {
-    display: flex;
-    min-width: 2em;    
-    max-width: 7em;
-    margin-inline: 2em;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    max-height: 7em;  
-  }
-}
 
 /* Q */
 
@@ -636,9 +615,33 @@ ul:hover {
 }
 
 .sponsor {
-  display:inline-flex;
-  justify-content: center;
-  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Par défaut : 2 colonnes */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.sponsor img {
+  width: 100%;
+  max-width: 200px;   /* Largeur max d’un logo */
+  height: 150px;      /* Hauteur uniforme */
+  object-fit: contain; /* Garde le ratio des images */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Zoom au survol */
+.sponsor img:hover {
+  transform: scale(1.1);
+}
+
+/* Écrans larges (≥ 900px) : 4 colonnes */
+@media screen and (min-width: 900px) {
+  .sponsor {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 
