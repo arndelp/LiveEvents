@@ -5,10 +5,14 @@
 
 const Plan = () => {
     return (  
-        
-        <div className="plan">      
-            <GoogleMap />          
-        </div>   
+        <>
+            <div className="planh1">
+                <h1> Plan de situation </h1>
+            </div>
+            <div className="plan">      
+                <GoogleMap />          
+            </div> 
+        </>  
         
     );
 }

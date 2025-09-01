@@ -8,9 +8,12 @@ function Programmation() {
   
   return (
     <>
-    <div className='fullPage'>
-      <Programme />
-    </div>
+      <div className="contacth1">
+        <h1> Programmation </h1>
+      </div>
+      <div className='fullPage'>
+        <Programme />
+      </div>
     </>
   );
 }

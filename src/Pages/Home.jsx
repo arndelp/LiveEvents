@@ -32,49 +32,39 @@ function Home() {
       }
 
     return ( 
-        <>
-       
-      <div className="background " style={{overflow: "hidden"}}>
-        <div className="row">
-          <BannerAlert /> 
-        </div>
+        <>       
+          <div className="background " style={{overflow: "hidden"}}>
+            <div className="row">
+              <BannerAlert /> 
+            </div>
           
-        <div className="row">
-          <h1 className="title pt-3">NATION SOUNDS</h1>
-        </div>
-        
-          <Link to="/LiveEvents/Programmation">
-          <div className="ConcertHomePage ">
-            <ConcertHomePage />
+            <div className="row">
+              <h1 className="title pt-3">NATION SOUNDS</h1>
+            </div>
+          
+            <Link to="/LiveEvents/Programmation">
+              <div className="ConcertHomePage ">
+                <ConcertHomePage />
+              </div>
+            </Link>
+          
+
+            <Billet />
+
+            <Link to="/LiveEvents/Plan">              
+              <div className="d-none d-lg-block GmapMini  col-8 offset-2  ">
+                <GoogleMap />
+              </div>
+              <div className="d-block d-lg-none GmapMiniSmall  col-10 offset-1  ">
+                <GoogleMap />              
+              </div>             
+            </Link>  
           </div>
-          </Link>
-         
 
-          <Billet />
-
-          <Link to="/LiveEvents/Plan">
-            
-            <div className="d-none d-lg-block GmapMini  col-8 offset-2  ">
-              <GoogleMap />
-            </div>
-
-            <div className="d-block d-lg-none GmapMiniSmall  col-10 offset-1  ">
-              <GoogleMap />              
-            </div>
-           
-            
-          </Link>  
-
-        </div>
-        <div className="marginMap">
-        <ScrollToTopButton/>
-        </div>
-        </>
-              
-                
-      
-
-      
+          <div className="marginMap">
+          <ScrollToTopButton/>
+          </div>
+        </>      
       )
 
 }
