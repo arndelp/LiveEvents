@@ -152,7 +152,7 @@ const handleCheckedOther = (e)=>{
             setErrorMessage("Impossible de charger la liste des concerts. Veuillez réessayer plus tard.");
           }          
         };
-      apiCallConcerts();
+       apiCallConcerts();
        // Nettoyage : on annule la requête si le composant se démonte (pour gestion du cycle de vie du composant et optimisation réseau.)
         return () => { controller.abort();    
         };    

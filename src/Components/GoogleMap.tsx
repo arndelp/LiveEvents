@@ -48,6 +48,8 @@ const GoogleMap = () => {
       }
     };
      apiCallMarkers();   
+      return () => { controller.abort();    
+        };  
   }, []);
 
 
