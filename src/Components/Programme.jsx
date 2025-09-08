@@ -153,7 +153,7 @@ const handleCheckedOther = (e)=>{
           }          
         };
       apiCallConcerts();
-       // Nettoyage : on annule la requête si le composant se démonte
+       // Nettoyage : on annule la requête si le composant se démonte (pour gestion du cycle de vie du composant et optimisation réseau.)
         return () => { controller.abort();    
         };    
       }, []);
