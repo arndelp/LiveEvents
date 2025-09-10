@@ -654,6 +654,14 @@ ul:hover {
   }
 }
 
+.sponsor-type h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1em;
+    margin-bottom: 1rem;
+    color:#f76c6c;
+    font-family:Katibeh, Arial, Helvetica, sans-serif;
+}
 
 
 .submitbutton {
