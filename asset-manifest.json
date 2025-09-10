@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/LiveEvents/static/css/main.d35e1abb.css",
+    "main.css": "/LiveEvents/static/css/main.c7db0384.css",
     "main.js": "/LiveEvents/static/js/main.dc2fa9b7.js",
     "index.html": "/LiveEvents/index.html",
-    "main.d35e1abb.css.map": "/LiveEvents/static/css/main.d35e1abb.css.map",
+    "main.c7db0384.css.map": "/LiveEvents/static/css/main.c7db0384.css.map",
     "main.dc2fa9b7.js.map": "/LiveEvents/static/js/main.dc2fa9b7.js.map"
   },
   "entrypoints": [
-    "static/css/main.d35e1abb.css",
+    "static/css/main.c7db0384.css",
     "static/js/main.dc2fa9b7.js"
   ]
 }
