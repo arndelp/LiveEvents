@@ -24,9 +24,7 @@ function App() {
   return (   
     <BrowserRouter>
 
-      <AuthProvider>
-
-      
+      <AuthProvider>      
 
         <ScrollToTop /> 
         <Nav />    
