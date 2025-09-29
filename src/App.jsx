@@ -79,8 +79,6 @@ function App() {
             <Registered />     }>
           </Route>
 
-          <Route path="/LiveEvents/Verified" element={<VerifiedPage />} />
-          <Route path="/LiveEvents/VerificationFailed" element={<VerificationFailedPage />} />
           
         </Routes>    
               

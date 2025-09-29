@@ -33,61 +33,42 @@ function FormRegister() {
     const [value, setValue] = useState(null)
     //fonction affichage état du recaptcha
     
-    function sendConfirmationEmail(customerId) {
-        Axios.post(`https://concertslives.store/api/customers/send-confirmation/${customerId}`, {}, {
+    //fonction submit utilisant le client HTTP Axios, permet le POST des data à l'url de l'api
+    function submit(e){
+        
+
+        e.preventDefault(); //empêche la soumission du formulaire   
+        Axios.post(url,{
+            lastname: data.lastname,
+            firstname: data.firstname,
+            email: data.email,
+            password: data.password,
+            style: data.style,
+            streetnumber: data.streetnumber,
+            street: data.street,
+            postalcode: data.postalcode,
+            city: data.city,
+            country: data.country,
+            phone: data.phone,
+        }, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
+                
             }
         })
-        .then(res => {
-            console.log("Email de confirmation envoyé !");
+        .then(res=>{            
+            navigate('/LiveEvents/Registered') // redirection vers la page de login après inscription
         })
         .catch(err => {
-            console.error("Erreur lors de l'envoi de l'email :", err);
-        });
-    }
-  
-    //fonction submit utilisant le client HTTP Axios, permet le POST des data à l'url de l'api
-    function submit(e) {
-    e.preventDefault();
-
-    Axios.post("https://concertslives.store/api/customers", {
-        lastname: data.lastname,
-        firstname: data.firstname,
-        email: data.email,
-        password: data.password,
-        style: data.style,
-        streetnumber: data.streetnumber,
-        street: data.street,
-        postalcode: data.postalcode,
-        city: data.city,
-        country: data.country,
-        phone: data.phone,
-    }, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        }
-    })
-    .then(res => {
-        const customerId = res.data.id;
-
-        // Envoi de l'email de confirmation simple
-        sendConfirmationEmail(customerId);
-
-        // Redirection vers page "Inscription réussie"
-        navigate('/LiveEvents/Registered');
-    })
-    .catch(err => {
-        if (err.response && err.response.data) {
-            alert(err.response.data.error || 'Une erreur est survenue');
-        } else {
-            alert('Erreur serveur');
-        }
+            if (err.response && err.response.data) {
+                alert(err.response.data.error || 'Une erreur est survenue');
+            } else {
+                alert('Erreur serveur');
+  }
     });
-}
-
+        
+    }
 
     //fonction handle: Récupération des données entrées par l'utilisateur
     function handle(e){
