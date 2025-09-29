@@ -817,6 +817,20 @@ ul:hover {
   justify-content: center;
 }
 
+.submittedHome {
+  display: flex;
+  justify-content: center;  
+  margin-top: 2em;  
+  
+}
+
+.submittedHometext {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.2em;    
+  
+}
+
 /* T */
 
 .textInfo {

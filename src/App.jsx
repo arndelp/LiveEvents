@@ -15,6 +15,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import { AuthProvider } from "./Context/AuthContext";
+import Registered from "./Pages/Registered";
 
 
 
@@ -73,6 +74,10 @@ function App() {
           <Route path="/LiveEvents/Login" element={
             <Login /> }>
           </Route>  
+
+          <Route path="/LiveEvents/Registered" element={            
+            <Registered />     }>
+          </Route>
           
         </Routes>    
               

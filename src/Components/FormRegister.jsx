@@ -60,8 +60,8 @@ function FormRegister() {
             }
         })
         .then(res=>{
-            console.log(res.data)
-            navigate('/LiveEvents/')
+            
+            navigate('/LiveEvents/Registered')
         })
         .catch(err => {
             if (err.response && err.response.data) {

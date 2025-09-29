@@ -97,7 +97,7 @@ function FormLogin() {
       <div className="registerLink ">
         <Link to="/LiveEvents/Register">
           <Button className="boutonSubmit" variant="link" size="lg">
-            Pas&nbsp;encore&nbsp;inscrit?&nbsp;Créez&nbsp;un&nbsp;compte
+            <p>Pas&nbsp;encore&nbsp;inscrit?&nbsp;Créez&nbsp;un&nbsp;compte</p>
           </Button>
         </Link>
       </div>
