@@ -16,8 +16,7 @@ import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import { AuthProvider } from "./Context/AuthContext";
 import Registered from "./Pages/Registered";
-import VerifiedPage from "./Pages/VerifiedPage";
-import VerificationFailedPage from "./Pages/VerificationFailedPage";  
+
 
 
 
