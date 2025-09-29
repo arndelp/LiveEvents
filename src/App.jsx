@@ -79,9 +79,7 @@ function App() {
           
         </Routes>    
               
-        <Foot />     
-
-      
+        <Foot />           
 
       </AuthProvider> 
 
