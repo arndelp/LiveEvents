@@ -20,32 +20,34 @@ export default function ProgrammeDetails () {
   const details2 = location.state.details2
   const style = location.state.style
 
-
-
   
+
+
+
+
   return (
     <>
-      <div >     
-        <div class= "kard pt-4 pb-4">              
-          <Card style={{ width: '90vh' }}>
-            <div class="container">
-              <Card.Img variant="top" src={fullImageUrl} class="imageDetails mt-2" />
+          
+        <div >              
+          <Card style={{ width: '100vw' }} className= "kard pt-4">
+            <div className="container">
+              <Card.Img variant="top" src={fullImageUrl} className="imageDetails mt-2 " />
             </div>
             <Card.Body>
-              <Card.Title class="fs-1 lh-sm link-danger" >{name}</Card.Title>
-              <Card.Text class="fs-3 lh-sm">
+              <Card.Title className="fs-1 lh-sm link-danger" >{name}</Card.Title>
+              <Card.Text className="fs-3 lh-sm">
                 {day}
               </Card.Text>
-              <Card.Text class="fs-3 lh-sm">
+              <Card.Text className="fs-3 lh-sm">
                 {place}
               </Card.Text>
-              <Card.Text class="fs-3 lh-sm">
+              <Card.Text className="fs-3 lh-sm">
                 {style}
               </Card.Text>
-              <Card.Text  class="fs-4 lh-sm mt-3">
+              <Card.Text  className="fs-6 lh-sm mt-3">
                 {details}
               </Card.Text>
-              <Card.Text  class="fs-5 lh-sm mt-3">
+              <Card.Text  className="fs-6 lh-sm mt-3">
                 {details2}
               </Card.Text>
 
@@ -56,7 +58,7 @@ export default function ProgrammeDetails () {
             </Card.Body>
           </Card>          
         </div>      
-      </div>    
+          
     </>
   )
 }

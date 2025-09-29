@@ -12,15 +12,24 @@ import ProgrammeDetails from "./Components/ProgrammeDetails";
 import Submitted from "./Pages/Submitted";
 import Confidential from "./Pages/Confidential";
 import ScrollToTop from "./Components/ScrollToTop";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+import { AuthProvider } from "./Context/AuthContext";
 
 
 
 function App() {
-  return (    
-  <BrowserRouter>
-    <ScrollToTop />
-      <Nav />     
-        
+ 
+  return (   
+    <BrowserRouter>
+
+      <AuthProvider>
+
+      
+
+        <ScrollToTop /> 
+        <Nav />    
+
         <Routes>
 
           <Route path="/LiveEvents/" element={ 
@@ -32,7 +41,7 @@ function App() {
 
           <Route path="/LiveEvents/Programmation/ProgrammeDetails" element={<ProgrammeDetails /> } >
           </Route>         
-                     
+                    
           <Route path="/LiveEvents/Billetterie" element={
             <Billetterie />  }>
           </Route>  
@@ -55,20 +64,25 @@ function App() {
 
           <Route path="/LiveEvents/Confidential" element={
             <Confidential /> }>
+          </Route>   
 
-          </Route>         
-          
-          
-        </Routes>       
-    
-          
-    <Foot />      
-    
+          <Route path="/LiveEvents/Register" element={
+            <Register /> }>
+          </Route>  
 
-</BrowserRouter>
-   
-   
-    
+          <Route path="/LiveEvents/Login" element={
+            <Login /> }>
+          </Route>  
+          
+        </Routes>    
+              
+        <Foot />     
+
+      
+
+      </AuthProvider> 
+
+    </BrowserRouter>   
 
   );
 }

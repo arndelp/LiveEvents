@@ -147,7 +147,12 @@ ul:hover {
    
 }
 
-
+.backdrop {
+  position: fixed;
+  inset: 0; /* couvre tout l'écran */
+  background: rgba(0, 0, 0, 0.5); /* noir semi-transparent */
+  z-index: 5; /* plus bas que ton menu mais plus haut que le reste */
+}
 
 .background {    
   background-color: var(--gris);    
@@ -226,6 +231,7 @@ ul:hover {
 
 .boutonSubmit {    
   margin-top: 2em;
+  min-width: fit-content;
   display: flex;
   justify-content: center;
 }
@@ -437,8 +443,7 @@ ul:hover {
 }
 
 .head {
-  /* position: fixed;
-  z-index: 10; */
+  
   display:flex;
   background-color: var(--mauve);
   align-items: center;
@@ -450,10 +455,63 @@ ul:hover {
   
 }
 
-.headLogoM {
-  align-items: center;
-  padding-top: 1.5em;
-     
+.headLogoMuserDisconnectLogo {
+  width: 1.5em;
+  margin-left: 0.3em;
+}
+
+.headLogoMuserDisconnectLogoFS {
+  font-size: 0.8em;  
+  font-family: Arial, Helvetica, sans-serif;  
+}
+
+.headLogoMuserConnectedFirstname {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;  
+  font-family: Katibeh, Arial, Helvetica, sans-serif;  
+  
+}
+
+.headLogoMuserConnectedSmiley {
+  width: 1em;
+  margin-left: 0.3em;
+}
+
+.headLogoDuserConnectedFirstname {
+  display: flex;
+  justify-content: left;
+  font-size: 1.5em;  
+  font-family: Katibeh, Arial, Helvetica, sans-serif;  
+  
+}
+
+.headLogoDuserDisconnectLogo {
+  width: 1.5em;
+  margin-left: 0.3em;
+}
+
+.headLogoDuserDisconnect {  
+  display: flex;
+  justify-content: center;;
+  padding-top: 1em;
+  max-width: 2em;
+  font-size: 0.8em;
+  
+}
+
+.headLogoMuserDisconnect {  
+  display: flex;
+  justify-content: center;;
+  padding-top: 1em;
+  max-width: 2em;
+   font-size: 1em;
+}
+
+
+
+.headLogoMuser {   
+  max-width: 2.5em;  
 }
 
 .headTitle {      
@@ -461,6 +519,18 @@ ul:hover {
   padding-top: 0.8em;
   font-size: 1.8em;
     
+}
+
+.headUserD {
+  display: flex;
+  align-items: center; 
+  padding-right: 1em;    
+  justify-content: space-between;  
+  margin-right: 1em;
+}
+
+.headLogoM {
+  margin-bottom: 1em;
 }
 
 /* I */
@@ -480,6 +550,18 @@ ul:hover {
   margin-inline: 0em;
 }
 
+.imageDetails {
+  max-width: 100vw;
+  height: auto;  
+  border-radius: 1em;  
+}
+
+@media screen and (min-width: 1024px) {
+  .imageDetails {  
+   max-width: 60vw;
+  }  
+}
+
 /* J */
 
 /* K */
@@ -488,7 +570,9 @@ ul:hover {
   display: grid;
   justify-content: center;
   min-height: 90vh;
-  background-color: var(--gris);   
+  background-color: var(--gris);  
+  min-width: 100vw;
+
 }
 
 /* L */
@@ -575,7 +659,61 @@ ul:hover {
   color: var(--rouge);
 }
 
+.no-scroll {  
+  overflow: hidden;
+  height: 100vh; 
+  /* empêche le défilement */
+}
+
 /* O */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--mauve);
+  z-index: 10;
+  margin-top: 0em;
+  max-width: 65vw;
+  max-height: 0;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;  
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 800px) {
+  .overlay {   
+   max-width: 40vw;
+  }  
+}
+
+
+@media screen and (min-height: 1024px) {
+  .overlay {  
+   max-width: 40vw;
+  }  
+}
+
+.overlay.show {
+  max-height: 90vh;
+  overflow: auto;
+}
+
+
+
+@media screen and (min-height: 810px) {
+  .overlay.show {
+   max-height: 75vh;   
+  }
+}
+
+@media screen and (min-height: 1024px) {
+  .overlay.show {
+   max-height: 55vh;
+   max-width: 50vw;
+  }  
+}
+
 
 /* P */
 
@@ -584,7 +722,7 @@ ul:hover {
 }
 
 .planh1 {
-  justify-content: center;
+   justify-content: center;
   text-align: center;
   background-color: var(--vert);   
   margin-bottom: 0;
@@ -603,12 +741,20 @@ ul:hover {
 
 
 
+
 /* Q */
 
 /* R */
 .retour {
   margin-top: 1em;
   bottom:  0em;
+}
+
+.registerLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 /* S */
 
@@ -634,6 +780,7 @@ ul:hover {
 }
 
 .sponsor img {
+  
   width: 100%;
   max-width: 200px;   /* Largeur max d’un logo */
   height: 150px;      /* Hauteur uniforme */
@@ -664,6 +811,7 @@ ul:hover {
 }
 
 
+
 .submitbutton {
   display: flex;
   justify-content: center;
@@ -682,6 +830,12 @@ ul:hover {
   font-size: x-large;    
 }
 
+.titleUser {
+  font-size: 3em;
+  color: var(--rouge);
+  font-family: Katibeh, Arial, Helvetica, sans-serif;  
+}
+
 .titreConf {
   display: flex;
   justify-content: center;
@@ -690,7 +844,9 @@ ul:hover {
 
 .topBar {
   display: flex;
+  align-items: center;  
 }
+
 
 /* U */
 

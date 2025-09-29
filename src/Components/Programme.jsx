@@ -123,40 +123,40 @@ const handleCheckedOther = (e)=>{
 
   // Récupération des données de l'API
   useEffect( ()=>{
-    // création d'un controller d'annulation
+    // Création d'un AbortController pour pouvoir annuler la requête si nécessaire
     const controller = new AbortController(); //API JavaScript native qui sert à annuler une requête réseau
-
     const apiCallConcerts = async () => {
-
       try {
-          //attache du signal du controller à la requête fetch
+           // On attache le signal du controller à la requête fetch pour pouvoir l'annuler plus tard
         const apiCallPromise = await fetch("https://concertslives.store/api/concerts ", 
-          {
-            signal: controller.signal,    // on passe l'objet controller avec la propriété signal au fetch, afin de pouvoir arrêter la requête plus tard avec controller.abort() 
+          {            
+            signal: controller.signal,    
           }
         );
-
+        //on doit forcer une erreur si le serveur répond avec un code http 4xx ou 5xx.        
         if (!apiCallPromise.ok) 
           throw new Error("Pas de réponse réseau");
 
         const apiCallObj = await apiCallPromise.json();
         setConcerts(apiCallObj)    
         setConcertsFiltered(apiCallObj) 
-
+          
+        // si une erreur se produit
         } catch (error) {
           if (error.name === 'AbortError') {
-            // Requête annulée (pas grave)
+            // Requête annulée , on quitte simplement
             return;
             }
-            // Message pour l'utilisateur
+            // Message d'erreur pour l'utilisateur si la requête échoue
             setErrorMessage("Impossible de charger la liste des concerts. Veuillez réessayer plus tard.");
           }          
         };
-       apiCallConcerts();
-       // Nettoyage : on annule la requête si le composant se démonte (pour gestion du cycle de vie du composant et optimisation réseau.)
-        return () => { controller.abort();    
-        };    
-      }, []);
+         // Appel de la fonction async pour récupérer les concerts
+      apiCallConcerts();
+      // Nettoyage : on annule la requête si le composant se démonte ( optimisation du réseau.)
+      return () => { controller.abort();    
+    };    
+  }, []); 
 
     
 
