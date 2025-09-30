@@ -745,17 +745,25 @@ ul:hover {
 /* Q */
 
 /* R */
+.registerLink {
+  justify-content: center;
+  text-align: center;
+  font-family: Kanit, Arial, Helvetica, sans-serif;   
+  margin-bottom: 0;
+  padding-top: 0.5em;  
+  font-size: 1em;   
+}
+
+.registerLinka {  
+  min-width: fit-content;
+}
+
 .retour {
   margin-top: 1em;
   bottom:  0em;
 }
 
-.registerLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
+
 /* S */
 
 .ScrollConf {

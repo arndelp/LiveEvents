@@ -94,12 +94,13 @@ function FormLogin() {
         </Form.Group>
       </form>
 
+      <div className="registerLink ">          
+        <p>Pas&nbsp;encore&nbsp;inscrit?</p>
+      </div>
       <div className="registerLink ">
-        <Link to="/LiveEvents/Register">
-          <Button className="boutonSubmit" variant="link" size="lg">
-            <p>Pas&nbsp;encore&nbsp;inscrit?&nbsp;Créez&nbsp;un&nbsp;compte</p>
-          </Button>
-        </Link>
+        <Button className="registerLinka " variant="link" size="lg">          
+          <p>S'enregistrer</p>                  
+        </Button>
       </div>
     </>
   );
