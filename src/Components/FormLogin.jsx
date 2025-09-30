@@ -98,9 +98,11 @@ function FormLogin() {
         <p>Pas&nbsp;encore&nbsp;inscrit?</p>
       </div>
       <div className="registerLink ">
-        <Button className="registerLinka " variant="link" size="lg">          
-          <p>S'enregistrer</p>                  
-        </Button>
+        <Link to="/LiveEvents/Register">
+          <Button   className="registerLinka " variant="link" size="lg">                
+            <p>S'enregistrer</p>                  
+          </Button>
+        </Link>
       </div>
     </>
   );
