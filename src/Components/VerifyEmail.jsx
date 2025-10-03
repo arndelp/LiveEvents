@@ -15,10 +15,10 @@ export default function VerifyEmail() {
     axios.get(`/verify/${customerId}/verify`)
       .then(response => {
         if (response.data.success) {
-          setMessage(response.data.message);
+          setMessage('Email vérifié !');
 
           // Redirection vers l'URL fournie par le backend
-          window.location.href = response.data.redirect;
+          navigate('/login');
         } else {
           setMessage(response.data.message || 'Erreur inconnue');
         }
@@ -27,7 +27,7 @@ export default function VerifyEmail() {
         console.error(error);
         setMessage('Erreur lors de la vérification de l\'email.');
       });
-  }, [location.pathname]);
+  }, [location.pathname, navigate]);
 
   return (
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
