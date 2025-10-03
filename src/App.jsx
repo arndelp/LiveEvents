@@ -16,6 +16,7 @@ import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import { AuthProvider } from "./Context/AuthContext";
 import Registered from "./Pages/Registered";
+import VerifyEmail from './Components/VerifyEmail';
 
 
 
@@ -77,6 +78,10 @@ function App() {
           <Route path="/LiveEvents/Registered" element={            
             <Registered />     }>
           </Route>
+
+          <Route path="/verify/:id/verify" element={
+            <VerifyEmail />   }>
+          </Route >
 
           
         </Routes>    
