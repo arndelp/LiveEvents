@@ -22,9 +22,11 @@ jobs:
         run: npm run build
         env:
           REACT_APP_GOOGLE_MAP: ${{ secrets.API_KEY }}
+          REACT_APP_API_URL: ${{ secrets.API_URL }}
       - name: Deploy 🚀
         env:
           REACT_APP_GOOGLE_MAP: ${{ secrets.API_KEY }}
+          REACT_APP_API_URL: ${{ secrets.API_URL }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build 

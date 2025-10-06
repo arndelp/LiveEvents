@@ -14,6 +14,7 @@ import Button from 'react-bootstrap/Button';
 
 //Type de l'apiKey en string (ne pas oublier le point d'exclamation final)
 export const apiKey : string = process.env.REACT_APP_GOOGLE_MAP!;
+export const apiURL : string = process.env.REACT_APP_API_URL!;
 
 const GoogleMap = () => {
 
@@ -27,7 +28,7 @@ const GoogleMap = () => {
 
     const apiCallMarkers = async () => {
       try {
-        const apiCallPromise = await fetch("https://concertslives.store/api/markers", 
+        const apiCallPromise = await fetch(`${apiURL}/api/markers`,     
           {
             signal: controller.signal,
           }
