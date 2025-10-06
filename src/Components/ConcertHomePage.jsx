@@ -50,13 +50,10 @@ export default function ConcertHomePage() {
 
   /*on met dans Val les concerts ayant la date et l'horaire  */
   const day1sch1 = concerts.filter(Val =>
-
+  /* condition: pas connecté ou connecté */
   isAuthenticated() ? 
-
     Val.style === (customer?.style || (Val.day === "09/07/2027" && Val.schedule === "18:00 - 19:00") )     
-
-   : 
-   
+   :    
     Val.day === "09/07/2027" && Val.schedule === "18:00 - 19:00"
   );
 

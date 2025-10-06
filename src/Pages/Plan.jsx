@@ -1,6 +1,4 @@
- import GoogleMap from "../Components/GoogleMap.tsx";
-
-
+import GoogleMap from "../Components/GoogleMap.tsx";
 
 
 const Plan = () => {

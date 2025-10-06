@@ -51,8 +51,7 @@ function FormRegister() {
         }, {
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                
+                'Accept': 'application/json',                
             }
         })
         .then(res=>{            
@@ -63,8 +62,8 @@ function FormRegister() {
                 alert(err.response.data.error || 'Une erreur est survenue');
             } else {
                 alert('Erreur serveur');
-  }
-    });
+            }
+        });
         
     }
 
@@ -81,26 +80,23 @@ function FormRegister() {
 // Récupère les pays une seule fois au montage
     useEffect(() => {
         async function fetchCountries() {
-        try {
-            const res = await fetch('https://restcountries.com/v3.1/all?fields=name,cca2');
-            const result = await res.json();
+            try {
+                const res = await fetch('https://restcountries.com/v3.1/all?fields=name,cca2');
+                const result = await res.json();
 
-            const sorted = result
-            .map(c => ({ code: c.cca2, name: c.name.common }))
-            .sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+                const sorted = result
+                .map(c => ({ code: c.cca2, name: c.name.common }))
+                .sort((a, b) => a.name.localeCompare(b.name, 'fr'));
 
-            setCountries(sorted);
-        } catch (err) {
-            console.error("Erreur de chargement des pays :", err);
-        } finally {
-            setLoadingCountries(false);
+                setCountries(sorted);
+            } catch (err) {
+                console.error("Erreur de chargement des pays :", err);
+            } finally {
+                setLoadingCountries(false);
+            }
         }
-        }
-
         fetchCountries();
-    }, []);
-
-    
+    }, []);    
 
 
     return (

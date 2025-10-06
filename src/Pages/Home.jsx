@@ -10,7 +10,6 @@ import { AuthContext } from "../Context/AuthContext";
 
 
 
-
 function Home() {
 
    const { customer,isAuthenticated } = useContext(AuthContext);

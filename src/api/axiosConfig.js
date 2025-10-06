@@ -1,8 +1,11 @@
 import Axios from 'axios';
 
+
+export const apiURL = process.env.REACT_APP_API_URL;
+
 // Création d'une instance Axios
 const axiosInstance = Axios.create({
-    baseURL: 'https://concertslives.store/api', // base URL de ton API
+    baseURL: `${apiURL}/api`, // base URL de l' API
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',

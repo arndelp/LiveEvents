@@ -23,9 +23,11 @@ function FormLogin() {
     setError(null); // reset erreur à chaque tentative
 
     try {
-      const res = await Axios.post(
-        `${apiURL}/api/custom_login_check`,
-        { email: data.email, password: data.password },
+      const res = await Axios.post(`${apiURL}/api/custom_login_check`,
+        { 
+          email: data.email, 
+          password: data.password 
+        },
         {
           headers: {
             "Content-Type": "application/json",
