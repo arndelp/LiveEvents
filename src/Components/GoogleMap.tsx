@@ -17,10 +17,6 @@ export const apiKey : string = process.env.REACT_APP_GOOGLE_MAP!;
 export const apiURL : string = process.env.REACT_APP_API_URL!;
 
 const GoogleMap = () => {
-
-
-
-
   
   //Récupération des données par l'API en utilisant une promesse
   useEffect( ()=>{
@@ -52,10 +48,6 @@ const GoogleMap = () => {
       return () => { controller.abort();    
         };  
   }, []);
-
-
-
-
 
    
 const [markerData, setMarkerData] = useState([]);  

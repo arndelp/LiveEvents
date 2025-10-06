@@ -3,7 +3,7 @@ import React from "react";
 import { Carousel } from "flowbite-react";
 
 
-
+export const apiURL = process.env.REACT_APP_API_URL;
 
 export default function BannerAlert() {
 
@@ -23,7 +23,7 @@ export default function BannerAlert() {
       
       const apiCallAlerts = async () => {
         try {
-          const apiCallPromise = await fetch("https://concertslives.store/api/alerts", {
+          const apiCallPromise = await fetch(`${apiURL}/api/alerts`, {
                 signal: controller.signal,
               });
           const apiCallObj = await  apiCallPromise.json();
