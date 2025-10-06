@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { Carousel } from "flowbite-react";
 
-
 export const apiURL = process.env.REACT_APP_API_URL;
+
 
 export default function BannerAlert() {
 

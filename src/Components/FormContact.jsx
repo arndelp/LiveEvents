@@ -6,13 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 
+export const apiURL = process.env.REACT_APP_API_URL;
 
 function FormContact() {
     const navigate = useNavigate()
 
-    //définition des variables
-    const url ="https://concertslives.store/api/contacts" 
-
+    //définition des variables    
     const [data, setData] =useState({
         lastname: "",
         firstname: "",
@@ -27,7 +26,7 @@ function FormContact() {
     //fonction submit utilisant le client HTTP Axios, permet le POST des data à l'url de l'api
     function submit(e){
         e.preventDefault(); //empêche la soumission du formulaire   
-        Axios.post(url,{
+        Axios.post(`${apiURL}/api/contacts`,{
             lastname: data.lastname,
             firstname: data.firstname,
             email: data.email,

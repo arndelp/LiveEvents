@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 
+export const apiURL = process.env.REACT_APP_API_URL;
 
 const Sponsor = () => {
 
@@ -16,7 +17,7 @@ const Sponsor = () => {
 
         const fetchSponsors = async () => {
         try {
-            const response = await fetch("https://concertslives.store/api/sponsors", 
+            const response = await fetch(`${apiURL}/api/sponsors`, 
             {
                 signal: controller.signal,
             }

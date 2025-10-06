@@ -49,10 +49,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("user", JSON.stringify(data.user));
 
       setToken(data.token);
-      setCustomer(data.user);
-
-      // Stocke les infos user reçues du backend
-      
+      setCustomer(data.user); 
       
     }
   };

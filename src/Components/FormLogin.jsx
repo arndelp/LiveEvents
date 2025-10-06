@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
+export const apiURL = process.env.REACT_APP_API_URL;
+
 function FormLogin() {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
@@ -16,15 +18,13 @@ function FormLogin() {
 
   const [error, setError] = useState(null);
 
-  const url = "https://concertslives.store/api/custom_login_check";
-
   const submit = async (e) => {
     e.preventDefault();  // empêche le rechargement de la page 
     setError(null); // reset erreur à chaque tentative
 
     try {
       const res = await Axios.post(
-        url,
+        `${apiURL}/api/custom_login_check`,
         { email: data.email, password: data.password },
         {
           headers: {
@@ -32,9 +32,7 @@ function FormLogin() {
             Accept: "application/json",
           },
         }
-      );
-
-      console.log("Réponse du backend :", res.data);
+      );      
 
       if (res.data.token) {
         // sauvegarde le token et les infos utilisateur dans le context

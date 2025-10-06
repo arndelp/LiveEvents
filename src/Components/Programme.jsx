@@ -4,7 +4,7 @@ import { Link} from "react-router-dom";
 import { Button } from "flowbite-react";
 import ScrollToTopButton from "./ScrollToTopButton";
 
-
+export const apiURL = process.env.REACT_APP_API_URL;
 
 
 const Programme = ()  => {
@@ -128,7 +128,7 @@ const handleCheckedOther = (e)=>{
     const apiCallConcerts = async () => {
       try {
            // On attache le signal du controller à la requête fetch pour pouvoir l'annuler plus tard
-        const apiCallPromise = await fetch("https://concertslives.store/api/concerts ", 
+        const apiCallPromise = await fetch(`${apiURL}/api/concerts`, 
           {            
             signal: controller.signal,    
           }

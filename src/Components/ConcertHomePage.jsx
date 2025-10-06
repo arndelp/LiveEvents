@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 
-
+export const apiURL = process.env.REACT_APP_API_URL;
 
 /*Function permettant l'affichage des premiers concerts du festival D1S1=Day1 Schedule1*/
 
@@ -25,7 +25,7 @@ export default function ConcertHomePage() {
       const apiCallConcerts = async () => {
 
         try {
-          const apiCallPromise = await fetch("https://concertslives.store/api/concerts", {
+          const apiCallPromise = await fetch(`${apiURL}/api/concerts`, {
             signal: controller.signal,
           });
 

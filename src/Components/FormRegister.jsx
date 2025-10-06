@@ -6,12 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 
+export const apiURL = process.env.REACT_APP_API_URL;
 
 function FormRegister() {
     const navigate = useNavigate()
-
-    //définition des variables
-    const url ="https://concertslives.store/api/customers" 
 
     const [data, setData] =useState({
         lastname: '',
@@ -38,7 +36,7 @@ function FormRegister() {
         
 
         e.preventDefault(); //empêche la soumission du formulaire   
-        Axios.post(url,{
+        Axios.post(`${apiURL}/api/customers`,{
             lastname: data.lastname,
             firstname: data.firstname,
             email: data.email,
