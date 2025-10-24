@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import { generateSrcSet } from '../utils/imageHelper';
+
 export const apiURL = process.env.REACT_APP_API_URL;
 
 /*Function permettant l'affichage des premiers concerts du festival D1S1=Day1 Schedule1*/
@@ -59,34 +59,26 @@ export default function ConcertHomePage() {
 
 /*on liste le contenu de Val , affichage dans des cards*/
 
-  const listDay1Sch1 = day1sch1.map(Val => {
-    const { src, srcSet, sizes } = generateSrcSet(Val.fullImageUrl);
-      return (
-        <li key={Val.id} className="listCard mt-2">
-        <div className="card cardh" >
-          <div className="row g-0">
-            <div className="col-md-4 ">
-              <img             
-                src={src}
-                srcSet={srcSet}
-                sizes={sizes} 
-                className="img-fluid rounded" 
-                alt={Val.name} 
-                loading="lazy"/>
-            </div>
-            <div className="col-md-8 ">
-              <div className="card-body">
-                <h5 className="card-title">{Val.name}</h5>
-                <p className="card-text pb-2">{Val.schedule}</p>
-                <p className="card-text"><small className="text-body-secondary ">{Val.location}</small></p>
-              </div>
-            </div>
+  const listDay1Sch1 = day1sch1.map(Val =>
+    
+    <li key={Val.id} className="listCard mt-2">
+    <div className="card cardh" >
+      <div className="row g-0">
+        <div className="col-md-4 ">
+          <img src={Val.fullImageUrl}  className="img-fluid rounded" alt={Val.name} loading="lazy"/>
+        </div>
+        <div className="col-md-8 ">
+          <div className="card-body">
+            <h5 className="card-title">{Val.name}</h5>
+            <p className="card-text pb-2">{Val.schedule}</p>
+            <p className="card-text"><small className="text-body-secondary ">{Val.location}</small></p>
           </div>
         </div>
-      </li>     
-    );
-  }
-);
+      </div>
+    </div>
+  </li>     
+       
+  );
 
 
  /*Affichage de la liste + lien vers Programmation */
@@ -99,4 +91,10 @@ return (
     </div>
   </div>
 )
+
+   
+
+
+
+
 }
