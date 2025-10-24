@@ -12,6 +12,6 @@ export function generateSrcSet(url) {
   return {
     src: medium,
     srcSet: `${small} 200w, ${medium} 400w, ${large} 800w`,
-    sizes: `(max-width: 600px) 100vw, 50vw`,
+    sizes: `(max-width: 300px) 100vw, 50vw`,
   };
 }
