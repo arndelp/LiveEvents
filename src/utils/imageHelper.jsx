@@ -1,3 +1,6 @@
+//Redimensionnement des images pour un affichage responsive
+
+
 // utils/imageHelper.js
 export function generateSrcSet(url) {
   // Ici on suppose un paramètre `w` pour redimensionner
