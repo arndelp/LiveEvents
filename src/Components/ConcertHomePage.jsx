@@ -71,7 +71,7 @@ export default function ConcertHomePage() {
                 height={200}  
                 className="img-fluid rounded" 
                 alt={Val.name} 
-                loading="lazy"/>
+                fetchPriority="high"/>
             </div>
             <div className="col-md-8 ">
               <div className="card-body">
