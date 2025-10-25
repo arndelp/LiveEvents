@@ -69,7 +69,7 @@ export default function ConcertHomePage() {
               <img             
                 src={src}
                 srcSet={srcSet}
-                sizes={sizes} 
+                sizes={sizes}                 
                 className="img-fluid rounded" 
                 alt={Val.name} 
                 loading="lazy"/>
@@ -95,7 +95,7 @@ return (
   <div className='row  g-0 '>
     <div className="pb-0 mt-8 " data-testid="concertHome">  
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}  
-      <ul >{listDay1Sch1}</ul>
+      <ul className="concertList">{listDay1Sch1}</ul>
     </div>
   </div>
 )

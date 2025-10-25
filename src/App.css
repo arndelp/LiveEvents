@@ -277,6 +277,12 @@ ul:hover {
   justify-content: space-around;    
 }
 
+.card img {
+  width: 100%;
+  aspect-ratio: 16/9; 
+  object-fit: cover;
+}
+
 .card-name {
   font-family: katibeh, Arial, Helvetica, sans-serif;
   font-size: 3em;
@@ -358,6 +364,10 @@ ul:hover {
 .ConcertHomePage {
   display: flex;
   justify-content: center;   
+}
+
+ul.concertList {
+  min-height: 500px; /* réserve l'espace pour tes cards */
 }
 
 /* D */
