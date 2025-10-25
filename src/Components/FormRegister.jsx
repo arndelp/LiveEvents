@@ -170,7 +170,7 @@ function FormRegister() {
                         
                 
                         <ReCAPTCHA
-                            sitekey="6LfQ-NwqAAAAAPQ7zlhsVFa-88bdAJT7v0QwOWsy"
+                            sitekey="6Lcm6PYrAAAAAEyOmP2dV7gskY8aNAD1PGt1Zf2a"
                             onChange={setValue}                            
                         /> 
                         
