@@ -5,6 +5,7 @@ import Foot from "./Components/Foot";
 import ScrollToTop from "./Components/ScrollToTop";
 import { AuthProvider } from "./Context/AuthContext";
 import {Suspense,lazy } from "react";
+import NotFound from "./Pages/NotFound";
 
 // Lazy loading des pages
 const Home = lazy(() => import("./Pages/Home"));
@@ -35,6 +36,8 @@ function App() {
         <Nav />    
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
+
+              <Route path="*" element={<NotFound />} />
 
               <Route path="/" element={ 
                 <Home />         }>           
