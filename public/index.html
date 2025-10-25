@@ -68,7 +68,23 @@
 </head>
 
 <body>
+  {# image placeholder pour le préchargement et éviter le layout shift #}
+  <img
+    id="preload-hero"
+    src="/public/logo.svg"
+    alt="logo du festival"
+    width="1200"
+    height="600"
+    loading="eager"
+    fetchpriority="high"
+    style="display:block;width:100%;height:auto;object-fit:cover;"
+  />
+
   <div id="root"></div>
+
+  
+  
+
 </body>
 
 </html>

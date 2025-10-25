@@ -21,6 +21,10 @@ export default function ConcertHomePage() {
        // création d'un controller d'annulation
       const controller = new AbortController();
 
+       // Suppression de l'image placeholder du HTML initial quand React démarre
+      const preloadHero = document.getElementById('preload-hero');
+      if (preloadHero) preloadHero.remove();
+
       const apiCallConcerts = async () => {
 
         try {
@@ -71,7 +75,9 @@ export default function ConcertHomePage() {
                 height={200}  
                 className="img-fluid rounded" 
                 alt={Val.name} 
-                fetchPriority="high"/>
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"/>
             </div>
             <div className="col-md-8 ">
               <div className="card-body">
