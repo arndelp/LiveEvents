@@ -65,7 +65,7 @@ export default function ConcertHomePage() {
     <div className="card cardh" >
       <div className="row g-0">
         <div className="col-md-4 ">
-          <img src={Val.fullImageUrl}  className="img-fluid rounded" alt={Val.name} loading="lazy"/>
+          <img src={Val.fullImageUrl}  className="img-fluid rounded" alt={Val.name} fetchPriority="high"/>
         </div>
         <div className="col-md-8 ">
           <div className="card-body">
