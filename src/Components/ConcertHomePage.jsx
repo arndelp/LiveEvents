@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import { generateSrcSet } from '../utils/imageHelper';
 export const apiURL = process.env.REACT_APP_API_URL;
 
 /*Function permettant l'affichage des premiers concerts du festival D1S1=Day1 Schedule1*/
@@ -60,17 +59,16 @@ export default function ConcertHomePage() {
 /*on liste le contenu de Val , affichage dans des cards*/
 
   const listDay1Sch1 = day1sch1.map(Val => {
-    const { src, srcSet, sizes } = generateSrcSet(Val.fullImageUrl);
+    
       return (
         <li key={Val.id} className="listCard mt-2">
         <div className="card cardh" >
           <div className="row g-0">
             <div className="col-md-4 ">
               <img             
-                src={src}
-                srcSet={srcSet}
-                sizes={sizes} 
-                
+                src={Val.fullImageUrl}   
+                width={200} 
+                height={200}  
                 className="img-fluid rounded" 
                 alt={Val.name} 
                 loading="lazy"/>
