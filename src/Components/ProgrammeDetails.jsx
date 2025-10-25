@@ -52,7 +52,7 @@ export default function ProgrammeDetails () {
               </Card.Text>
 
         {/*Bouton Retour, utilisation de la méthode react useNavigate */}
-              <Link to='/LiveEvents/Programmation'>
+              <Link to='/Programmation'>
                 <Button color="blue"  className="boutonRetourDetail">Retour</Button>
               </Link>
             </Card.Body>

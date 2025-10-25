@@ -39,7 +39,7 @@ function FormContact() {
         })
         .then(res=>{
             console.log(res.data)
-            navigate('/LiveEvents/Submitted')
+            navigate('/Submitted')
         })
         .catch(err => {
             console.error("Erreur lors de l'envoi :", err);
@@ -79,7 +79,7 @@ function FormContact() {
                             <Form.Check className="checkRGPD " label={"En cochant cette case, je consens au traitement de mes données personnelles afin de permettre à LiveEvents de me répondre de la manière la plus pertinente et ce, conformément à la politique de confidentialité dont j’ai pris connaissance et que j’accepte sans réserve." } id={`checkBox`} required></Form.Check>
                         </div>
                         
-                        <Link to="/LiveEvents/Confidential" >
+                        <Link to=" /Confidential" >
                             <Button className="checkRGPDLink" variant="link" >Lire la politique de confidentialité</Button>
                         </Link>
                         

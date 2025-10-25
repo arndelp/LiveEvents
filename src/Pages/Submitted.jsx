@@ -11,7 +11,7 @@ function Contact() {
                 <h1>Merci pour l'intérêt dont vous nous portez ! </h1>
                 <p class="textSubmitted">  nous vous répondrons dans les plus brefs délais </p>
                 <div class="submittedHome"> 
-                    <Link to="/LiveEvents/">
+                    <Link to="/">
                         <Button variant="primary" size="lg">
                             Accueil
                         </Button>

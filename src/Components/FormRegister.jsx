@@ -55,7 +55,7 @@ function FormRegister() {
             }
         })
         .then(res=>{            
-            navigate('/LiveEvents/Registered') // redirection vers la page de login après inscription
+            navigate('/Registered') // redirection vers la page de login après inscription
         })
         .catch(err => {
             if (err.response && err.response.data) {
@@ -161,7 +161,7 @@ function FormRegister() {
                             <Form.Check className="checkRGPD " label={"En cochant cette case, je consens au traitement de mes données personnelles afin de permettre à LiveEvents de me répondre de la manière la plus pertinente et ce, conformément à la politique de confidentialité dont j’ai pris connaissance et que j’accepte sans réserve." } id={`checkBox`} required></Form.Check>
                         </div>
                         
-                        <Link to="/LiveEvents/Confidential" >
+                        <Link to="/Confidential" >
                             <Button className="checkRGPDLink" variant="link" >Lire la politique de confidentialité</Button>
                         </Link>
                         

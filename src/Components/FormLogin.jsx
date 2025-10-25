@@ -41,7 +41,7 @@ function FormLogin() {
         login(res.data);
 
         // redirection vers la page d'accueil après login
-        navigate("/LiveEvents/");
+        navigate("/");
       } else {
         setError("Identifiants invalides.");
       }
@@ -98,7 +98,7 @@ function FormLogin() {
         <p>Pas&nbsp;encore&nbsp;inscrit?</p>
       </div>
       <div className="registerLink ">
-        <Link to="/LiveEvents/Register">
+        <Link to="/Register">
           <Button   className="registerLinka " variant="link" size="lg">                
             <p>S'enregistrer</p>                  
           </Button>

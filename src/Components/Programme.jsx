@@ -164,7 +164,7 @@ const handleCheckedOther = (e)=>{
 // Vignette d'affichage et lien vers détails avec props          
 const Details= ({id ,name, style, location, schedule, day, fullImageUrl, details, details2}) => {    
     return (
-      < Link to='/LiveEvents/Programmation/ProgrammeDetails' state={{id, name, style, location, schedule, day, fullImageUrl, details, details2}}>            
+      < Link to='/Programmation/ProgrammeDetails' state={{id, name, style, location, schedule, day, fullImageUrl, details, details2}}>            
           <div class="row card cardh mb-3 mt-3" >
             <div class="row g-0">
               <div class="col-md-4 ">

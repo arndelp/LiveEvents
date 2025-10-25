@@ -35,7 +35,7 @@ export default function Nav() {
             <nav className="head row ">
                 <div className="logo col-2 d-none d-lg-block ">
                     <div >
-                        <Link to="/LiveEvents/">
+                        <Link to="/">
                             <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className="logoSize" />
                         </Link>
                     </div>   
@@ -46,27 +46,27 @@ export default function Nav() {
                     <ul className="navbar__links ">              
                        
                         <li className="navbar__item">
-                            <Link to="/LiveEvents/Programmation">
+                            <Link to="/Programmation">
                                 <h3>Programmation</h3>
                             </Link>
                         </li>
                         <li className="navbar__item">
-                            <Link to="/LiveEvents/Billetterie">
+                            <Link to="/Billetterie">
                                 <h3>Billetterie</h3>
                              </Link>
                         </li>   
                         <li className="navbar__item">
-                            <Link to="/LiveEvents/Informations">
+                            <Link to="/Informations">
                             <h3>Informations</h3>
                             </Link> 
                         </li>        
                         <li className="navbar__item">
-                        <Link to="/LiveEvents/Plan">
+                        <Link to="/Plan">
                             <h3>Plan</h3>
                             </Link>
                         </li>    
                         <li className="navbar__item">
-                            <Link to="/LiveEvents/Contact">
+                            <Link to="/Contact">
                                 <h3>Contact</h3>
                              </Link>
                         </li>   
@@ -85,7 +85,7 @@ export default function Nav() {
                                     
                                 </div>
                                 <div>
-                                    <Link to="/LiveEvents/" onClick={logout} title="Se déconnecter">
+                                    <Link to="/" onClick={logout} title="Se déconnecter">
                                         <div className="headLogoDuserDisconnect">                                    
                                                 Déconnexion                                
                                         </div>
@@ -100,7 +100,7 @@ export default function Nav() {
                         </>
                     ) : (
                     <div className="headLogoMuser">
-                        <Link to="/LiveEvents/Login">
+                        <Link to="/Login">
                             <img src={`${process.env.PUBLIC_URL}/assets/circle-user-regular.svg`} alt="logo-user"  />
                         </Link>
                     </div>
@@ -123,7 +123,7 @@ export default function Nav() {
                 {/*Logo mobile */}
                 <div className="col-6 headTitle d-block d-lg-none">
                     <div className="headLogoM">
-                        <Link to="/LiveEvents/">
+                        <Link to="/">
                             <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo"  />
                         </Link>
                     </div>
@@ -138,7 +138,7 @@ export default function Nav() {
                                 {customer?.firstname || "Utilisateur"}
                                 
                             </div>
-                            <Link to="/LiveEvents/" onClick={logout} title="Se déconnecter">
+                            <Link to="/" onClick={logout} title="Se déconnecter">
                                 <div className="headLogoMuserDisconnect">                                    
                                     Se&nbsp;déconnecter                               
                                     <img src={`${process.env.PUBLIC_URL}/assets/user-slash-solid-full.svg`} alt="logo-user" className='headLogoDuserDisconnectLogo' />                               
@@ -150,7 +150,7 @@ export default function Nav() {
                         </>
                     ) : (
                     <div className="headLogoMuser">
-                        <Link to="/LiveEvents/Login">
+                        <Link to="/Login">
                             <img src={`${process.env.PUBLIC_URL}/assets/circle-user-regular.svg`} alt="logo-user"  />
                         </Link>
                     </div>
@@ -170,7 +170,7 @@ export default function Nav() {
                             </li>                 
                             <li className="navbar__item">
                                 <Link 
-                                    to="/LiveEvents/"
+                                    to="/"
                                     className="navbar__link "
                                     onClick={handleShowLinks}
                                     >
@@ -179,7 +179,7 @@ export default function Nav() {
                             </li>
                             <li className="navbar__item">
                                 <Link 
-                                    to="/LiveEvents/Programmation"
+                                    to="/Programmation"
                                     className="navbar__link " 
                                     onClick={handleShowLinks}
                                     >
@@ -187,7 +187,7 @@ export default function Nav() {
                                 </Link>
                             </li>
                             <li className="navbar__item">
-                                <Link to="/LiveEvents/Billetterie"
+                                <Link to="/Billetterie"
                                     className="navbar__link" 
                                     onClick={handleShowLinks}
                                     >
@@ -195,7 +195,7 @@ export default function Nav() {
                                 </Link>
                             </li>   
                             <li className="navbar__item">
-                                <Link to="/LiveEvents/Informations"
+                                <Link to="/Informations"
                                     className="navbar__link " 
                                     onClick={handleShowLinks}
                                     >
@@ -203,7 +203,7 @@ export default function Nav() {
                                 </Link>
                             </li>        
                             <li className="navbar__item">
-                                <Link to="/LiveEvents/Plan"
+                                <Link to="/Plan"
                                     className="navbar__link "
                                     onClick={handleShowLinks}
                                     >
@@ -211,7 +211,7 @@ export default function Nav() {
                                 </Link>
                             </li>    
                             <li className="navbar__item">
-                                <Link to="/LiveEvents/Contact"
+                                <Link to="/Contact"
                                     className="navbar__link "
                                     onClick={handleShowLinks}
                                     >

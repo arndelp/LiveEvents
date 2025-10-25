@@ -8,7 +8,7 @@ function Informations () {
     return (
         <>
         <div className="checkRGPDRetour">
-            <Link to="/LiveEvents/contact">
+            <Link to="/contact">
                     <Button  variant="link">Précédent</Button>
             </Link>
         </div>

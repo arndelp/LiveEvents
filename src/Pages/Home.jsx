@@ -19,7 +19,7 @@ function Home() {
               
           <div className="row mb-20 mt-20" >
             <div className="boutonBilletHome ">
-            <Link to="/LiveEvents/Billetterie">
+            <Link to="/Billetterie">
               <Button size="xl" gradientDuoTone="redToYellow" >
                 <HiShoppingCart className="mr-2 h-10 w-10" />
                   Billetterie
@@ -50,7 +50,7 @@ function Home() {
           )}
           </div>
         
-          <Link to="/LiveEvents/Programmation">
+          <Link to="/Programmation">
           <div className="ConcertHomePage ">
             <ConcertHomePage />
           </div>
@@ -61,7 +61,7 @@ function Home() {
 
 
 
-          <Link to="/LiveEvents/Plan">
+          <Link to="/Plan">
             
             <div className="d-none d-lg-block GmapMini  col-8 offset-2  ">
               <GoogleMap />

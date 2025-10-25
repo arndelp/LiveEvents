@@ -36,49 +36,49 @@ function App() {
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
 
-              <Route path="/LiveEvents/" element={ 
+              <Route path="/" element={ 
                 <Home />         }>           
               </Route>  
 
-              <Route path="/LiveEvents/Programmation"  element={<Programmation /> }>
+              <Route path="/Programmation"  element={<Programmation /> }>
               </Route>  
 
-              <Route path="/LiveEvents/Programmation/ProgrammeDetails" element={<ProgrammeDetails /> } >
+              <Route path="/Programmation/ProgrammeDetails" element={<ProgrammeDetails /> } >
               </Route>         
                         
-              <Route path="/LiveEvents/Billetterie" element={
+              <Route path="/Billetterie" element={
                 <Billetterie />  }>
               </Route>  
 
-              <Route path="/LiveEvents/Informations" element={
+              <Route path="/Informations" element={
                 <Informations />  }>
               </Route>
                     
-              <Route path="/LiveEvents/Plan" element={ 
+              <Route path="/Plan" element={ 
                 <Plan />         }>                     
               </Route>    
 
-              <Route path="/LiveEvents/Contact" element={            
+              <Route path="/Contact" element={            
                 <Contact />     }>
               </Route>
 
-              <Route path="/LiveEvents/Submitted" element={            
+              <Route path="/Submitted" element={            
                 <Submitted />     }>
               </Route>
 
-              <Route path="/LiveEvents/Confidential" element={
+              <Route path="/Confidential" element={
                 <Confidential /> }>
               </Route>   
 
-              <Route path="/LiveEvents/Register" element={
+              <Route path="/Register" element={
                 <Register /> }>
               </Route>  
 
-              <Route path="/LiveEvents/Login" element={
+              <Route path=" /Login" element={
                 <Login /> }>
               </Route>  
 
-              <Route path="/LiveEvents/Registered" element={            
+              <Route path="/Registered" element={            
                 <Registered />     }>
               </Route>
 

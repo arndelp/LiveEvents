@@ -332,7 +332,7 @@ const handleShowLinks = () => {
             onCloseClick={handleInfowindowCloseClick}>
             <h4>{selectedName}</h4>
             <p>{selectedDetails}</p>  
-            <Link to= "/LiveEvents/Programmation">            
+            <Link to= "/Programmation">            
               <Button className="checkRGPDLink" variant="link">Voir le programme</Button>
             </Link>   
           </InfoWindow>
@@ -346,7 +346,7 @@ const handleShowLinks = () => {
             onCloseClick={handleInfowindowCloseClick}>
             <h4>{selectedName}</h4>
             <p>{selectedDetails}</p>   
-              <Link to="/LiveEvents/Informations">                  
+              <Link to="/Informations">                  
                 <Button className="checkRGPDLink" variant="link">&lsaquo;&lsaquo;Infos&rsaquo;&rsaquo;</Button>
               </Link>        
           </InfoWindow>

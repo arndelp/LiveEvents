@@ -11,7 +11,7 @@ function Contact() {
                 <h1>Vous êtes maintenant enregistré</h1>
                 <p className="textSubmitted"> Veuillez vérifier votre adresse e-mail avant de vous connecter </p>
                 <div className="submittedHome">                     
-                    <Link to="/LiveEvents/Login">
+                    <Link to="/Login">
                         <Button variant="primary" size="lg" >
                             <p className='submittedHometext'>Connexion</p>
                         </Button>
