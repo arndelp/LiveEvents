@@ -69,7 +69,8 @@ export default function ConcertHomePage() {
               <img             
                 src={src}
                 srcSet={srcSet}
-                sizes={sizes}                 
+                sizes={sizes} 
+                
                 className="img-fluid rounded" 
                 alt={Val.name} 
                 loading="lazy"/>
