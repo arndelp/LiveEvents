@@ -4,7 +4,7 @@ import Nav from "./Components/Nav";
 import Foot from "./Components/Foot";
 import ScrollToTop from "./Components/ScrollToTop";
 import { AuthProvider } from "./Context/AuthContext";
-import {lazy } from "react";
+import {Suspense,lazy } from "react";
 
 // Lazy loading des pages
 const Home = lazy(() => import("./Pages/Home"));
@@ -33,7 +33,7 @@ function App() {
 
         <ScrollToTop /> 
         <Nav />    
-          
+          <Suspense fallback={<div>Loading...</div>}>
             <Routes>
 
               <Route path="/" element={ 
@@ -84,7 +84,7 @@ function App() {
 
                       
             </Routes>    
-          
+          </Suspense>
               
         <Foot />           
 
