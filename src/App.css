@@ -42,6 +42,10 @@ svg:hover {
   background-color: var(--rouge);
 }
 
+html {
+  font-display: swap;
+}
+
 h1.title {
   font-size: 5em;
 }
