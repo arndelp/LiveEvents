@@ -82,7 +82,7 @@ export default function ConcertHomePage() {
             <div className="col-md-8 ">
               <div className="card-body">
                 <h1 className="card-title">{Val.name}</h1>
-                <p className="card-text pb-2">{Val.schedule}</p>
+                <p className="card-text">{Val.schedule}</p>
                 <p className="card-text"><small className="text-body-secondary ">{Val.location}</small></p>
               </div>
             </div>
