@@ -449,7 +449,7 @@ ul.concertList {
 }
 
 .HautDePage {   
-  width: 2.5em; 
+  width: 7.5em; 
   display: grid;
   justify-content: center;
   aspect-ratio: 1 / 1;
@@ -543,8 +543,7 @@ ul.concertList {
   margin-right: 1em;
 }
 
-.headLogoM {
-  margin-bottom: 1em;
+.headLogoM {  
   margin-left: 0.5em;
 }
 
