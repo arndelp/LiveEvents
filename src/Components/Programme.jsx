@@ -171,7 +171,7 @@ const Details= ({id ,name, style, location, schedule, day, fullImageUrl, details
                 <img src={fullImageUrl}  class="img-fluid rounded" alt={name} />
               </div>
               <div class="col-md-8 ">
-                <div class="card-body progBody">
+                <div class="card-body ">
                   <h1 class="card-title">{name}</h1>
                   <p class="card-text">{style}</p>
                   <p class="card-text">{day}</p>
