@@ -124,7 +124,7 @@ export default function Nav() {
                 <div className="col-6 headTitle d-block d-lg-none">
                     <div className="headLogoM">
                         <Link to="/">
-                            <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className='logoM' width={50} height={35} />  
+                            <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className='logoM' width={35} height={20} />  
                         </Link>
                     </div>
                 </div>
