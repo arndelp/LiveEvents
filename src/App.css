@@ -538,6 +538,7 @@ ul.concertList {
 
 .headLogoM {
   margin-bottom: 1em;
+  margin-left: 0.5em;
 }
 
 /* I */
@@ -598,6 +599,11 @@ ul.concertList {
 .logo {
   display: flex;
   align-items: center;   
+}
+
+.logoM {
+  width: 3.5em;    
+  height: auto;       
 }
 
 .logoSize {
