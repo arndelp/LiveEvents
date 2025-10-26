@@ -448,9 +448,12 @@ ul.concertList {
   margin-right: 0.5em;  
 }
 
-.HautDePage {    
+.HautDePage {   
+  width: 2.5em; 
   display: grid;
   justify-content: center;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 }
 
 .head {
@@ -568,6 +571,12 @@ ul.concertList {
   border-radius: 1em;  
 }
 
+.img-fluid {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
 @media screen and (min-width: 1024px) {
   .imageDetails {  
    max-width: 60vw;
@@ -607,7 +616,10 @@ ul.concertList {
 
 .logoM {
   width: 3.5em;    
-  height: auto;       
+  height: auto;  
+  aspect-ratio: 50 / 35;    
+  object-fit: contain;
+  display: block; 
 }
 
 .logoSize {
@@ -755,7 +767,12 @@ ul.concertList {
   font-size: 2em;
 }
 
-
+#preload-hero {
+  aspect-ratio: 2 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 
 
