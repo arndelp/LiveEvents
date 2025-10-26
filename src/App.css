@@ -616,9 +616,8 @@ ul.concertList {
 .logoM {
   width: 3.5em;    
   height: auto;  
-  aspect-ratio: 50 / 35;    
-  object-fit: contain;
-  display: block; 
+  aspect-ratio: 35 / 35;    
+  
 }
 
 .logoSize {
