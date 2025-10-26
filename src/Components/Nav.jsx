@@ -116,7 +116,7 @@ export default function Nav() {
                 <div className=" col-3 d-block d-lg-none mt-4">                       
                     <div className="btn-group" data-toggle="buttons-checkbox">                        
                         <button type="button" className="Burger btn btn-default " onClick={handleShowLinks}>                            
-                                <img src={`${process.env.PUBLIC_URL}/assets/burger.png`} alt='burger' ></img>                            
+                                <img src={`${process.env.PUBLIC_URL}/assets/burger.png`} alt='burger' width={35} height={30}></img>                            
                         </button>                        
                     </div>                    
                 </div>
@@ -124,7 +124,7 @@ export default function Nav() {
                 <div className="col-6 headTitle d-block d-lg-none">
                     <div className="headLogoM">
                         <Link to="/">
-                            <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className='logoM' />
+                            <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className='logoM' width={50} height={35} />  
                         </Link>
                     </div>
                 </div>
@@ -151,7 +151,7 @@ export default function Nav() {
                     ) : (
                     <div className="headLogoMuser">
                         <Link to="/Login">
-                            <img src={`${process.env.PUBLIC_URL}/assets/circle-user-regular.svg`} alt="logo-user"  />
+                            <img src={`${process.env.PUBLIC_URL}/assets/circle-user-regular.svg`} alt="logo-user" width={50} height={50} />
                         </Link>
                     </div>
                     )}
@@ -165,7 +165,7 @@ export default function Nav() {
                         <ul className=" d-block d-lg-none mobileMenu">  
                             <li>
                                 <button type="button" className="Burger btn btn-default pt-4" onClick={handleShowLinks}>                            
-                                    <img src={ `${process.env.PUBLIC_URL}/assets/croix.png` } alt='burger' ></img>                              
+                                    <img src={ `${process.env.PUBLIC_URL}/assets/croix.png` } alt='burger' width={50} height={50}></img>                              
                                 </button>   
                             </li>                 
                             <li className="navbar__item">
