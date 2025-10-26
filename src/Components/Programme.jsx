@@ -173,9 +173,9 @@ const Details= ({id ,name, style, location, schedule, day, fullImageUrl, details
               <div class="col-md-8 ">
                 <div class="card-body progBody">
                   <h1 class="card-title">{name}</h1>
-                  <p class="card-text pb-2">{style}</p>
-                  <p class="card-text pb-2">{day}</p>
-                  <p class="card-text pb-2">{schedule}</p>
+                  <p class="card-text">{style}</p>
+                  <p class="card-text">{day}</p>
+                  <p class="card-text">{schedule}</p>
                   <p class="card-text"><small class="text-body-secondary ">{location}</small></p>
                 </div>
               </div>
