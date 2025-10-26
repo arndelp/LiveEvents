@@ -312,7 +312,7 @@ ul:hover {
 
 .card-text {
   font-family: katibeh, Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
   padding-bottom: 0.5em;
   display: flex ;
   justify-content: center;
@@ -320,7 +320,7 @@ ul:hover {
 
 .card-title {
   font-family: katibeh, Arial, Helvetica, sans-serif;
-  font-size: 1.3em;
+  font-size: 1.7em;
   padding-bottom: 0.5em;
   display: flex ;
   justify-content: center;
