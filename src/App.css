@@ -109,15 +109,14 @@ ul.concertList {
 }
 #preload-hero {
   position: fixed;
-  top: 0;
+  top: 40vh;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  background-color: #fff; /* fond fixe */
+  z-index: 9999; 
 }
  
 ul:hover {
@@ -809,13 +808,25 @@ ul.concertList {
   
 }
 
-#preload-hero {
-  aspect-ratio: 2 / 1;
-  display: block;
+.preload-background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  background-color: var(--gris); /* Couleur du fond, ou dégradé, ou image */
+  z-index: 5000;
 }
 
+.logo-preload {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.8s ease;
+}
+
+.logo-preload.fade-out {
+  opacity: 0;
+}
 
 
 /* Q */
