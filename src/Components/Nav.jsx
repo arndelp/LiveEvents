@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState, useEffect, useContext} from "react";
+import {useState, useContext} from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
@@ -19,7 +19,7 @@ export default function Nav() {
         setShowLinks(!showLinks)
     }
 
-     // Bloquer le scroll du body quand le menu est ouvert
+    
    
 
     return (   
