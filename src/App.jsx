@@ -27,7 +27,7 @@ const Registered = lazy(() => import("./Pages/Registered"));
 
 
 function App() {
-  
+// Préchargement du hero et animation du logo
   useEffect(() => {
     const preloadHero = document.getElementById("preload-hero");
     const logo = document.querySelector(".logo-preload");
@@ -43,6 +43,8 @@ function App() {
     window.addEventListener("load", handleLoad);
     return () => window.removeEventListener("load", handleLoad);
   }, []);
+
+
   return (   
     <BrowserRouter>
 
