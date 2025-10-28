@@ -282,9 +282,11 @@ ul:hover {
 }
 
 .card img {
-  width: 100%;
-  aspect-ratio: 16/9; 
+  display: block;
+  width: 100%;  
+  aspect-ratio: 16/9;
   object-fit: cover;
+  
 }
 
 .card-name {
@@ -827,6 +829,26 @@ ul.concertList {
   display: grid;
   align-items:  center;
   justify-content: center;
+}
+
+.skeleton-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.skeleton-card {
+  width: 70vw;
+  height: 250px; /* même hauteur que la card finale */
+  background-color: #e0e0e0;
+  border-radius: 1em;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
 }
 
 .sponsor {

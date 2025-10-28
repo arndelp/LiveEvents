@@ -71,13 +71,15 @@ export default function ConcertHomePage() {
             <div className="col-md-4 ">
               <img             
                 src={Val.fullImageUrl}   
-                width={200} 
-                height={200}  
+                width="1600" 
+                height="900"  
                 className="img-fluid rounded" 
                 alt={Val.name} 
                 fetchPriority="high"
                 loading="eager"
-                decoding="async"/>
+                decoding="async"
+                style={{ aspectRatio: "16 / 9", objectFit: "cover", display: "block", backgroundColor: "var(--gris)" }}
+                />
             </div>
             <div className="col-md-8 ">
               <div className="card-body">
@@ -100,7 +102,17 @@ return (
   <div className='row  g-0 '>
     <div className="pb-0 mt-8 " data-testid="concertHome">  
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}  
-      <ul className="concertList">{listDay1Sch1}</ul>
+
+      {concerts.length === 0 ? (
+        // placeholder pour réserver la place des données avant le fetch (optimisation performance)
+        <div className="skeleton-container">
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="skeleton-card"></div>
+          ))}
+        </div>
+      ) : (
+        <ul className="concertList">{listDay1Sch1}</ul>
+      )}
     </div>
   </div>
 )
