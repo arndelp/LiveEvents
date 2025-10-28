@@ -656,9 +656,11 @@ ul.concertList {
 }
 
 .logo-preload {
+  opacity: 1; /* pour safari*/
   position: relative;
   z-index: 9999;
   transition: opacity 0.8s ease;
+  will-change: opacity;
 }
 
 .logo-preload.fade-out {

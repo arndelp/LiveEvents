@@ -32,7 +32,7 @@ function App() {
     const preloadHero = document.getElementById("preload-hero");
     const logo = document.querySelector(".logo-preload");
 
-    const handleLoad = () => {
+    const startFade = () => {
       if (logo) logo.classList.add("fade-out");
 
       setTimeout(() => {
@@ -40,8 +40,13 @@ function App() {
       }, 800);
     };
 
-    window.addEventListener("load", handleLoad);
-    return () => window.removeEventListener("load", handleLoad);
+    if (document.readyState === "complete") {
+    // page déjà chargée
+    requestAnimationFrame(startFade);
+  } else {
+    window.addEventListener("load", startFade);
+    return () => window.removeEventListener("load", startFade);
+  }
   }, []);
 
 
