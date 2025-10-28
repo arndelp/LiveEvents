@@ -27,22 +27,22 @@ const Registered = lazy(() => import("./Pages/Registered"));
 
 
 function App() {
+  
   useEffect(() => {
-         const logo = document.querySelector(".logo-preload");
-         const preloadHero = document.getElementById("preload-hero");
- 
-         if (logo && preloadHero) {
-             // Lancer le fade du logo
-             logo.classList.add("fade-out");
- 
-             // Supprimer le preloadHero après le fade
-             const timer = setTimeout(() => {
-             preloadHero.remove(); // tout le preload disparaît
-             }, 800);
- 
-             return () => clearTimeout(timer);
-         }
-     }, []);
+    const preloadHero = document.getElementById("preload-hero");
+    const logo = document.querySelector(".logo-preload");
+
+    const handleLoad = () => {
+      if (logo) logo.classList.add("fade-out");
+
+      setTimeout(() => {
+        preloadHero?.remove();
+      }, 800);
+    };
+
+    window.addEventListener("load", handleLoad);
+    return () => window.removeEventListener("load", handleLoad);
+  }, []);
   return (   
     <BrowserRouter>
 
