@@ -384,7 +384,7 @@ ul:hover {
 .ConcertHomePage {
   display: flex;
   justify-content: center; 
-  aspect-ratio: 1 / 2;
+  aspect-ratio: auto;
 
 }
 
