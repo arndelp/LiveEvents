@@ -21,30 +21,21 @@ export default function Nav() {
 
      // Bloquer le scroll du body quand le menu est ouvert
     useEffect(() => {
-        if (showLinks) {
-        document.body.classList.add("no-scroll");
-        } else {
-        document.body.classList.remove("no-scroll");
-        }
-    }, [showLinks]);
-
-     // Suppression de l'image placeholder du HTML initial quand React démarre
-     //S'exxécute une seule fois au montage du composant
-     // aucun CLS (Conten Layout Shift)
-    useEffect(() => {
+        const logo = document.querySelector(".logo-preload");
         const preloadHero = document.getElementById("preload-hero");
-        if (preloadHero) {
-            // Lance une transition douce
-            preloadHero.classList.add("fade-out");
 
-            // Supprime le DOM après la transition (après ~800 ms)
+        if (logo && preloadHero) {
+            // Lancer le fade du logo
+            logo.classList.add("fade-out");
+
+            // Supprimer le preloadHero après le fade
             const timer = setTimeout(() => {
-            preloadHero.remove();
-            }, 2000);
+            preloadHero.remove(); // tout le preload disparaît
+            }, 800);
 
             return () => clearTimeout(timer);
         }
-        }, []);
+    }, []);
 
     return (   
        ////////////////////////Format Desktop///////////////////////////////////////////////////////
