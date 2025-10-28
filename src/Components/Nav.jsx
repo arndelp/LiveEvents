@@ -40,7 +40,7 @@ export default function Nav() {
             // Supprime le DOM après la transition (après ~800 ms)
             const timer = setTimeout(() => {
             preloadHero.remove();
-            }, 800);
+            }, 2000);
 
             return () => clearTimeout(timer);
         }
