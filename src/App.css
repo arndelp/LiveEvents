@@ -88,6 +88,10 @@ ul:hover {
   color: var(--rouge);
 }
 
+ul.concertList {
+  min-height: 1000px; /* réserve l'espace pour les cards */
+}
+
 /******************ID************************/
 #suiveznous {
   font-family: Katibeh, Arial, Helvetica, sans-serif;
@@ -831,23 +835,46 @@ ul.concertList {
   justify-content: center;
 }
 
-.skeleton-container {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
+.skeleton-card {
+  background-color: var(--mauve);
+  border-radius: 1em;
+  overflow: hidden;
+  width: 70vw; /* identique à .cardh */
+  margin: 0 auto;
+  display: block;
 }
 
-.skeleton-card {
-  width: 70vw;
-  height: 250px; /* même hauteur que la card finale */
-  background-color: #e0e0e0;
-  border-radius: 1em;
+.skeleton-img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background-color: #ddd;
   animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-text {
+  padding: 1em;
+}
+
+.skeleton-line {
+  height: 1em;
+  background-color: #ccc;
+  margin-bottom: 0.5em;
+  border-radius: 0.25em;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-line.title {
+  width: 70%;
+  height: 1.5em;
+}
+
+.skeleton-line.short {
+  width: 40%;
 }
 
 @keyframes pulse {
   0% { opacity: 1; }
-  50% { opacity: 0.4; }
+  50% { opacity: 0.5; }
   100% { opacity: 1; }
 }
 

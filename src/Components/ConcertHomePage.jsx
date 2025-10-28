@@ -23,7 +23,7 @@ export default function ConcertHomePage() {
 
        // Suppression de l'image placeholder du HTML initial quand React démarre
       const preloadHero = document.getElementById('preload-hero');
-      if (preloadHero) preloadHero.remove();
+      if (preloadHero) preloadHero.style.visibility = 'hidden';
 
       const apiCallConcerts = async () => {
 
@@ -105,11 +105,27 @@ return (
 
       {concerts.length === 0 ? (
         // placeholder pour réserver la place des données avant le fetch (optimisation performance)
-        <div className="skeleton-container">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="skeleton-card"></div>
-          ))}
+        // affichage de 3 cartes "squelette" pendant le chargement représentant les concerts
+        <ul className="concertList">
+    {[...Array(3)].map((_, i) => (
+      <li key={i} className="listCard mt-2">
+        <div className="card cardh skeleton-card">
+          <div className="row g-0">
+            <div className="col-md-4">
+              <div className="skeleton-img"></div>
+            </div>
+            <div className="col-md-8">
+              <div className="skeleton-text">
+                <div className="skeleton-line title"></div>
+                <div className="skeleton-line"></div>
+                <div className="skeleton-line short"></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </li>
+    ))}
+  </ul>
       ) : (
         <ul className="concertList">{listDay1Sch1}</ul>
       )}
