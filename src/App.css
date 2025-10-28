@@ -110,10 +110,10 @@ ul.concertList {
 
 #preload-hero {
   position: fixed;
-  top: 0;
+  top: 40vh;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background: var(--gris); /* ou une couleur de fond de ton site */
   display: flex;
   justify-content: center;
