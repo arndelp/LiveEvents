@@ -383,7 +383,11 @@ ul:hover {
 
 .ConcertHomePage {
   display: flex;
-  justify-content: center;   
+  justify-content: center; 
+  width: fit-content;
+  height: auto;
+  aspect-ratio: 3 / 1;
+
 }
 
 ul.concertList {
