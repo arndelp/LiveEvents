@@ -23,7 +23,7 @@ export default function ConcertHomePage() {
 
        // Suppression de l'image placeholder du HTML initial quand React démarre
       const preloadHero = document.getElementById('preload-hero');
-      if (preloadHero) preloadHero.style.visibility = 'hidden';
+      if (preloadHero) preloadHero.remove();
 
       const apiCallConcerts = async () => {
 
