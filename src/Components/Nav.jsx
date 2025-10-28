@@ -28,7 +28,23 @@ export default function Nav() {
         }
     }, [showLinks]);
 
+     // Suppression de l'image placeholder du HTML initial quand React démarre
+     //S'exxécute une seule fois au montage du composant
+     // aucun CLS (Conten Layout Shift)
+    useEffect(() => {
+        const preloadHero = document.getElementById("preload-hero");
+        if (preloadHero) {
+            // Lance une transition douce
+            preloadHero.classList.add("fade-out");
 
+            // Supprime le DOM après la transition (après ~800 ms)
+            const timer = setTimeout(() => {
+            preloadHero.remove();
+            }, 800);
+
+            return () => clearTimeout(timer);
+        }
+        }, []);
 
     return (   
        ////////////////////////Format Desktop///////////////////////////////////////////////////////

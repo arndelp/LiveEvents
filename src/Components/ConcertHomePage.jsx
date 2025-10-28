@@ -19,11 +19,7 @@ export default function ConcertHomePage() {
   /*utilisation requêtes asynchrones*/
     useEffect(()=>{
        // création d'un controller d'annulation
-      const controller = new AbortController();
-
-       // Suppression de l'image placeholder du HTML initial quand React démarre
-      const preloadHero = document.getElementById('preload-hero');
-      if (preloadHero) preloadHero.remove();
+      const controller = new AbortController();      
 
       const apiCallConcerts = async () => {
 

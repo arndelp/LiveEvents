@@ -108,6 +108,14 @@ ul.concertList {
   width: 3em;
 }
 
+#preload-hero {
+  transition: opacity 0.6s ease-out, visibility 0s linear 0.6s;
+}
+
+#preload-hero.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
 
 ul:hover {
   color: var(--rouge);
