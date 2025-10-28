@@ -656,6 +656,8 @@ ul.concertList {
 }
 
 .logo-preload {
+  position: relative;
+  z-index: 9999;
   transition: opacity 0.8s ease;
 }
 
@@ -819,15 +821,7 @@ ul.concertList {
   background-size: cover;
 }
 
-.logo-preload {
-  position: relative;
-  z-index: 9999;
-  transition: opacity 0.8s ease;
-}
 
-.logo-preload.fade-out {
-  opacity: 0;
-}
 
 
 /* Q */
