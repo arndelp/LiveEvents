@@ -39,7 +39,7 @@ function App() {
         preloadHero?.remove();
       }, 800);
     };
-
+// Si la page est déjà chargée, démarrer l'animation immédiatement (nécessaire pour safari)
     if (document.readyState === "complete") {
     // page déjà chargée
     requestAnimationFrame(startFade);
