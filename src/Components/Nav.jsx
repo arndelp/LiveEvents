@@ -20,22 +20,7 @@ export default function Nav() {
     }
 
      // Bloquer le scroll du body quand le menu est ouvert
-    useEffect(() => {
-        const logo = document.querySelector(".logo-preload");
-        const preloadHero = document.getElementById("preload-hero");
-
-        if (logo && preloadHero) {
-            // Lancer le fade du logo
-            logo.classList.add("fade-out");
-
-            // Supprimer le preloadHero après le fade
-            const timer = setTimeout(() => {
-            preloadHero.remove(); // tout le preload disparaît
-            }, 800);
-
-            return () => clearTimeout(timer);
-        }
-    }, []);
+   
 
     return (   
        ////////////////////////Format Desktop///////////////////////////////////////////////////////

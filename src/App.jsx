@@ -5,6 +5,7 @@ import Foot from "./Components/Foot";
 import ScrollToTop from "./Components/ScrollToTop";
 import { AuthProvider } from "./Context/AuthContext";
 import {Suspense,lazy } from "react";
+import { useEffect } from "react";
 
 
 // Lazy loading des pages
@@ -26,7 +27,22 @@ const Registered = lazy(() => import("./Pages/Registered"));
 
 
 function App() {
+  useEffect(() => {
+         const logo = document.querySelector(".logo-preload");
+         const preloadHero = document.getElementById("preload-hero");
  
+         if (logo && preloadHero) {
+             // Lancer le fade du logo
+             logo.classList.add("fade-out");
+ 
+             // Supprimer le preloadHero après le fade
+             const timer = setTimeout(() => {
+             preloadHero.remove(); // tout le preload disparaît
+             }, 800);
+ 
+             return () => clearTimeout(timer);
+         }
+     }, []);
   return (   
     <BrowserRouter>
 
