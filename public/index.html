@@ -69,16 +69,18 @@
 
 <body> 
   <!-- image placeholder en attendant que le JS se charge -->
-  <img
-    id="preload-hero"
-    src="./assets/logo.svg"
-    alt="logo du festival"
-    width="1200"
-    height="600"
-    loading="eager"
-    fetchpriority="high"
-    style="display:block;width:100%;height:auto;object-fit:cover;"
-  />
+  <div id="preload-hero">
+    <div class="preload-background"></div>
+    <img    
+      src="./assets/logo.svg"
+      alt="logo du festival"
+      width="1200"
+      height="600"
+      loading="eager"
+      fetchpriority="high"
+      style="display:block;width:100%;height:auto;object-fit:cover;"
+    />
+  </div>
 
   <div id="root"></div>
 
