@@ -1,14 +1,14 @@
 import ConcertHomePage from "../Components/ConcertHomePage.jsx"
-import GoogleMap from "../Components/GoogleMap.tsx"
 import BannerAlert from "../Components/BannerAlert.jsx"
 import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
 import {  HiShoppingCart } from "react-icons/hi";
 import ScrollToTopButton from "../Components/ScrollToTopButton.jsx";
-import { useContext } from "react";
+import { lazy, Suspense, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 
-
+//pour améliorer les performances, chargement lazy de la googlemap
+const GoogleMap = lazy(() => import("../Components/GoogleMap.tsx"));
 
 function Home() {
 
@@ -62,16 +62,15 @@ function Home() {
 
 
           <Link to="/Plan">
-            
-            <div className="d-none d-lg-block GmapMini  col-8 offset-2  ">
-              <GoogleMap />
-            </div>
+            <Suspense fallback={<div className="loading-map">Chargement de la carte...</div>}>
+              <div className="d-none d-lg-block GmapMini  col-8 offset-2  ">
+                <GoogleMap />
+              </div>
 
-            <div className="d-block d-lg-none GmapMiniSmall  col-10 offset-1  ">
-              <GoogleMap />              
-            </div>
-           
-            
+              <div className="d-block d-lg-none GmapMiniSmall  col-10 offset-1  ">
+                <GoogleMap />              
+              </div>
+            </Suspense>            
           </Link>  
 
         </div>
