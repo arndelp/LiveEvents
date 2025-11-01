@@ -51,7 +51,7 @@ function Home() {
           </div>
         
           <Link to="/Programmation">
-          <div className="ConcertHomePage " width="100vw" height={400} >
+          <div className="ConcertHomePage " width={300} height={400} >
             <ConcertHomePage />
           </div>
           </Link>
