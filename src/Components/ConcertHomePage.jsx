@@ -67,8 +67,8 @@ export default function ConcertHomePage() {
             <div className="col-md-4 ">
               <img             
                 src={Val.fullImageUrl}   
-                width="1600" 
-                height="900"  
+                width="100" 
+                height="150"  
                 className="img-fluid rounded" 
                 alt={Val.name} 
                 fetchPriority="high"
