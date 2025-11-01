@@ -130,7 +130,7 @@ const handleShowLinks = () => {
                                  
         <div className="btn-group BurgerSituationMap" data-toggle="buttons-checkbox">                                  
           <button type="button" className="BurgerProg btn btn-default " onClick={handleShowLinks}>                        
-            <img src={`${process.env.PUBLIC_URL}/assets/parametres-curseurs.png`} alt='burger' ></img>                        
+            <img src={`${process.env.PUBLIC_URL}/assets/parametres-curseurs.png`} alt='burger' width="35em" height= "35em"></img>                        
           </button>                    
         </div>      
         
