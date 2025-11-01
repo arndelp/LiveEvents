@@ -28,7 +28,7 @@ export default function Nav() {
                 <div className="logo col-2 d-none d-lg-block ">
                     <div >
                         <Link to="/">
-                            <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className="logoSize" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className="logoSize" width={30} height={30}/>
                         </Link>
                     </div>   
                 </div>
@@ -72,7 +72,7 @@ export default function Nav() {
                         <>
                             <div className='headUserD'>
                                 <div className="headLogoDuserConnectedFirstname">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/face-smile-solid-full.svg`} alt="logo-user" className='headLogoMuserConnectedSmiley'/>
+                                    <img src={`${process.env.PUBLIC_URL}/assets/face-smile-solid-full.svg`} alt="logo-user" className='headLogoMuserConnectedSmiley' width={30} height={30}/>
                                     {customer?.firstname || "Utilisateur"}
                                     
                                 </div>
@@ -83,7 +83,7 @@ export default function Nav() {
                                         </div>
                                         <div className="headLogoDuserDisconnectLogo">
                                             
-                                                <img src={`${process.env.PUBLIC_URL}/assets/user-slash-solid-full.svg`} alt="logo-user"  />                                
+                                                <img src={`${process.env.PUBLIC_URL}/assets/user-slash-solid-full.svg`} alt="logo-user" width={30} height={30} />                                
                                             
                                         </div>
                                     </Link>
@@ -93,7 +93,7 @@ export default function Nav() {
                     ) : (
                     <div className="headLogoMuser">
                         <Link to="/Login">
-                            <img src={`${process.env.PUBLIC_URL}/assets/circle-user-regular.svg`} alt="logo-user"  />
+                            <img src={`${process.env.PUBLIC_URL}/assets/circle-user-regular.svg`} alt="logo-user" width={30} height={30} />
                         </Link>
                     </div>
                     )}
@@ -108,7 +108,7 @@ export default function Nav() {
                 <div className=" col-3 d-block d-lg-none mt-4">                       
                     <div className="btn-group" data-toggle="buttons-checkbox">                        
                         <button type="button" className="Burger btn btn-default " onClick={handleShowLinks}>                            
-                                <img src={`${process.env.PUBLIC_URL}/assets/burger.png`} alt='burger' width={35} height={30}></img>                            
+                                <img src={`${process.env.PUBLIC_URL}/assets/burger.png`} alt='burger' width={30} height={30}></img>                            
                         </button>                        
                     </div>                    
                 </div>
@@ -133,7 +133,7 @@ export default function Nav() {
                             <Link to="/" onClick={logout} title="Se déconnecter">
                                 <div className="headLogoMuserDisconnect">                                    
                                     Se&nbsp;déconnecter                               
-                                    <img src={`${process.env.PUBLIC_URL}/assets/user-slash-solid-full.svg`} alt="logo-user" className='headLogoDuserDisconnectLogo' />                               
+                                    <img src={`${process.env.PUBLIC_URL}/assets/user-slash-solid-full.svg`} alt="logo-user" className='headLogoDuserDisconnectLogo' width={30} height={30}/>                               
                                 </div>
                                 
                                 

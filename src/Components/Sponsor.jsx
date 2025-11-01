@@ -47,7 +47,7 @@ const Sponsor = () => {
     //sponsor: élément en cour d'itération
     const sponsorsByType = sponsors.reduce((accumulateur, sponsor) => {
         const type = sponsor.type || "Autre"; // Si pas de type, on met "Autre"
-         // Si ce type n'existe pas encore dans l'objet "grouped"
+         
         if (!accumulateur[type]) {
             accumulateur[type] = []; // Crée un tableau pour ce type s'il n'existe pas
         }
@@ -72,7 +72,7 @@ const Sponsor = () => {
                 {/*Object.keys : méthode native je JS qui renvoie un tableau avec les clé énumérable de sponsorByType*/}
                 {Object.keys(sponsorsByType)
                 //Tri alphabétique des types
-                .sort((a,b) => a.localeCompare(b)) //Tri alphabétique des types
+                .sort((a,b) => a.localeCompare(b)) 
                 // Pour chaque type, on génère un bloc d'affichage 
                 .map(type => (
                     <div key={type} className={ `sponsor-type sponsor-type-${type.toLowerCase()}`}>

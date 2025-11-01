@@ -23,28 +23,35 @@ function FormContact() {
     
     
 
-    //fonction submit utilisant le client HTTP Axios, permet le POST des data à l'url de l'api
+// Fonction de soumission du formulaire de contact
+// Utilise le client HTTP Axios pour envoyer les données (POST) vers l'API
     function submit(e){
-        e.preventDefault(); //empêche la soumission du formulaire   
+        // Empêche le comportement par défaut du navigateur (rechargement de la page)
+        e.preventDefault(); 
+        // Envoi d'une requête POST vers l'API avec les données du formulaire   
         Axios.post(`${apiURL}/api/contacts`,{
+            // Corps de la requête : informations saisies par l'utilisateur
             lastname: data.lastname,
             firstname: data.firstname,
             email: data.email,
             message: data.message
         }, {
+            // En-têtes HTTP précisant le format des données envoyées et attendues
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',                
             }
         })
-        .then(res=>{
-            console.log(res.data)
+        // Si la requête réussit, on traite la réponse ici
+        .then(res=>{            
             navigate('/Submitted')
         })
+        // Si une erreur survient, on l'intercepte ici
         .catch(err => {
-            console.error("Erreur lors de l'envoi :", err);
-            alert("Une erreur s'est produite lors de l'envoi du message.");
-        });        
+            console.error("Erreur lors de l'envoi :", err); // Journalisation de l'erreur
+            alert("Une erreur s'est produite lors de l'envoi du message."); // Message d'erreur utilisateur
+        });
+                
     }   
 
      //fonction handle: Récupération des données entrées par l'utilisateur

@@ -121,39 +121,45 @@ const handleCheckedOther = (e)=>{
   } 
 } 
 
-  // Récupération des données de l'API
+  // Récupération des données de l'API lors du montage du composant
   useEffect( ()=>{
-    // Création d'un AbortController pour pouvoir annuler la requête si nécessaire
-    const controller = new AbortController(); //API JavaScript native qui sert à annuler une requête réseau
+    // Création d'un AbortController pour pouvoir annuler la requête si composant est démonté
+    //API native de Javascript permettant d'annuler une requête réseau
+    const controller = new AbortController(); 
+
+    // Fonction asynchrone pour récupérer la liste des concerts
     const apiCallConcerts = async () => {
       try {
-           // On attache le signal du controller à la requête fetch pour pouvoir l'annuler plus tard
+    // On attache le signal du controller à la requête fetch pour permettre son annulation
         const apiCallPromise = await fetch(`${apiURL}/api/concerts`, 
           {            
             signal: controller.signal,    
           }
         );
-        //on doit forcer une erreur si le serveur répond avec un code http 4xx ou 5xx.        
+    // Si le serveur renvoie un code HTTP 4xx ou 5xx, on force une erreur       
         if (!apiCallPromise.ok) 
           throw new Error("Pas de réponse réseau");
 
+    // Conversion de la réponse en JSON
         const apiCallObj = await apiCallPromise.json();
+    // Mise à jour des états avec les données récupérées
         setConcerts(apiCallObj)    
         setConcertsFiltered(apiCallObj) 
           
-        // si une erreur se produit
+    // si une erreur se produit
         } catch (error) {
           if (error.name === 'AbortError') {
-            // Requête annulée , on quitte simplement
+    // Requête annulée : on ne fait rien de plus
             return;
             }
-            // Message d'erreur pour l'utilisateur si la requête échoue
+    // Affichage d’un message d’erreur utilisateur en cas d’échec de la requête
             setErrorMessage("Impossible de charger la liste des concerts. Veuillez réessayer plus tard.");
           }          
         };
-         // Appel de la fonction async pour récupérer les concerts
+         // Appel de la fonction pour lancer la récupération des concerts
       apiCallConcerts();
       // Nettoyage : on annule la requête si le composant se démonte ( optimisation du réseau.)
+      // (évite les fuites mémoire et les erreurs réseau inutiles)
       return () => { controller.abort();    
     };    
   }, []); 
