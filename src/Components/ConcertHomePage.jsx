@@ -68,7 +68,7 @@ export default function ConcertHomePage() {
               <img             
                 src={Val.fullImageUrl}   
                 width="100" 
-                height="150"  
+                height="56"  
                 className="img-fluid rounded" 
                 alt={Val.name} 
                 fetchPriority="high"
