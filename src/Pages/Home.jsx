@@ -51,7 +51,7 @@ function Home() {
           </div>
         
           <Link to="/Programmation">
-          <div className="ConcertHomePage " >
+          <div className="ConcertHomePage " width={100} height={300} >
             <ConcertHomePage />
           </div>
           </Link>
@@ -74,7 +74,7 @@ function Home() {
           </Link>  
 
         </div>
-        <div className="marginMap">
+        <div className="marginMap" width={32} height={32}>
         <ScrollToTopButton/>
         </div>
         </>
