@@ -8,7 +8,7 @@ import {Suspense,lazy } from "react";
 import { useEffect } from "react";
 
 
-// Lazy loading des pages
+// Lazy loading des pages - chargement des composants en temps réel (lorsqu'ils sont utilisés)
 const Home = lazy(() => import("./Pages/Home"));
 const Billetterie = lazy(() => import("./Pages/Billetterie"));
 const Programmation = lazy(() => import("./Pages/Programmation"));
@@ -27,18 +27,20 @@ const Registered = lazy(() => import("./Pages/Registered"));
 
 
 function App() {
-// Préchargement du hero et animation du logo
+// Animation de préchargement (Préchargement du hero et animation du logo)
   useEffect(() => {
     const preloadHero = document.getElementById("preload-hero");
     const logo = document.querySelector(".logo-preload");
 
     const startFade = () => {
+      //Ajout de la classe CSS fade-out au logo (transparence->opacity=0)
       if (logo) logo.classList.add("fade-out");
-
+      //Suppression de l'animation de préload après 800ms)
       setTimeout(() => {
         preloadHero?.remove();
       }, 800);
     };
+
 // Si la page est déjà chargée, démarrer l'animation immédiatement (nécessaire pour safari)
     if (document.readyState === "complete") {
     // page déjà chargée
@@ -57,7 +59,7 @@ function App() {
 
         <ScrollToTop /> 
         <Nav />    
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={null}>
             <Routes>
 
              
