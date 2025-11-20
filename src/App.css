@@ -558,7 +558,8 @@ ul.concertList {
 
 
 
-.headLogoMuser {   
+.headLogoMuser { 
+  margin-left: 2em;  
   max-width: 2.5em;  
 }
 
@@ -577,9 +578,7 @@ ul.concertList {
   margin-right: 1em;
 }
 
-.headUserM {
-  margin-left: 2em;
-}
+
 
 .headLogoM {  
   margin-left: 0.5em;
