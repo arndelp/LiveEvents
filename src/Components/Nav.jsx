@@ -24,7 +24,7 @@ export default function Nav() {
 
     return (   
        ////////////////////////Format Desktop///////////////////////////////////////////////////////
-            <nav className="head row ">
+            <nav className="head ">
                 <div className="logo col-2 d-none d-lg-block ">
                     <div >
                         <Link to="/">
