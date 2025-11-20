@@ -35,7 +35,7 @@ function App() {
     const startFade = () => {
       //Ajout de la classe CSS fade-out au logo (transparence->opacity=0)
       if (logo) logo.classList.add("fade-out");
-      //Suppression de l'animation de préload après 800ms)
+      //Suppression de l'animation de préload après 800ms
       setTimeout(() => {
         preloadHero?.remove();
       }, 800);
