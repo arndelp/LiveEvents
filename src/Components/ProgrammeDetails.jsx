@@ -30,9 +30,11 @@ export default function ProgrammeDetails () {
           
         <div >              
           <Card className= "kard pt-4">
-            
-            <Card.Img variant="top" src={fullImageUrl} className="imageDetails mt-2 " />
-            
+            <div className="row">  
+              <div className="imageDetailsContainer">
+               <Card.Img variant="top" src={fullImageUrl} className="imageDetails mt-2 " />
+              </div>
+            </div>  
             <Card.Body>
               <Card.Title className="fs-1 lh-sm link-danger" >{name}</Card.Title>
               <Card.Text className="fs-3 lh-sm">

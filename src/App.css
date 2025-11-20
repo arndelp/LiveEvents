@@ -605,6 +605,13 @@ ul.concertList {
   border-radius: 1em;  
 }
 
+.imageDetailsContainer {
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: auto;
+}
+
 .img-fluid {
   aspect-ratio: 1 / 1;
   object-fit: cover;
