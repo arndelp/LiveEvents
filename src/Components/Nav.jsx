@@ -103,7 +103,7 @@ export default function Nav() {
 {/* ////////////////////////Format mobile/////////////////////////////////////*/}
             
             {showLinks && <div className="backdrop" onClick={handleShowLinks}></div>}
-            <div className="row topBar">
+            <div className="topBar">
                 {/*Burger */}
                 <div className=" col-3 d-block d-lg-none mt-4">                       
                     <div className="btn-group" data-toggle="buttons-checkbox">                        
