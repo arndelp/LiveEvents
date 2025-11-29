@@ -219,7 +219,7 @@ ul:hover {
 }
 
 .bodyScroll {
-  padding-top: 5.6em;
+  padding-top: 5.4em;
   background-color: var(--gris);
 }
 
@@ -1019,7 +1019,7 @@ ul.concertList {
   display: flex;
   min-width: 100vw;
   align-items: center;  
-  max-height: 5.6em;
+  max-height: 5.4em;
 }
 
 
