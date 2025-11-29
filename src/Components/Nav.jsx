@@ -25,7 +25,7 @@ export default function Nav() {
     return (   
        ////////////////////////Format Desktop///////////////////////////////////////////////////////
             <nav className="head ">
-                <div className="logo col-2 d-none d-lg-block ">
+                <div className="logo col-2 d-none d-xl-block ">
                     <div >
                         <Link to="/">
                             <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className="logoSize" width={30} height={30}/>
@@ -34,7 +34,7 @@ export default function Nav() {
                 </div>
 
                               
-                <div className="d-none d-lg-block col-8" >
+                <div className="d-none d-xl-block col-8" >
                     <ul className="navbar__links ">              
                        
                         <li className="navbar__item">
@@ -66,7 +66,7 @@ export default function Nav() {
                     </ul>
                 </div>
 
-                <div className="logo col-2 d-none d-lg-block ">
+                <div className="logo col-2 d-none d-xl-block ">
                     <div >
                         {isAuthenticated() ? (
                         <>
@@ -105,7 +105,7 @@ export default function Nav() {
             {showLinks && <div className="backdrop" onClick={handleShowLinks}></div>}
             <div className="topBar">
                 {/*Burger */}
-                <div className=" col-3 d-block d-lg-none mt-4">                       
+                <div className=" col-3 d-block d-xl-none mt-4">                       
                     <div className="btn-group" data-toggle="buttons-checkbox">                        
                         <button type="button" className="Burger btn btn-default " onClick={handleShowLinks}>                            
                                 <img src={`${process.env.PUBLIC_URL}/assets/burger.png`} alt='burger' width={30} height={30}></img>                            
@@ -113,7 +113,7 @@ export default function Nav() {
                     </div>                    
                 </div>
                 {/*Logo mobile */}
-                <div className="col-6 headTitle d-block d-lg-none">
+                <div className="col-6 headTitle d-block d-xl-none">
                     <div className="headLogoM">
                         <Link to="/">
                             <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="logo" className='logoM' width={35} height={20} />  
@@ -121,7 +121,7 @@ export default function Nav() {
                     </div>
                 </div>
                 {/*Icon user mobile */}
-                <div className="col-3 pt-2  d-block d-lg-none ">
+                <div className="col-3 pt-2  d-block d-xl-none ">
                     {isAuthenticated() ? (
                         <>
                         <div className="headUserM">
@@ -152,9 +152,9 @@ export default function Nav() {
             </div>
                 
             
-                    <div className={`row d-lg-none overlay ${showLinks ? "show" : ""} `}>   
+                    <div className={`row d-xl-none overlay ${showLinks ? "show" : ""} `}>   
                         
-                        <ul className=" d-block d-lg-none mobileMenu">  
+                        <ul className=" d-block d-xl-none mobileMenu">  
                             <li>
                                 <button type="button" className="Burger btn btn-default pt-4" onClick={handleShowLinks}>                            
                                     <img src={ `${process.env.PUBLIC_URL}/assets/croix.png` } alt='burger' width={50} height={50}></img>                              
