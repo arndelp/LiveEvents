@@ -22,9 +22,9 @@
 
 :root {
   --blanc: #FFFFFF;
-  --mauve: #d880e0;  
+  --mauve: #DBB0DE;  
   --rouge: #f76c6c;
-  --noir: #000000;
+  --noir: #5C0065;
   --gris: #fde3e3;     
   --vert: #C3F1D5;
 }
@@ -185,6 +185,13 @@ ul:hover {
   background-color: var(--vert);
 }
 
+.barreNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
 .bill {
   padding-top: 1em;   
   display: flex;
@@ -207,6 +214,11 @@ ul:hover {
   justify-content: space-around;
   min-height: 100vh;   
   background-size: cover;
+  background-color: var(--gris);
+}
+
+.bodyScroll {
+  padding-top: 6.5em;
   background-color: var(--gris);
 }
 

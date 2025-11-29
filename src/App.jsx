@@ -54,16 +54,14 @@ function App() {
 
   return (   
     <BrowserRouter>
-
       <AuthProvider>      
-
         <ScrollToTop /> 
-        <Nav />    
-          <Suspense fallback={null}>
+        <div className="barreNav">
+          <Nav />  
+        </div> 
+        <Suspense fallback={null}>
+          <div className="bodyScroll">
             <Routes>
-
-             
-
               <Route path="/" element={ 
                 <Home />         }>           
               </Route>  
@@ -109,15 +107,12 @@ function App() {
               <Route path="/Registered" element={            
                 <Registered />     }>
               </Route>
+            </Routes>  
+            <Foot />
+          </div>  
 
-                      
-            </Routes>    
-          </Suspense>
-              
-        <Foot />           
-
+        </Suspense>
       </AuthProvider> 
-
     </BrowserRouter>   
 
   );
