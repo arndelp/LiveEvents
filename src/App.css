@@ -554,7 +554,7 @@ ul.concertList {
 
 .headLogoDuserDisconnect {  
   display: flex;
-  justify-content: center;;
+  justify-content: start;
   padding-top: 1em;
   max-width: 2em;
   font-size: 0.8em;
