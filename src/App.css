@@ -189,6 +189,7 @@ ul:hover {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 100;
 }
 
@@ -649,7 +650,7 @@ ul.concertList {
   min-width: 100vw;
   min-height: 90vh;
   background-color: var(--gris);  
-  min-width: 100vw;
+  
 
 }
 
