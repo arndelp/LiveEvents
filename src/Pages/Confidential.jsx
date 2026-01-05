@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import  { Button } from 'react-bootstrap';
 import ScrollToTopButton from "../Components/ScrollToTopButton";
+import { useNavigate } from 'react-router-dom';
+
 
 
 function Informations () {
 
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1); // la dernière page visitée
+    };
+
     return (
         <>
         <div className="checkRGPDRetour">
-            <Link to="/contact">
-                    <Button  variant="link">Retour</Button>
-            </Link>
+            <Button variant="link" onClick={handleBack}>
+                Retour
+            </Button>
         </div>
             <div className="textInfo">
                 <dix class="titreConf">
