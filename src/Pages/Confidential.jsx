@@ -9,7 +9,7 @@ function Informations () {
         <>
         <div className="checkRGPDRetour">
             <Link to="/contact">
-                    <Button  variant="link">Précédent</Button>
+                    <Button  variant="link">Retour</Button>
             </Link>
         </div>
             <div className="textInfo">
