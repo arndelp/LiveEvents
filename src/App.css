@@ -646,7 +646,7 @@ ul.concertList {
 
 .kard {
   display: grid;
-  justify-content: center;
+  justify-items: center;
   width: 100%;
   min-height: 90vh;
   background-color: var(--gris);  
