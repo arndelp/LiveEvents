@@ -12,7 +12,7 @@ const axiosInstance = Axios.create({
     },
 });
 
-// Ajouter un intercepteur pour injecter le token JWT dans chaque requête
+// Ajouter un intercepteur pour injecter le token JWT dans chaque requête de l'utilisateur connecté
 axiosInstance.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('token');

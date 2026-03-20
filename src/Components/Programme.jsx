@@ -162,7 +162,7 @@ const handleCheckedOther = (e)=>{
       // (évite les fuites mémoire et les erreurs réseau inutiles)
       return () => { controller.abort();    
     };    
-  }, []); 
+  }, []);    // Le tableau de dépendances vide [] indique que l’effet ne s’exécute qu’une seule fois au montage du composant
 
     
 
